@@ -14,7 +14,7 @@ if (container === null) {
 
 createRoot(container).render(
   <StrictMode>
-    {import.meta.env.MODE === 'pages' ? (
+    {import.meta.env.MODE.startsWith('pages') ? (
       <ServerRequiredNotice title="UC4 初期表示と操作可能になるまでが遅い" />
     ) : (
       <App />

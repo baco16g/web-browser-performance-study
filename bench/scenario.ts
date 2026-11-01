@@ -66,7 +66,8 @@ export type Scenario = InteractionScenario | LoadScenario;
 /** ページ内で計測値が記録されるまで待つ。rAF でのポーリングはフレームを増やすのでタイマーにする */
 export async function waitForSample(page: Page, sampleName: string): Promise<void> {
   await page.waitForFunction(
-    (name) => window.__perf.snapshot().some((sample) => sample.name === name),
+    // 読み込みの直後は、計測ライブラリの準備がまだ終わっていないことがある
+    (name) => window.__perf?.snapshot().some((sample) => sample.name === name),
     sampleName,
     { polling: SAMPLE_POLLING_MS, timeout: SAMPLE_TIMEOUT_MS },
   );

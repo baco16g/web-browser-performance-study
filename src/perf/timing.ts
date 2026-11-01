@@ -35,6 +35,13 @@ function runAfterRendering(task: () => void): void {
   port2.postMessage(null);
 }
 
+/** ページの読み込み開始から、次のフレームの描画が終わるまでの時間を記録する */
+export function recordTimeAfterNextFrame(name: string): void {
+  requestAnimationFrame(() => {
+    runAfterRendering(() => recorder.record(name, performance.now()));
+  });
+}
+
 /**
  * 入力が起きてから、次のフレームのメインスレッドの仕事が終わるまでの時間を記録する。
  *

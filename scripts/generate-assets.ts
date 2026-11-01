@@ -5,8 +5,9 @@ import { IMAGE_VARIATIONS } from '../src/shared/products.ts';
 
 const IMAGE_SIZES = [256, 1024, 2048] as const;
 const OUTPUT_DIRECTORY = resolve(import.meta.dirname, '../public/generated');
+const TURBULENCE_FREQUENCY = 0.9;
 
-/** 色相だけが違う単純な図形。JPEG は小さくなるが、デコード後の大きさは画素数で決まる */
+/** 細かいノイズを重ねて、写真に近い転送量にする。デコード後の大きさは画素数で決まる */
 function createSvg(imageId: number, size: number): string {
   const hue = (imageId * 360) / IMAGE_VARIATIONS;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 100 100">
@@ -15,8 +16,13 @@ function createSvg(imageId: number, size: number): string {
         <stop offset="0" stop-color="hsl(${hue} 70% 62%)"/>
         <stop offset="1" stop-color="hsl(${(hue + 50) % 360} 70% 38%)"/>
       </linearGradient>
+      <filter id="noise">
+        <feTurbulence type="fractalNoise" baseFrequency="${TURBULENCE_FREQUENCY}" seed="${imageId + 1}"/>
+        <feColorMatrix values="0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 1.2 -0.25"/>
+      </filter>
     </defs>
     <rect width="100" height="100" fill="url(#g)"/>
+    <rect width="100" height="100" filter="url(#noise)"/>
     <circle cx="50" cy="46" r="24" fill="hsl(${hue} 80% 88%)" opacity="0.85"/>
     <rect x="22" y="76" width="56" height="7" rx="3.5" fill="hsl(${hue} 80% 92%)" opacity="0.8"/>
   </svg>`;

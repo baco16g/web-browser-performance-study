@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UC4 初期表示と操作可能になるまで</title>
+    <script>
+      // 本番なら link タグや取得の開始を HTML に直接書く。教材では実装を切り替えるので script で足す
+      (() => {
+        const params = new URLSearchParams(location.search);
+        const variant = params.get('variant');
+        if (variant !== 'early' && variant !== 'good') {
+          return;
+        }
+
+        const preload = document.createElement('link');
+        preload.rel = 'preload';
+        preload.as = 'image';
+        preload.fetchPriority = 'high';
+        preload.href = '/generated/product-0-1024.jpg';
+        document.head.append(preload);
+
+        const delay = params.get('delay') ?? '100';
+        const count = params.get('count') ?? '2000';
+        const fetchJson = (url) => fetch(url).then((response) => response.json());
+        window.__earlyCatalog = Promise.all([
+          fetchJson(`/api/products?count=${count}&delay=${delay}`),
+          fetchJson(`/api/hero?delay=${delay}`),
+        ]).then(([{ products }, hero]) => ({ products, hero }));
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/usecases/uc04-initial-load/main.tsx"></script>
+  </body>
+</html>

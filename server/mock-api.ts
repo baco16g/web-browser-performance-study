@@ -39,6 +39,16 @@ async function handleApi(req: IncomingMessage, res: ServerResponse, next: () => 
     return;
   }
 
+  if (url.pathname === '/api/hero') {
+    sendJson(res, 200, { title: '今週のおすすめ', imageId: 0 });
+    return;
+  }
+
+  if (url.pathname === '/api/banner') {
+    sendJson(res, 200, { message: '期間限定で送料が無料になります' });
+    return;
+  }
+
   const id = url.pathname.match(/^\/api\/products\/([^/]+)$/)?.[1];
   const product = id === undefined ? undefined : findProduct(id);
   if (product !== undefined) {

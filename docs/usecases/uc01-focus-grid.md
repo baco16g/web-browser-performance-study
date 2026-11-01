@@ -28,6 +28,8 @@
 
 親の state にフォーカス位置を持つと、移動のたびに親が再レンダリングされ、配下の全タイルの描画関数が呼ばれます。外部ストアでは、各タイルが自分の状態だけを `useSyncExternalStore` で購読します。通知先は外れたタイルと当たったタイルの2つです。実装は [state-grid.tsx](../../src/usecases/uc01-focus-grid/state-grid.tsx) と [store-grid.tsx](../../src/usecases/uc01-focus-grid/store-grid.tsx) にあります。
 
+この5つとは別に、`bad` から価格の整形だけを変えた比較用の実装 `formatter` があります。下の「1回の費用は価格の整形に集中していた」で説明します。
+
 ## 自動で測る
 
 ```sh
@@ -53,7 +55,28 @@ npm run bench -- --scenario uc01 --trace
 
 `bad` の時間のほとんどは JavaScript で、再レンダリングの範囲を2個に絞ると 130.7ms が 19.8ms になりました。Event Timing の内訳でも待ち時間は 0.5ms 程度で、処理時間の 121.9ms が支配的です。入力が待たされているのではなく、処理そのものが長いと分かります。
 
-profiling ビルドで測ると、`bad` の `actualDuration` は 113.7ms、`baseDuration` は 109.9ms でした。ほぼ同じ値なので、メモ化が効いていません。`memo` では 3.8ms と 125.8ms に開きます（[生データ](../results/uc01-profiling.json)）。profiling ビルドは計測の負荷が大きく、`bad` の次フレームまでの時間が 319.4ms に伸びるので、通常の本番ビルドの値とは比べないでください。
+profiling ビルドで測ると、`bad` の `actualDuration` は 117.7ms、`baseDuration` は 113.2ms でした。ほぼ同じ値なので、メモ化が効いていません。`memo` では 3.6ms と 129.0ms に開きます（[生データ](../results/uc01-profiling.json)）。
+
+### 1回の費用は価格の整形に集中していた
+
+`bad` は回数だけでなく、1回あたりの費用も高くなっていました。
+
+Apple M1 の Chrome で CPU を4倍遅くして公開サイトの `bad` を記録すると、1回のキー入力の Bottom-up では `Tile` の Self time が 105.3ms（69.7%）で最長でした。Self time と Total time の差は 1.2ms なので、時間を使っているのは `Tile` 自身です。ただし、`toLocaleString` のような組み込み関数は、Bottom-up に別の行として出ないことがあります。
+
+そこで `Tile` のリンクから Sources パネルを開き、行ごとの時間を読みました。記録全体の合計 436.6ms のうち 419.8ms（約96%）が、価格を整形する `toLocaleString('ja-JP')` の行に集まっていました。Console で 3000 回の整形だけを切り出すと、同じ条件で 94.6ms かかりました。4回の入力の記録として1回あたりに直すと、その行の約9割にあたります。
+
+MDN も、[`toLocaleString` を同じ引数で何度も呼ぶときは `Intl.NumberFormat` を使い回すほうがよい](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)と説明しています。`formatter` は `Intl.NumberFormat` を1つだけ作り、全タイルで使い回します。
+
+| 指標                         | bad        | formatter |
+| ---------------------------- | ---------- | --------- |
+| 入力から次フレームまで (ms)  | 134.5 ±1.1 | 44.5 ±0.3 |
+| Event Timing の処理時間 (ms) | 126.9 ±0.8 | 34.4 ±1.2 |
+| JavaScript の実行時間 (ms)   | 119.7 ±1.0 | 26.8 ±0.7 |
+| 再レンダリングしたタイル     | 3000       | 3000      |
+
+条件は上の表と同じです。別の測定なので、`bad` の値も少し違います（[生データ](../results/uc01-formatter.json)）。
+
+再レンダリングの数は 3000 のままで、時間は約3分の1になりました。回数を減らす改善と、1回の費用を減らす改善は別のものです。この測定でも、回数を2に絞る `memo` は 20.0ms で、`formatter` より短くなっています。
 
 ### memo と外部ストアの差は小さかった
 
@@ -85,6 +108,17 @@ profiling ビルドで測ると、`bad` の `actualDuration` は 113.7ms、`base
 
 `good` だけスタイル再計算の時間が 2.8ms に増えました。回数は他の実装と同じ4回です。全体では短くなっているので実害はありませんが、理由は分かっていません。
 
+価格の行の割合も、測り方で差がありました。ヘッドレス実行のトレースを行と列で集計すると、価格の行は `Tile` の Self time の 68.3% で、関数の先頭の行に 29.5% が付きました（CPU 4倍、圧縮ありのビルド、8回の移動）。Chrome の Sources パネルでは約96%で、差の理由は分かっていません。
+
+自動計測の profiling ビルドの時間にも注意が必要です。`bad` の次フレームまでの時間は 327.3ms でしたが、これには Chrome DevTools Protocol の `Performance.enable` の影響が含まれます。有効にするかどうかだけを変えて測った結果が次の表です（CPU 4倍、2回の読み込み × 5回の移動の中央値）。
+
+| ビルド    | 無効    | 有効    |
+| --------- | ------- | ------- |
+| profiling | 157.4ms | 330.7ms |
+| 本番      | 141.1ms | 151.0ms |
+
+profiling ビルドでだけ約2倍になる理由は確かめていません。profiling ビルドの時間は、通常の本番ビルドの値と比べないでください。
+
 ## 手で観察する
 
 1. `npm run build && npm run preview` で本番ビルドを開きます。
@@ -92,7 +126,7 @@ profiling ビルドで測ると、`bad` の `actualDuration` は 113.7ms、`base
 3. 記録を始めて右矢印キーを数回押し、記録を止めます。
 4. `keydown` の下の処理の長さを `bad` と `good` で比べます。
 
-再レンダリングの理由を見るには、`npm run dev` で開いて React DevTools の Profiler を使います。
+再レンダリングの理由を見るには、[公開サイトの profiling ビルド](https://baco16g.github.io/web-browser-performance-study/profiling/)で React DevTools の Profiler を使います。`npm run dev` でも使えますが、開発ビルドは StrictMode が描画関数を2回呼ぶので、`uc01:tile-renders` が 6000 になります。
 
 ## 手を動かして確かめる
 

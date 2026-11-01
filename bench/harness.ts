@@ -39,6 +39,13 @@ const CDP_GAUGES: readonly CdpMetric[] = [
   { source: 'JSHeapUsedSize', name: 'cdp:js-heap-used', unit: 'bytes', scale: 1 },
 ];
 
+/** GC の後に測ったときだけ意味を持つ、回収されずに残った量 */
+const CDP_RETAINED_METRICS: readonly CdpMetric[] = [
+  { source: 'JSHeapUsedSize', name: 'cdp:retained-heap', unit: 'bytes', scale: 1 },
+  { source: 'Nodes', name: 'cdp:retained-nodes', unit: 'count', scale: 1 },
+  { source: 'JSEventListeners', name: 'cdp:retained-listeners', unit: 'count', scale: 1 },
+];
+
 export type BenchOptions = {
   baseUrl: string;
   runs: number;
@@ -108,6 +115,20 @@ async function settle(page: Page): Promise<void> {
   );
 }
 
+function hasForcedGc(scenario: Scenario): boolean {
+  return scenario.kind === 'interaction' && scenario.forceGc === true;
+}
+
+async function readCdpMetricsAfterGc(
+  cdp: CDPSession,
+  scenario: Scenario,
+): Promise<Map<string, number>> {
+  if (hasForcedGc(scenario)) {
+    await cdp.send('HeapProfiler.collectGarbage');
+  }
+  return readCdpMetrics(cdp);
+}
+
 async function collectValues(
   { page }: OpenedPage,
   scenario: Scenario,
@@ -119,7 +140,10 @@ async function collectValues(
   const samples = await page.evaluate(() => window.__perf.drain());
 
   const values: MetricValues = {};
-  for (const { source, name, scale } of CDP_METRICS) {
+  const deltaMetrics = hasForcedGc(scenario)
+    ? [...CDP_METRICS, ...CDP_RETAINED_METRICS]
+    : CDP_METRICS;
+  for (const { source, name, scale } of deltaMetrics) {
     values[name] = ((after.get(source) ?? 0) - (before.get(source) ?? 0)) * scale;
   }
   for (const { source, name, scale } of CDP_GAUGES) {
@@ -140,9 +164,10 @@ async function measureIteration(
   iteration: number,
 ): Promise<MetricValues> {
   await settle(opened.page);
-  const before = await readCdpMetrics(opened.cdp);
+  const before = await readCdpMetricsAfterGc(opened.cdp, scenario);
   await scenario.act(opened.page, iteration);
-  const after = await readCdpMetrics(opened.cdp);
+  await settle(opened.page);
+  const after = await readCdpMetricsAfterGc(opened.cdp, scenario);
   return collectValues(opened, scenario, before, after);
 }
 
@@ -205,9 +230,14 @@ async function measureRun(
 }
 
 function collectDefinitions(scenario: Scenario): MetricDefinition[] {
+  const cdpMetrics = [
+    ...CDP_METRICS,
+    ...CDP_GAUGES,
+    ...(hasForcedGc(scenario) ? CDP_RETAINED_METRICS : []),
+  ];
   return [
     ...scenario.metrics.map(({ name, unit, optional }) => ({ name, unit, optional })),
-    ...[...CDP_METRICS, ...CDP_GAUGES].map(({ name, unit }) => ({ name, unit, optional: false })),
+    ...cdpMetrics.map(({ name, unit }) => ({ name, unit, optional: false })),
   ];
 }
 

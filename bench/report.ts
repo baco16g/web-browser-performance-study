@@ -3,6 +3,7 @@ import { arch, cpus, platform, totalmem } from 'node:os';
 import type { Browser } from '@playwright/test';
 import type { BenchResult, MetricSummary } from './result.ts';
 
+const BYTES_PER_KIBIBYTE = 1024;
 const BYTES_PER_MEBIBYTE = 1024 ** 2;
 const BYTES_PER_GIBIBYTE = 1024 ** 3;
 
@@ -29,8 +30,11 @@ function formatMetric(metric: MetricSummary | undefined): string {
     return '-';
   }
   if (metric.unit === 'bytes') {
-    const toMebibytes = (bytes: number): string => (bytes / BYTES_PER_MEBIBYTE).toFixed(1);
-    return `${toMebibytes(metric.median)} ±${toMebibytes(metric.iqr)} MiB`;
+    const [scale, label] =
+      Math.abs(metric.median) < BYTES_PER_MEBIBYTE
+        ? [BYTES_PER_KIBIBYTE, 'KiB']
+        : [BYTES_PER_MEBIBYTE, 'MiB'];
+    return `${(metric.median / scale).toFixed(1)} ±${(metric.iqr / scale).toFixed(1)} ${label}`;
   }
   const digits = metric.unit === 'count' ? 0 : metric.unit === 'score' ? 3 : 1;
   return `${metric.median.toFixed(digits)} ±${metric.iqr.toFixed(digits)}`;

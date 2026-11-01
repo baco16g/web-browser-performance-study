@@ -48,6 +48,8 @@ type ScenarioBase = {
 /** 開いたページの上で同じ操作を繰り返して測る */
 export type InteractionScenario = ScenarioBase & {
   kind: 'interaction';
+  /** 操作の前後で GC を実行し、回収されずに残った量を測る */
+  forceGc?: boolean;
   /** ページを開いた後、最初の操作の前に 1 回だけ行う準備 */
   prepare(page: Page): Promise<void>;
   /** 操作を 1 回行い、完了するまで待つ。iteration は読み込みごとに 0 から数える */

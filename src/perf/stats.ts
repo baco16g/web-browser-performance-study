@@ -1,3 +1,5 @@
+import { lastOf } from '../shared/array.ts';
+
 export type Summary = {
   count: number;
   min: number;
@@ -45,7 +47,7 @@ export function summarize(values: readonly number[]): Summary {
     median: quantileOfSorted(sorted, 0.5),
     p75,
     p95: quantileOfSorted(sorted, 0.95),
-    max: sorted.at(-1) ?? 0,
+    max: lastOf(sorted) ?? 0,
     iqr: p75 - p25,
   };
 }

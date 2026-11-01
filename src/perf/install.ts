@@ -10,16 +10,25 @@ declare global {
   }
 }
 
+/** 計測の準備に失敗しても、ページの表示は止めない */
+function runSafely(task: () => void): void {
+  try {
+    task();
+  } catch (error) {
+    console.warn('計測の準備に失敗しました', error);
+  }
+}
+
 /** `?hud=0` を付けると HUD を出さない。自動計測では HUD の負荷を避ける */
 export function installPerf(): void {
   window.__perf = recorder;
-  installObservers();
+  runSafely(installObservers);
 
   const params = new URLSearchParams(location.search);
   if (params.get('hud') !== '0') {
-    mountHud(recorder);
+    runSafely(() => mountHud(recorder));
   }
   if (params.get('rum') === '1') {
-    installRum(recorder, params);
+    runSafely(() => installRum(recorder, params));
   }
 }

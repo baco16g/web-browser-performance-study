@@ -20,8 +20,9 @@
 ```ts
 for (const card of cards) {
   card.style.height = 'auto';
-  heights.push(card.offsetHeight); // ここで毎回レイアウトが走る
-  card.style.height = `${heights.at(-1)}px`;
+  const height = card.offsetHeight; // ここで毎回レイアウトが走る
+  heights.push(height);
+  card.style.height = `${height}px`;
 }
 ```
 

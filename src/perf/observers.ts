@@ -55,6 +55,13 @@ export function installObservers(): void {
     EVENT_DURATION_THRESHOLD_MS,
   );
 
+  // web-vitals は内部で Array.prototype.at を使うので、ない環境では読み込まない
+  if ('at' in Array.prototype) {
+    installWebVitals();
+  }
+}
+
+function installWebVitals(): void {
   onINP(({ value }) => recorder.record('vitals:inp', value), { reportAllChanges: true });
   onLCP(
     ({ value, attribution }) => {

@@ -16,6 +16,8 @@ export default defineConfig(({ mode }) => ({
     alias: mode === 'profiling' ? { 'react-dom/client': 'react-dom/profiling' } : {},
   },
   build: {
+    // 既定の対象は Safari 16.4 以降なので、古いエンジンを確かめるときは明示する
+    ...(mode === 'safari15' ? { target: 'safari15' } : {}),
     // DevTools で元の関数名を読めるようにする
     sourcemap: true,
     rolldownOptions: {

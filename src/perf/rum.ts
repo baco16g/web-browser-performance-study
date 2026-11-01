@@ -1,3 +1,4 @@
+import { findLastOf } from '../shared/array.ts';
 import type { PerfRecorder } from './recorder.ts';
 
 export type RumBeacon = {
@@ -59,7 +60,7 @@ export function pickLatestValues(
   metricNames: readonly string[],
 ): Array<{ metric: string; value: number }> {
   return metricNames.flatMap((metric) => {
-    const latest = samples.findLast(({ name }) => name === metric);
+    const latest = findLastOf(samples, ({ name }) => name === metric);
     return latest === undefined ? [] : [{ metric, value: latest.value }];
   });
 }

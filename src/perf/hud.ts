@@ -1,3 +1,4 @@
+import { findLastOf, lastOf } from '../shared/array.ts';
 import { readHeapUsedBytes } from './memory.ts';
 import { supportsEntryType } from './observers.ts';
 import type { PerfRecorder, PerfSample } from './recorder.ts';
@@ -10,7 +11,7 @@ const BYTES_PER_MEBIBYTE = 1024 ** 2;
 type Row = { label: string; read: (samples: readonly PerfSample[]) => string };
 
 function latest(samples: readonly PerfSample[], name: string): PerfSample | undefined {
-  return samples.findLast((sample) => sample.name === name);
+  return findLastOf(samples, (sample) => sample.name === name);
 }
 
 function formatVital(samples: readonly PerfSample[], name: string, digits = 0): string {
@@ -22,7 +23,7 @@ function formatInputLatency(samples: readonly PerfSample[]): string {
     .filter(({ name }) => name.endsWith(':input-to-next-frame'))
     .slice(-RECENT_SAMPLES)
     .map(({ value }) => value);
-  const last = values.at(-1);
+  const last = lastOf(values);
   return last === undefined ? '-' : `${last.toFixed(1)} (中央値 ${median(values).toFixed(1)})`;
 }
 

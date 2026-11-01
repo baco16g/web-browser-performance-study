@@ -28,8 +28,9 @@ export const equalizeInterleaved: EqualizeStrategy = (cards, columns) => {
   const heights: number[] = [];
   for (const card of cards) {
     card.style.height = 'auto';
-    heights.push(card.offsetHeight);
-    card.style.height = `${heights.at(-1)}px`;
+    const height = card.offsetHeight;
+    heights.push(height);
+    card.style.height = `${height}px`;
   }
   applyRowHeights(cards, maxHeightPerRow(heights, columns), columns);
 };

@@ -1,0 +1,1517 @@
+{
+  "scenario": "uc01",
+  "title": "十字キーのフォーカス移動",
+  "createdAt": "2026-11-01T06:34:30.748Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "webkit 27.2",
+    "gitCommit": "29dd69f",
+    "gitDirty": false
+  },
+  "conditions": {
+    "runs": 5,
+    "warmupIterations": 2,
+    "iterations": 5,
+    "cpuThrottle": 1,
+    "seed": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "query": {
+      "count": "3000"
+    }
+  },
+  "variants": {
+    "bad": {
+      "runs": [
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 96,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 83,
+              "browser:keydown:presentation": 5,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 95,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 80,
+              "browser:keydown:presentation": 8,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 89,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 75,
+              "browser:keydown:presentation": 4,
+              "browser:keydown:duration": 80
+            },
+            {
+              "uc01:input-to-next-frame": 92,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 79,
+              "browser:keydown:presentation": 9,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 93,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 80,
+              "browser:keydown:presentation": 8,
+              "browser:keydown:duration": 88
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 96,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 82,
+              "browser:keydown:presentation": 6,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 93,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 79,
+              "browser:keydown:presentation": 9,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 91,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 77,
+              "browser:keydown:presentation": 2,
+              "browser:keydown:duration": 80
+            },
+            {
+              "uc01:input-to-next-frame": 92,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 79,
+              "browser:keydown:presentation": 9,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 96,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 82,
+              "browser:keydown:presentation": 5,
+              "browser:keydown:duration": 88
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 94,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 81,
+              "browser:keydown:presentation": 7,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 97,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 82,
+              "browser:keydown:presentation": 5,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 92,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 78,
+              "browser:keydown:presentation": 10,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 96,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 83,
+              "browser:keydown:presentation": 5,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 91,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 78,
+              "browser:keydown:presentation": 10,
+              "browser:keydown:duration": 88
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 94,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 81,
+              "browser:keydown:presentation": 7,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 97,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 81,
+              "browser:keydown:presentation": 6,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 92,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 78,
+              "browser:keydown:presentation": 9,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 92,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 79,
+              "browser:keydown:presentation": 9,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 92,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 78,
+              "browser:keydown:presentation": 9,
+              "browser:keydown:duration": 88
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 96,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 83,
+              "browser:keydown:presentation": 5,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 97,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 82,
+              "browser:keydown:presentation": 6,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 89,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 75,
+              "browser:keydown:presentation": 5,
+              "browser:keydown:duration": 80
+            },
+            {
+              "uc01:input-to-next-frame": 93,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 80,
+              "browser:keydown:presentation": 8,
+              "browser:keydown:duration": 88
+            },
+            {
+              "uc01:input-to-next-frame": 95,
+              "uc01:tile-renders": 3000,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 82,
+              "browser:keydown:presentation": 6,
+              "browser:keydown:duration": 88
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc01:input-to-next-frame": {
+          "count": 5,
+          "min": 92,
+          "p25": 93,
+          "median": 93,
+          "p75": 94,
+          "p95": 94.8,
+          "max": 95,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "uc01:tile-renders": {
+          "count": 5,
+          "min": 3000,
+          "p25": 3000,
+          "median": 3000,
+          "p75": 3000,
+          "p95": 3000,
+          "max": 3000,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:input-delay": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0.7999999999999998,
+          "max": 1,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:processing": {
+          "count": 5,
+          "min": 79,
+          "p25": 79,
+          "median": 80,
+          "p75": 81,
+          "p95": 81.8,
+          "max": 82,
+          "iqr": 2,
+          "unit": "ms"
+        },
+        "browser:keydown:presentation": {
+          "count": 5,
+          "min": 6,
+          "p25": 6,
+          "median": 7,
+          "p75": 8,
+          "p95": 8.8,
+          "max": 9,
+          "iqr": 2,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 88,
+          "p25": 88,
+          "median": 88,
+          "p75": 88,
+          "p95": 88,
+          "max": 88,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    },
+    "memo": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 29,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 33,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 5,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 5,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 29,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 33,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 23,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc01:input-to-next-frame": {
+          "count": 5,
+          "min": 31,
+          "p25": 31,
+          "median": 31,
+          "p75": 31,
+          "p95": 31,
+          "max": 31,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc01:tile-renders": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:input-delay": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0.7999999999999998,
+          "max": 1,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:processing": {
+          "count": 5,
+          "min": 4,
+          "p25": 4,
+          "median": 4,
+          "p75": 4,
+          "p95": 4,
+          "max": 4,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:presentation": {
+          "count": 5,
+          "min": 11,
+          "p25": 12,
+          "median": 12,
+          "p75": 12,
+          "p95": 12,
+          "max": 12,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    },
+    "store": {
+      "runs": [
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 29,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 27,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 33,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc01:input-to-next-frame": {
+          "count": 5,
+          "min": 31,
+          "p25": 31,
+          "median": 31,
+          "p75": 31,
+          "p95": 31.8,
+          "max": 32,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc01:tile-renders": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:input-delay": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:processing": {
+          "count": 5,
+          "min": 3,
+          "p25": 3,
+          "median": 3,
+          "p75": 4,
+          "p95": 4,
+          "max": 4,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "browser:keydown:presentation": {
+          "count": 5,
+          "min": 12,
+          "p25": 12,
+          "median": 12,
+          "p75": 12,
+          "p95": 12,
+          "max": 12,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    },
+    "transform": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 29,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 29,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 33,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 33,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc01:input-to-next-frame": {
+          "count": 5,
+          "min": 31,
+          "p25": 31,
+          "median": 31,
+          "p75": 31,
+          "p95": 31.8,
+          "max": 32,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc01:tile-renders": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:input-delay": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 1,
+          "p75": 1,
+          "p95": 1,
+          "max": 1,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "browser:keydown:processing": {
+          "count": 5,
+          "min": 3,
+          "p25": 3,
+          "median": 3,
+          "p75": 3,
+          "p95": 3.8,
+          "max": 4,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:presentation": {
+          "count": 5,
+          "min": 12,
+          "p25": 12,
+          "median": 12,
+          "p75": 12,
+          "p95": 12,
+          "max": 12,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    },
+    "good": {
+      "runs": [
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 33,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 11,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 33,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 1,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 30,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 31,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 3,
+              "browser:keydown:presentation": 13,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc01:input-to-next-frame": 32,
+              "uc01:tile-renders": 2,
+              "browser:keydown:input-delay": 0,
+              "browser:keydown:processing": 4,
+              "browser:keydown:presentation": 12,
+              "browser:keydown:duration": 16
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc01:input-to-next-frame": {
+          "count": 5,
+          "min": 31,
+          "p25": 31,
+          "median": 31,
+          "p75": 31,
+          "p95": 31,
+          "max": 31,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc01:tile-renders": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:input-delay": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:processing": {
+          "count": 5,
+          "min": 3,
+          "p25": 3,
+          "median": 4,
+          "p75": 4,
+          "p95": 4,
+          "max": 4,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "browser:keydown:presentation": {
+          "count": 5,
+          "min": 12,
+          "p25": 12,
+          "median": 12,
+          "p75": 12,
+          "p95": 12.8,
+          "max": 13,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    }
+  }
+}

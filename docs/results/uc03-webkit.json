@@ -1,0 +1,989 @@
+{
+  "scenario": "uc03",
+  "title": "絞り込み中の入力",
+  "createdAt": "2026-11-01T06:36:51.611Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "webkit 27.2",
+    "gitCommit": "29dd69f",
+    "gitDirty": false
+  },
+  "conditions": {
+    "runs": 5,
+    "warmupIterations": 2,
+    "iterations": 5,
+    "cpuThrottle": 1,
+    "seed": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "query": {
+      "count": "50000"
+    }
+  },
+  "variants": {
+    "bad": {
+      "runs": [
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 83,
+              "uc03:results-ready": 45,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 84,
+              "uc03:results-ready": 42,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 85,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 83,
+              "uc03:results-ready": 42,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 85,
+              "uc03:results-ready": 45,
+              "browser:keydown:duration": 48
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 86,
+              "uc03:results-ready": 48,
+              "browser:keydown:duration": 56
+            },
+            {
+              "uc03:input-to-next-frame": 84,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 84,
+              "uc03:results-ready": 44,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 89,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 87,
+              "uc03:results-ready": 48,
+              "browser:keydown:duration": 48
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 88,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 88,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 91,
+              "uc03:results-ready": 50,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 74,
+              "uc03:results-ready": 37,
+              "browser:keydown:duration": 40
+            },
+            {
+              "uc03:input-to-next-frame": 90,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 84,
+              "uc03:results-ready": 44,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 83,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 86,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 80,
+              "uc03:results-ready": 39,
+              "browser:keydown:duration": 40
+            },
+            {
+              "uc03:input-to-next-frame": 88,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 89,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 77,
+              "uc03:results-ready": 40,
+              "browser:keydown:duration": 40
+            },
+            {
+              "uc03:input-to-next-frame": 81,
+              "uc03:results-ready": 44,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 85,
+              "uc03:results-ready": 45,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 87,
+              "uc03:results-ready": 48,
+              "browser:keydown:duration": 48
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 84,
+          "p25": 84,
+          "median": 85,
+          "p75": 86,
+          "p95": 87.6,
+          "max": 88,
+          "iqr": 2,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 45,
+          "p25": 45,
+          "median": 46,
+          "p75": 48,
+          "p95": 48.8,
+          "max": 49,
+          "iqr": 3,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 48,
+          "p25": 48,
+          "median": 48,
+          "p75": 48,
+          "p95": 48,
+          "max": 48,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    },
+    "microtask": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 83,
+              "uc03:results-ready": 43,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 89,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 88,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 88,
+              "uc03:results-ready": 48,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 88,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 86,
+              "uc03:results-ready": 45,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 81,
+              "uc03:results-ready": 41,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 87,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 82,
+              "uc03:results-ready": 41,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 77,
+              "uc03:results-ready": 39,
+              "browser:keydown:duration": 40
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 77,
+              "uc03:results-ready": 36,
+              "browser:keydown:duration": 40
+            },
+            {
+              "uc03:input-to-next-frame": 76,
+              "uc03:results-ready": 38,
+              "browser:keydown:duration": 40
+            },
+            {
+              "uc03:input-to-next-frame": 82,
+              "uc03:results-ready": 42,
+              "browser:keydown:duration": 40
+            },
+            {
+              "uc03:input-to-next-frame": 78,
+              "uc03:results-ready": 40,
+              "browser:keydown:duration": 40
+            },
+            {
+              "uc03:input-to-next-frame": 81,
+              "uc03:results-ready": 45,
+              "browser:keydown:duration": 48
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 82,
+              "uc03:results-ready": 42,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 85,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 85,
+              "uc03:results-ready": 43,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 86,
+              "uc03:results-ready": 45,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 79,
+              "uc03:results-ready": 40,
+              "browser:keydown:duration": 40
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 81,
+              "uc03:results-ready": 41,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 83,
+              "uc03:results-ready": 43,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 85,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 84,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 48
+            },
+            {
+              "uc03:input-to-next-frame": 86,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 48
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 78,
+          "p25": 82,
+          "median": 84,
+          "p75": 85,
+          "p95": 87.4,
+          "max": 88,
+          "iqr": 3,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 40,
+          "p25": 41,
+          "median": 43,
+          "p75": 46,
+          "p95": 48.4,
+          "max": 49,
+          "iqr": 5,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 40,
+          "p25": 48,
+          "median": 48,
+          "p75": 48,
+          "p95": 48,
+          "max": 48,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    },
+    "deferred": {
+      "runs": [
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 43,
+              "uc03:results-ready": 45,
+              "browser:keydown:duration": 40
+            },
+            {
+              "uc03:input-to-next-frame": 39,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 36,
+              "uc03:results-ready": 43,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 40,
+              "uc03:results-ready": 51,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 42,
+              "uc03:results-ready": 43,
+              "browser:keydown:duration": 32
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 38,
+              "uc03:results-ready": 42
+            },
+            {
+              "uc03:input-to-next-frame": 38,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 37,
+              "uc03:results-ready": 48,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 39,
+              "uc03:results-ready": 50,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 38,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 32
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 46,
+              "uc03:results-ready": 42,
+              "browser:keydown:duration": 24
+            },
+            {
+              "uc03:input-to-next-frame": 39,
+              "uc03:results-ready": 50,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 42,
+              "uc03:results-ready": 42,
+              "browser:keydown:duration": 24
+            },
+            {
+              "uc03:input-to-next-frame": 37,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 36,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 32
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 48,
+              "uc03:results-ready": 44,
+              "browser:keydown:duration": 24
+            },
+            {
+              "uc03:input-to-next-frame": 35,
+              "uc03:results-ready": 42,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 39,
+              "uc03:results-ready": 51,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 46,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 37,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 32
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 34,
+              "uc03:results-ready": 42,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 36,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 36,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 37,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 32
+            },
+            {
+              "uc03:input-to-next-frame": 39,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 32
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 36,
+          "p25": 38,
+          "median": 39,
+          "p75": 39,
+          "p95": 39.8,
+          "max": 40,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 45,
+          "p25": 46,
+          "median": 46,
+          "p75": 47,
+          "p95": 47.8,
+          "max": 48,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 32,
+          "p25": 32,
+          "median": 32,
+          "p75": 32,
+          "p95": 32,
+          "max": 32,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    },
+    "yield": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 50
+            },
+            {
+              "uc03:input-to-next-frame": 6,
+              "uc03:results-ready": 50
+            },
+            {
+              "uc03:input-to-next-frame": 17,
+              "uc03:results-ready": 61,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 50
+            },
+            {
+              "uc03:input-to-next-frame": 16,
+              "uc03:results-ready": 60,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 51
+            },
+            {
+              "uc03:input-to-next-frame": 6,
+              "uc03:results-ready": 49
+            },
+            {
+              "uc03:input-to-next-frame": 15,
+              "uc03:results-ready": 59,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc03:input-to-next-frame": 6,
+              "uc03:results-ready": 49
+            },
+            {
+              "uc03:input-to-next-frame": 19,
+              "uc03:results-ready": 62,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 6,
+              "uc03:results-ready": 52
+            },
+            {
+              "uc03:input-to-next-frame": 6,
+              "uc03:results-ready": 49
+            },
+            {
+              "uc03:input-to-next-frame": 15,
+              "uc03:results-ready": 59,
+              "browser:keydown:duration": 16
+            },
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 50
+            },
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 50
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 8,
+              "uc03:results-ready": 51
+            },
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 51
+            },
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 49
+            },
+            {
+              "uc03:input-to-next-frame": 6,
+              "uc03:results-ready": 49
+            },
+            {
+              "uc03:input-to-next-frame": 6,
+              "uc03:results-ready": 49
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 50
+            },
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 49
+            },
+            {
+              "uc03:input-to-next-frame": 6,
+              "uc03:results-ready": 49
+            },
+            {
+              "uc03:input-to-next-frame": 6,
+              "uc03:results-ready": 49
+            },
+            {
+              "uc03:input-to-next-frame": 18,
+              "uc03:results-ready": 62,
+              "browser:keydown:duration": 16
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 6,
+          "p25": 6,
+          "median": 6,
+          "p75": 6,
+          "p95": 6,
+          "max": 6,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 49,
+          "p25": 49,
+          "median": 50,
+          "p75": 50,
+          "p95": 50.8,
+          "max": 51,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 4,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    },
+    "worker": {
+      "runs": [
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 18,
+              "uc03:results-ready": 51,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 21
+            },
+            {
+              "uc03:input-to-next-frame": 5,
+              "uc03:results-ready": 48,
+              "uc03:worker-search": 22
+            },
+            {
+              "uc03:input-to-next-frame": 18,
+              "uc03:results-ready": 55,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 23
+            },
+            {
+              "uc03:input-to-next-frame": 19,
+              "uc03:results-ready": 52,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 20
+            },
+            {
+              "uc03:input-to-next-frame": 17,
+              "uc03:results-ready": 54,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 24
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 14,
+              "uc03:results-ready": 47,
+              "uc03:worker-search": 20
+            },
+            {
+              "uc03:input-to-next-frame": 14,
+              "uc03:results-ready": 46,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 20
+            },
+            {
+              "uc03:input-to-next-frame": 14,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 20
+            },
+            {
+              "uc03:input-to-next-frame": 20,
+              "uc03:results-ready": 56,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 23
+            },
+            {
+              "uc03:input-to-next-frame": 4,
+              "uc03:results-ready": 44,
+              "uc03:worker-search": 25
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 13,
+              "uc03:results-ready": 41,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 19
+            },
+            {
+              "uc03:input-to-next-frame": 20,
+              "uc03:results-ready": 54,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 21
+            },
+            {
+              "uc03:input-to-next-frame": 22,
+              "uc03:results-ready": 45,
+              "browser:keydown:duration": 24,
+              "uc03:worker-search": 19
+            },
+            {
+              "uc03:input-to-next-frame": 23,
+              "uc03:results-ready": 43,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 23
+            },
+            {
+              "uc03:input-to-next-frame": 15,
+              "uc03:results-ready": 50,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 23
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 16,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 20
+            },
+            {
+              "uc03:input-to-next-frame": 16,
+              "uc03:results-ready": 49,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 20
+            },
+            {
+              "uc03:input-to-next-frame": 15,
+              "uc03:results-ready": 42,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 19
+            },
+            {
+              "uc03:input-to-next-frame": 20,
+              "uc03:results-ready": 53,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 20
+            },
+            {
+              "uc03:input-to-next-frame": 4,
+              "uc03:results-ready": 50,
+              "uc03:worker-search": 22
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc03:input-to-next-frame": 19,
+              "uc03:results-ready": 53,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 20
+            },
+            {
+              "uc03:input-to-next-frame": 16,
+              "uc03:results-ready": 53,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 23
+            },
+            {
+              "uc03:input-to-next-frame": 24,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 24,
+              "uc03:worker-search": 19
+            },
+            {
+              "uc03:input-to-next-frame": 15,
+              "uc03:results-ready": 47,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 19
+            },
+            {
+              "uc03:input-to-next-frame": 16,
+              "uc03:results-ready": 50,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 21
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 14,
+          "p25": 16,
+          "median": 16,
+          "p75": 18,
+          "p95": 19.6,
+          "max": 20,
+          "iqr": 2,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 45,
+          "p25": 47,
+          "median": 49,
+          "p75": 50,
+          "p95": 51.6,
+          "max": 52,
+          "iqr": 3,
+          "unit": "ms"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc03:worker-search": {
+          "count": 5,
+          "min": 20,
+          "p25": 20,
+          "median": 20,
+          "p75": 21,
+          "p95": 21.8,
+          "max": 22,
+          "iqr": 1,
+          "unit": "ms"
+        }
+      }
+    }
+  }
+}

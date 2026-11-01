@@ -108,4 +108,6 @@ CI でどう使い分けているかは[計測を続ける仕組み](continuous-
 
 ブラウザによって使える API も違います。`src/perf/observers.ts` は `PerformanceObserver.supportedEntryTypes` で対応を確かめ、HUD は使えない項目に「非対応」と表示します。入力から次フレームまでの計測は、`scheduler.postTask` がない環境では `MessageChannel` に切り替わるので、Event Timing がない環境でも使えます。
 
+ブラウザごとの対応状況と、古い環境を想定した確認の結果は[ブラウザごとの違いと古い環境](browser-differences.md)にまとめました。
+
 Event Timing の値にも制約があります。`duration` は 8ms 単位に丸められ、16ms 未満の操作は記録されません。改善が進むほど記録が欠けるので、短い処理の比較には向きません。

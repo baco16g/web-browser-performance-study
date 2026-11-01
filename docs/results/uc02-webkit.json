@@ -1,0 +1,491 @@
+{
+  "scenario": "uc02",
+  "title": "カードの高さ揃え",
+  "createdAt": "2026-11-01T06:35:40.246Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "webkit 27.2",
+    "gitCommit": "29dd69f",
+    "gitDirty": false
+  },
+  "conditions": {
+    "runs": 5,
+    "warmupIterations": 2,
+    "iterations": 5,
+    "cpuThrottle": 1,
+    "seed": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "query": {
+      "count": "300"
+    }
+  },
+  "variants": {
+    "bad": {
+      "runs": [
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 96,
+              "uc02:change-text-size": 92
+            },
+            {
+              "uc02:input-to-next-frame": 103,
+              "uc02:change-text-size": 98
+            },
+            {
+              "uc02:input-to-next-frame": 98,
+              "uc02:change-text-size": 94
+            },
+            {
+              "uc02:input-to-next-frame": 105,
+              "uc02:change-text-size": 101
+            },
+            {
+              "uc02:input-to-next-frame": 109,
+              "uc02:change-text-size": 104
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 98,
+              "uc02:change-text-size": 94
+            },
+            {
+              "uc02:input-to-next-frame": 105,
+              "uc02:change-text-size": 100
+            },
+            {
+              "uc02:input-to-next-frame": 112,
+              "uc02:change-text-size": 107
+            },
+            {
+              "uc02:input-to-next-frame": 108,
+              "uc02:change-text-size": 103
+            },
+            {
+              "uc02:input-to-next-frame": 110,
+              "uc02:change-text-size": 106
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 109,
+              "uc02:change-text-size": 104
+            },
+            {
+              "uc02:input-to-next-frame": 106,
+              "uc02:change-text-size": 102
+            },
+            {
+              "uc02:input-to-next-frame": 110,
+              "uc02:change-text-size": 106
+            },
+            {
+              "uc02:input-to-next-frame": 104,
+              "uc02:change-text-size": 99
+            },
+            {
+              "uc02:input-to-next-frame": 103,
+              "uc02:change-text-size": 98
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 97,
+              "uc02:change-text-size": 92
+            },
+            {
+              "uc02:input-to-next-frame": 108,
+              "uc02:change-text-size": 103
+            },
+            {
+              "uc02:input-to-next-frame": 112,
+              "uc02:change-text-size": 108
+            },
+            {
+              "uc02:input-to-next-frame": 100,
+              "uc02:change-text-size": 95
+            },
+            {
+              "uc02:input-to-next-frame": 95,
+              "uc02:change-text-size": 92
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 109,
+              "uc02:change-text-size": 104
+            },
+            {
+              "uc02:input-to-next-frame": 108,
+              "uc02:change-text-size": 103
+            },
+            {
+              "uc02:input-to-next-frame": 110,
+              "uc02:change-text-size": 107
+            },
+            {
+              "uc02:input-to-next-frame": 105,
+              "uc02:change-text-size": 101
+            },
+            {
+              "uc02:input-to-next-frame": 101,
+              "uc02:change-text-size": 97
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc02:input-to-next-frame": {
+          "count": 5,
+          "min": 100,
+          "p25": 103,
+          "median": 106,
+          "p75": 108,
+          "p95": 108,
+          "max": 108,
+          "iqr": 5,
+          "unit": "ms"
+        },
+        "uc02:change-text-size": {
+          "count": 5,
+          "min": 95,
+          "p25": 98,
+          "median": 102,
+          "p75": 103,
+          "p95": 103,
+          "max": 103,
+          "iqr": 5,
+          "unit": "ms"
+        }
+      }
+    },
+    "good": {
+      "runs": [
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 27
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 29
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 30
+            },
+            {
+              "uc02:input-to-next-frame": 39,
+              "uc02:change-text-size": 30
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 30
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 32,
+              "uc02:change-text-size": 26
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 29
+            },
+            {
+              "uc02:input-to-next-frame": 36,
+              "uc02:change-text-size": 28
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 30
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 29
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 34,
+              "uc02:change-text-size": 28
+            },
+            {
+              "uc02:input-to-next-frame": 39,
+              "uc02:change-text-size": 30
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 30
+            },
+            {
+              "uc02:input-to-next-frame": 40,
+              "uc02:change-text-size": 32
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 31
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 37,
+              "uc02:change-text-size": 29
+            },
+            {
+              "uc02:input-to-next-frame": 39,
+              "uc02:change-text-size": 30
+            },
+            {
+              "uc02:input-to-next-frame": 39,
+              "uc02:change-text-size": 31
+            },
+            {
+              "uc02:input-to-next-frame": 40,
+              "uc02:change-text-size": 31
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 30
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 34,
+              "uc02:change-text-size": 27
+            },
+            {
+              "uc02:input-to-next-frame": 39,
+              "uc02:change-text-size": 30
+            },
+            {
+              "uc02:input-to-next-frame": 38,
+              "uc02:change-text-size": 30
+            },
+            {
+              "uc02:input-to-next-frame": 39,
+              "uc02:change-text-size": 31
+            },
+            {
+              "uc02:input-to-next-frame": 39,
+              "uc02:change-text-size": 30
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc02:input-to-next-frame": {
+          "count": 5,
+          "min": 38,
+          "p25": 38,
+          "median": 38,
+          "p75": 39,
+          "p95": 39,
+          "max": 39,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "uc02:change-text-size": {
+          "count": 5,
+          "min": 29,
+          "p25": 30,
+          "median": 30,
+          "p75": 30,
+          "p95": 30,
+          "max": 30,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    },
+    "css": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 30,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 32,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 31,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 34,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 32,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 1
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 31,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 32,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 1
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 32,
+              "uc02:change-text-size": 1
+            },
+            {
+              "uc02:input-to-next-frame": 34,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 32,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "uc02:input-to-next-frame": 30,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            },
+            {
+              "uc02:input-to-next-frame": 33,
+              "uc02:change-text-size": 0
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc02:input-to-next-frame": {
+          "count": 5,
+          "min": 33,
+          "p25": 33,
+          "median": 33,
+          "p75": 33,
+          "p95": 33,
+          "max": 33,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc02:change-text-size": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        }
+      }
+    }
+  }
+}

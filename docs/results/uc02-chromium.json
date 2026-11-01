@@ -1,0 +1,1355 @@
+{
+  "scenario": "uc02",
+  "title": "カードの高さ揃え",
+  "createdAt": "2026-11-01T06:35:18.689Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "chromium 156.0.8078.4",
+    "gitCommit": "29dd69f",
+    "gitDirty": false
+  },
+  "conditions": {
+    "runs": 5,
+    "warmupIterations": 2,
+    "iterations": 5,
+    "cpuThrottle": 1,
+    "seed": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "query": {
+      "count": "300"
+    }
+  },
+  "variants": {
+    "bad": {
+      "runs": [
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 62.302,
+              "cdp:recalc-style-ms": 7.2970000000000015,
+              "cdp:script-ms": 1.271999999999999,
+              "cdp:task-ms": 73.58400000000002,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4378944,
+              "uc02:input-to-next-frame": 73,
+              "uc02:change-text-size": 70.09999990463257
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 65.54800000000002,
+              "cdp:recalc-style-ms": 8.577000000000002,
+              "cdp:script-ms": 2.8619999999999965,
+              "cdp:task-ms": 84.787,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3351412,
+              "uc02:input-to-next-frame": 79.39999985694885,
+              "uc02:change-text-size": 76.09999990463257
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 61.29999999999997,
+              "cdp:recalc-style-ms": 7.341,
+              "cdp:script-ms": 1.2770000000000004,
+              "cdp:task-ms": 72.74399999999997,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3489204,
+              "uc02:input-to-next-frame": 72.20000004768372,
+              "uc02:change-text-size": 69.20000004768372
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 56.567000000000036,
+              "cdp:recalc-style-ms": 6.328999999999994,
+              "cdp:script-ms": 1.0909999999999949,
+              "cdp:task-ms": 66.80600000000003,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3617608,
+              "uc02:input-to-next-frame": 66.39999985694885,
+              "uc02:change-text-size": 63.40000009536743
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 60.833999999999996,
+              "cdp:recalc-style-ms": 7.252000000000002,
+              "cdp:script-ms": 1.0970000000000009,
+              "cdp:task-ms": 71.84000000000002,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3737356,
+              "uc02:input-to-next-frame": 71.39999985694885,
+              "uc02:change-text-size": 68.59999990463257
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 59.245999999999995,
+              "cdp:recalc-style-ms": 6.5920000000000005,
+              "cdp:script-ms": 1.4239999999999982,
+              "cdp:task-ms": 70.19999999999999,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4366676,
+              "uc02:input-to-next-frame": 69.59999990463257,
+              "uc02:change-text-size": 66.39999985694885
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 62.74100000000002,
+              "cdp:recalc-style-ms": 7.73,
+              "cdp:script-ms": 1.4260000000000002,
+              "cdp:task-ms": 77.22099999999999,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 3325460,
+              "uc02:input-to-next-frame": 74.10000014305115,
+              "uc02:change-text-size": 71.29999995231628
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 55.76199999999998,
+              "cdp:recalc-style-ms": 6.121000000000001,
+              "cdp:script-ms": 1.3859999999999983,
+              "cdp:task-ms": 66.19399999999997,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3482784,
+              "uc02:input-to-next-frame": 65.5,
+              "uc02:change-text-size": 62.5
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 45.74600000000001,
+              "cdp:recalc-style-ms": 4.168999999999999,
+              "cdp:script-ms": 1.0480000000000003,
+              "cdp:task-ms": 54.169999999999995,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3607904,
+              "uc02:input-to-next-frame": 53.59999990463257,
+              "uc02:change-text-size": 50.39999985694885
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 43.15399999999997,
+              "cdp:recalc-style-ms": 4.068999999999996,
+              "cdp:script-ms": 0.910000000000001,
+              "cdp:task-ms": 50.73800000000006,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3727264,
+              "uc02:input-to-next-frame": 50.19999980926514,
+              "uc02:change-text-size": 47.5
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 59.26300000000001,
+              "cdp:recalc-style-ms": 7.157,
+              "cdp:script-ms": 1.2569999999999977,
+              "cdp:task-ms": 76.64900000000003,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 3305340,
+              "uc02:input-to-next-frame": 69.79999995231628,
+              "uc02:change-text-size": 66.90000009536743
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 56.543000000000006,
+              "cdp:recalc-style-ms": 6.520999999999999,
+              "cdp:script-ms": 1.3000000000000025,
+              "cdp:task-ms": 67.11600000000001,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3456780,
+              "uc02:input-to-next-frame": 66.40000009536743,
+              "uc02:change-text-size": 63.700000047683716
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 60.23099999999998,
+              "cdp:recalc-style-ms": 6.727,
+              "cdp:script-ms": 1.506999999999998,
+              "cdp:task-ms": 74.43099999999997,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3336840,
+              "uc02:input-to-next-frame": 70.59999990463257,
+              "uc02:change-text-size": 67.60000014305115
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 55.01100000000003,
+              "cdp:recalc-style-ms": 6.043,
+              "cdp:script-ms": 1.0749999999999995,
+              "cdp:task-ms": 64.973,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3470108,
+              "uc02:input-to-next-frame": 64.40000009536743,
+              "uc02:change-text-size": 61.5
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 62.399999999999956,
+              "cdp:recalc-style-ms": 7.137999999999998,
+              "cdp:script-ms": 1.2329999999999979,
+              "cdp:task-ms": 76.847,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3340764,
+              "uc02:input-to-next-frame": 73.09999990463257,
+              "uc02:change-text-size": 70.09999990463257
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 62.15900000000002,
+              "cdp:recalc-style-ms": 7.345000000000001,
+              "cdp:script-ms": 1.3279999999999994,
+              "cdp:task-ms": 77.77600000000001,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 3304936,
+              "uc02:input-to-next-frame": 72.90000009536743,
+              "uc02:change-text-size": 70
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 56.603000000000016,
+              "cdp:recalc-style-ms": 6.582000000000001,
+              "cdp:script-ms": 1.2999999999999992,
+              "cdp:task-ms": 67.18499999999999,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3455640,
+              "uc02:input-to-next-frame": 66.70000004768372,
+              "uc02:change-text-size": 63.700000047683716
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 62.332,
+              "cdp:recalc-style-ms": 6.7879999999999985,
+              "cdp:script-ms": 1.4449999999999983,
+              "cdp:task-ms": 76.11400000000002,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3333440,
+              "uc02:input-to-next-frame": 73.09999990463257,
+              "uc02:change-text-size": 69.79999995231628
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 58.825999999999986,
+              "cdp:recalc-style-ms": 6.685000000000003,
+              "cdp:script-ms": 1.0900000000000007,
+              "cdp:task-ms": 69.413,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3469820,
+              "uc02:input-to-next-frame": 68.90000009536743,
+              "uc02:change-text-size": 66
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 63.18799999999997,
+              "cdp:recalc-style-ms": 7.239999999999997,
+              "cdp:script-ms": 1.244999999999996,
+              "cdp:task-ms": 77.59499999999997,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3340264,
+              "uc02:input-to-next-frame": 73.89999985694885,
+              "uc02:change-text-size": 70.90000009536743
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 62.444,
+              "cdp:recalc-style-ms": 7.280000000000002,
+              "cdp:script-ms": 1.295000000000001,
+              "cdp:task-ms": 77.812,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 3305468,
+              "uc02:input-to-next-frame": 73.20000004768372,
+              "uc02:change-text-size": 70.19999980926514
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 56.529999999999994,
+              "cdp:recalc-style-ms": 6.530000000000001,
+              "cdp:script-ms": 1.2999999999999992,
+              "cdp:task-ms": 67.01800000000003,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3456540,
+              "uc02:input-to-next-frame": 66.5,
+              "uc02:change-text-size": 63.69999980926514
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 62.05100000000002,
+              "cdp:recalc-style-ms": 6.756999999999999,
+              "cdp:script-ms": 1.4309999999999983,
+              "cdp:task-ms": 75.01000000000002,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3333828,
+              "uc02:input-to-next-frame": 72.59999990463257,
+              "uc02:change-text-size": 69.5
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 59.257000000000005,
+              "cdp:recalc-style-ms": 6.763999999999999,
+              "cdp:script-ms": 1.0859999999999967,
+              "cdp:task-ms": 69.92499999999995,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3470016,
+              "uc02:input-to-next-frame": 69.40000009536743,
+              "uc02:change-text-size": 66.59999990463257
+            },
+            {
+              "cdp:layout-count": 301,
+              "cdp:recalc-style-count": 301,
+              "cdp:layout-ms": 62.226000000000006,
+              "cdp:recalc-style-ms": 7.080000000000003,
+              "cdp:script-ms": 1.2710000000000012,
+              "cdp:task-ms": 77.55699999999999,
+              "cdp:dom-nodes": 2455,
+              "cdp:js-heap-used": 3340448,
+              "uc02:input-to-next-frame": 72.79999995231628,
+              "uc02:change-text-size": 69.79999995231628
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc02:input-to-next-frame": {
+          "count": 5,
+          "min": 65.5,
+          "p25": 69.79999995231628,
+          "median": 72.20000004768372,
+          "p75": 72.59999990463257,
+          "p95": 72.84000005722046,
+          "max": 72.90000009536743,
+          "iqr": 2.799999952316284,
+          "unit": "ms"
+        },
+        "uc02:change-text-size": {
+          "count": 5,
+          "min": 62.5,
+          "p25": 66.90000009536743,
+          "median": 69.20000004768372,
+          "p75": 69.5,
+          "p95": 69.73999996185303,
+          "max": 69.79999995231628,
+          "iqr": 2.5999999046325684,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 301,
+          "p25": 301,
+          "median": 301,
+          "p75": 301,
+          "p95": 301,
+          "max": 301,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 301,
+          "p25": 301,
+          "median": 301,
+          "p75": 301,
+          "p95": 301,
+          "max": 301,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 55.76199999999998,
+          "p25": 59.26300000000001,
+          "median": 61.29999999999997,
+          "p75": 62.05100000000002,
+          "p95": 62.13740000000002,
+          "max": 62.15900000000002,
+          "iqr": 2.788000000000011,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 6.121000000000001,
+          "p25": 6.727,
+          "median": 6.763999999999999,
+          "p75": 6.7879999999999985,
+          "p95": 7.195200000000001,
+          "max": 7.2970000000000015,
+          "iqr": 0.06099999999999817,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 1.2569999999999977,
+          "p25": 1.271999999999999,
+          "median": 1.295000000000001,
+          "p75": 1.2999999999999992,
+          "p95": 1.3687999999999985,
+          "max": 1.3859999999999983,
+          "iqr": 0.028000000000000247,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 66.19399999999997,
+          "p25": 72.74399999999997,
+          "median": 74.43099999999997,
+          "p75": 75.01000000000002,
+          "p95": 75.89320000000002,
+          "max": 76.11400000000002,
+          "iqr": 2.266000000000048,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 2455,
+          "p25": 2455,
+          "median": 2455,
+          "p75": 2455,
+          "p95": 2455,
+          "max": 2455,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 3340264,
+          "p25": 3340448,
+          "median": 3340764,
+          "p75": 3607904,
+          "p95": 3615667.2,
+          "max": 3617608,
+          "iqr": 267456,
+          "unit": "bytes"
+        }
+      }
+    },
+    "good": {
+      "runs": [
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 9.877999999999998,
+              "cdp:recalc-style-ms": 3.8600000000000008,
+              "cdp:script-ms": 0.5639999999999985,
+              "cdp:task-ms": 17.505000000000006,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4287444,
+              "uc02:input-to-next-frame": 17.5,
+              "uc02:change-text-size": 13.100000143051147
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 9.918999999999997,
+              "cdp:recalc-style-ms": 4.038,
+              "cdp:script-ms": 0.5579999999999995,
+              "cdp:task-ms": 17.617999999999995,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4392216,
+              "uc02:input-to-next-frame": 17.100000143051147,
+              "uc02:change-text-size": 13.5
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 15.244000000000007,
+              "cdp:recalc-style-ms": 6.544999999999999,
+              "cdp:script-ms": 0.8890000000000009,
+              "cdp:task-ms": 27.082999999999995,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4494864,
+              "uc02:input-to-next-frame": 26.399999856948853,
+              "uc02:change-text-size": 21.200000047683716
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 14.82399999999999,
+              "cdp:recalc-style-ms": 7.054000000000001,
+              "cdp:script-ms": 0.8489999999999991,
+              "cdp:task-ms": 27.290999999999983,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4591384,
+              "uc02:input-to-next-frame": 26.600000143051147,
+              "uc02:change-text-size": 21.199999809265137
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 10.182999999999998,
+              "cdp:recalc-style-ms": 4.232999999999997,
+              "cdp:script-ms": 0.5760000000000001,
+              "cdp:task-ms": 18.16000000000001,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4694520,
+              "uc02:input-to-next-frame": 17.59999990463257,
+              "uc02:change-text-size": 14
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 10.285000000000002,
+              "cdp:recalc-style-ms": 4.244,
+              "cdp:script-ms": 0.6280000000000001,
+              "cdp:task-ms": 18.504999999999995,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4282312,
+              "uc02:input-to-next-frame": 18,
+              "uc02:change-text-size": 14.099999904632568
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 14.311999999999998,
+              "cdp:recalc-style-ms": 6.491999999999999,
+              "cdp:script-ms": 1.003999999999998,
+              "cdp:task-ms": 26.429999999999996,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4388552,
+              "uc02:input-to-next-frame": 25.700000047683716,
+              "uc02:change-text-size": 20.199999809265137
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 9.558000000000003,
+              "cdp:recalc-style-ms": 3.4960000000000027,
+              "cdp:script-ms": 0.7460000000000001,
+              "cdp:task-ms": 17.127000000000002,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4485844,
+              "uc02:input-to-next-frame": 16.59999990463257,
+              "uc02:change-text-size": 12.299999952316284
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 8.806999999999995,
+              "cdp:recalc-style-ms": 3.523999999999999,
+              "cdp:script-ms": 0.5480000000000034,
+              "cdp:task-ms": 15.915000000000013,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4588444,
+              "uc02:input-to-next-frame": 15.400000095367432,
+              "uc02:change-text-size": 11.899999856948853
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 7.702000000000001,
+              "cdp:recalc-style-ms": 3.0039999999999996,
+              "cdp:script-ms": 0.5390000000000013,
+              "cdp:task-ms": 13.982999999999995,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4691592,
+              "uc02:input-to-next-frame": 14.399999856948853,
+              "uc02:change-text-size": 10.400000095367432
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 15.919999999999996,
+              "cdp:recalc-style-ms": 6.989000000000001,
+              "cdp:script-ms": 0.903000000000001,
+              "cdp:task-ms": 28.403000000000013,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4304720,
+              "uc02:input-to-next-frame": 27.700000047683716,
+              "uc02:change-text-size": 22.299999952316284
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 15.247999999999998,
+              "cdp:recalc-style-ms": 6.883,
+              "cdp:script-ms": 0.9049999999999996,
+              "cdp:task-ms": 27.60599999999999,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4409648,
+              "uc02:input-to-next-frame": 26.90000009536743,
+              "uc02:change-text-size": 21.59999990463257
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.221,
+              "cdp:recalc-style-ms": 7.067,
+              "cdp:script-ms": 0.9689999999999976,
+              "cdp:task-ms": 29.034000000000006,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4512392,
+              "uc02:input-to-next-frame": 28.299999952316284,
+              "uc02:change-text-size": 22.700000047683716
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.32,
+              "cdp:recalc-style-ms": 7.077999999999998,
+              "cdp:script-ms": 1.0319999999999983,
+              "cdp:task-ms": 29.116000000000003,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4608948,
+              "uc02:input-to-next-frame": 28.5,
+              "uc02:change-text-size": 22.90000009536743
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 15.726000000000004,
+              "cdp:recalc-style-ms": 7.022,
+              "cdp:script-ms": 0.9619999999999975,
+              "cdp:task-ms": 28.386999999999997,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4712084,
+              "uc02:input-to-next-frame": 27.600000143051147,
+              "uc02:change-text-size": 22.09999990463257
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 15.86,
+              "cdp:recalc-style-ms": 6.974000000000001,
+              "cdp:script-ms": 0.8540000000000005,
+              "cdp:task-ms": 28.405,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4289428,
+              "uc02:input-to-next-frame": 27.700000047683716,
+              "uc02:change-text-size": 22.09999990463257
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.050999999999995,
+              "cdp:recalc-style-ms": 7.182999999999998,
+              "cdp:script-ms": 0.9870000000000018,
+              "cdp:task-ms": 28.878000000000014,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4395692,
+              "uc02:input-to-next-frame": 28.299999952316284,
+              "uc02:change-text-size": 22.799999952316284
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.683000000000003,
+              "cdp:recalc-style-ms": 7.311999999999999,
+              "cdp:script-ms": 1.2299999999999984,
+              "cdp:task-ms": 30.130000000000017,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4493000,
+              "uc02:input-to-next-frame": 29.5,
+              "uc02:change-text-size": 23.5
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.605999999999995,
+              "cdp:recalc-style-ms": 7.137999999999998,
+              "cdp:script-ms": 1.0780000000000025,
+              "cdp:task-ms": 29.55200000000002,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4595564,
+              "uc02:input-to-next-frame": 28.800000190734863,
+              "uc02:change-text-size": 23.299999952316284
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.840000000000007,
+              "cdp:recalc-style-ms": 7.435000000000004,
+              "cdp:script-ms": 1.021000000000001,
+              "cdp:task-ms": 30.06700000000001,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4698616,
+              "uc02:input-to-next-frame": 29.5,
+              "uc02:change-text-size": 23.799999952316284
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 15.757,
+              "cdp:recalc-style-ms": 6.922,
+              "cdp:script-ms": 0.896000000000001,
+              "cdp:task-ms": 28.15699999999999,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4280640,
+              "uc02:input-to-next-frame": 27.5,
+              "uc02:change-text-size": 22.09999990463257
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.097,
+              "cdp:recalc-style-ms": 7.0729999999999995,
+              "cdp:script-ms": 0.9790000000000008,
+              "cdp:task-ms": 28.92,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4386904,
+              "uc02:input-to-next-frame": 28.200000047683716,
+              "uc02:change-text-size": 22.600000143051147
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.787999999999997,
+              "cdp:recalc-style-ms": 7.126,
+              "cdp:script-ms": 1.0249999999999981,
+              "cdp:task-ms": 29.743999999999993,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4484100,
+              "uc02:input-to-next-frame": 29.09999990463257,
+              "uc02:change-text-size": 23.299999952316284
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.291,
+              "cdp:recalc-style-ms": 7.3489999999999975,
+              "cdp:script-ms": 1.0369999999999997,
+              "cdp:task-ms": 29.452000000000005,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4586556,
+              "uc02:input-to-next-frame": 28.799999952316284,
+              "uc02:change-text-size": 23.200000047683716
+            },
+            {
+              "cdp:layout-count": 2,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 16.491000000000007,
+              "cdp:recalc-style-ms": 6.962000000000003,
+              "cdp:script-ms": 0.9450000000000014,
+              "cdp:task-ms": 29.178000000000008,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4689668,
+              "uc02:input-to-next-frame": 28.5,
+              "uc02:change-text-size": 22.800000190734863
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc02:input-to-next-frame": {
+          "count": 5,
+          "min": 16.59999990463257,
+          "p25": 17.59999990463257,
+          "median": 27.700000047683716,
+          "p75": 28.5,
+          "p95": 28.74000015258789,
+          "max": 28.800000190734863,
+          "iqr": 10.900000095367432,
+          "unit": "ms"
+        },
+        "uc02:change-text-size": {
+          "count": 5,
+          "min": 12.299999952316284,
+          "p25": 14,
+          "median": 22.299999952316284,
+          "p75": 22.800000190734863,
+          "p95": 23.2,
+          "max": 23.299999952316284,
+          "iqr": 8.800000190734863,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 9.558000000000003,
+          "p25": 10.182999999999998,
+          "median": 15.919999999999996,
+          "p75": 16.291,
+          "p95": 16.542999999999996,
+          "max": 16.605999999999995,
+          "iqr": 6.108000000000002,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 3.523999999999999,
+          "p25": 4.232999999999997,
+          "median": 7.022,
+          "p75": 7.0729999999999995,
+          "p95": 7.160999999999999,
+          "max": 7.182999999999998,
+          "iqr": 2.8400000000000025,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 0.5760000000000001,
+          "p25": 0.6280000000000001,
+          "median": 0.9619999999999975,
+          "p75": 0.9790000000000008,
+          "p95": 1.012600000000001,
+          "max": 1.021000000000001,
+          "iqr": 0.35100000000000064,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 17.127000000000002,
+          "p25": 18.16000000000001,
+          "median": 28.403000000000013,
+          "p75": 29.178000000000008,
+          "p95": 29.477200000000018,
+          "max": 29.55200000000002,
+          "iqr": 11.017999999999997,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 2470,
+          "p25": 2470,
+          "median": 2470,
+          "p75": 2470,
+          "p95": 2470,
+          "max": 2470,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 4484100,
+          "p25": 4485844,
+          "median": 4493000,
+          "p75": 4494864,
+          "p95": 4508886.4,
+          "max": 4512392,
+          "iqr": 9020,
+          "unit": "bytes"
+        }
+      }
+    },
+    "css": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.663000000000004,
+              "cdp:recalc-style-ms": 2.935,
+              "cdp:script-ms": 0.3300000000000004,
+              "cdp:task-ms": 23.350999999999996,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4216480,
+              "uc02:input-to-next-frame": 23.09999990463257,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.006999999999994,
+              "cdp:recalc-style-ms": 2.9779999999999998,
+              "cdp:script-ms": 0.3109999999999988,
+              "cdp:task-ms": 23.740000000000013,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4312196,
+              "uc02:input-to-next-frame": 23.299999952316284,
+              "uc02:change-text-size": 0.09999990463256836
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.490000000000006,
+              "cdp:recalc-style-ms": 2.947,
+              "cdp:script-ms": 0.3359999999999995,
+              "cdp:task-ms": 24.48,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4399740,
+              "uc02:input-to-next-frame": 24.09999990463257,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.910999999999994,
+              "cdp:recalc-style-ms": 2.9730000000000016,
+              "cdp:script-ms": 0.3259999999999999,
+              "cdp:task-ms": 23.725999999999996,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4495720,
+              "uc02:input-to-next-frame": 23.5,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.512999999999998,
+              "cdp:recalc-style-ms": 2.952999999999997,
+              "cdp:script-ms": 0.3279999999999984,
+              "cdp:task-ms": 24.40500000000001,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4582012,
+              "uc02:input-to-next-frame": 23.90000009536743,
+              "uc02:change-text-size": 0
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.166000000000006,
+              "cdp:recalc-style-ms": 2.9980000000000007,
+              "cdp:script-ms": 0.3429999999999995,
+              "cdp:task-ms": 22.94299999999999,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4218828,
+              "uc02:input-to-next-frame": 22.59999990463257,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.765,
+              "cdp:recalc-style-ms": 3.0460000000000003,
+              "cdp:script-ms": 0.42100000000000126,
+              "cdp:task-ms": 24.130000000000013,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4314152,
+              "uc02:input-to-next-frame": 23.799999952316284,
+              "uc02:change-text-size": 0.09999990463256836
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.228999999999992,
+              "cdp:recalc-style-ms": 2.9559999999999986,
+              "cdp:script-ms": 0.41199999999999914,
+              "cdp:task-ms": 24.40500000000001,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4407336,
+              "uc02:input-to-next-frame": 23.899999856948853,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.087000000000002,
+              "cdp:recalc-style-ms": 3.303000000000002,
+              "cdp:script-ms": 0.4339999999999969,
+              "cdp:task-ms": 21.175,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4497040,
+              "uc02:input-to-next-frame": 20.799999952316284,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 7.445000000000007,
+              "cdp:recalc-style-ms": 1.3299999999999979,
+              "cdp:script-ms": 0.18299999999999914,
+              "cdp:task-ms": 11.703000000000019,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4583392,
+              "uc02:input-to-next-frame": 13.599999904632568,
+              "uc02:change-text-size": 0.09999990463256836
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 7.394999999999999,
+              "cdp:recalc-style-ms": 1.2369999999999994,
+              "cdp:script-ms": 0.23999999999999716,
+              "cdp:task-ms": 11.548000000000002,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4206396,
+              "uc02:input-to-next-frame": 13.5,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 9.669000000000004,
+              "cdp:recalc-style-ms": 1.8860000000000006,
+              "cdp:script-ms": 0.2699999999999994,
+              "cdp:task-ms": 15.049999999999994,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4301696,
+              "uc02:input-to-next-frame": 14.599999904632568,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.948999999999996,
+              "cdp:recalc-style-ms": 2.535999999999999,
+              "cdp:script-ms": 0.34999999999999964,
+              "cdp:task-ms": 21.27000000000001,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4394748,
+              "uc02:input-to-next-frame": 21,
+              "uc02:change-text-size": 0.09999990463256836
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.29400000000001,
+              "cdp:recalc-style-ms": 2.972000000000001,
+              "cdp:script-ms": 0.342000000000002,
+              "cdp:task-ms": 23.009,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4484300,
+              "uc02:input-to-next-frame": 22.5,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.996999999999996,
+              "cdp:recalc-style-ms": 3.0089999999999995,
+              "cdp:script-ms": 0.3409999999999975,
+              "cdp:task-ms": 23.013999999999978,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4570828,
+              "uc02:input-to-next-frame": 22.700000047683716,
+              "uc02:change-text-size": 0
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.041,
+              "cdp:recalc-style-ms": 2.9559999999999995,
+              "cdp:script-ms": 0.3390000000000025,
+              "cdp:task-ms": 23.70399999999999,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4220892,
+              "uc02:input-to-next-frame": 23.299999952316284,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.746999999999996,
+              "cdp:recalc-style-ms": 3.149000000000001,
+              "cdp:script-ms": 0.3970000000000015,
+              "cdp:task-ms": 24.10000000000001,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4316608,
+              "uc02:input-to-next-frame": 23.700000047683716,
+              "uc02:change-text-size": 0.10000014305114746
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.616000000000007,
+              "cdp:recalc-style-ms": 3.053,
+              "cdp:script-ms": 0.4009999999999986,
+              "cdp:task-ms": 24.727,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4404104,
+              "uc02:input-to-next-frame": 24.300000190734863,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.115999999999989,
+              "cdp:recalc-style-ms": 2.937999999999998,
+              "cdp:script-ms": 0.29999999999999816,
+              "cdp:task-ms": 21.701999999999998,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4499812,
+              "uc02:input-to-next-frame": 21.399999856948853,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.714000000000006,
+              "cdp:recalc-style-ms": 2.9700000000000006,
+              "cdp:script-ms": 0.3320000000000024,
+              "cdp:task-ms": 24.60399999999999,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4586032,
+              "uc02:input-to-next-frame": 24.09999990463257,
+              "uc02:change-text-size": 0
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.317999999999998,
+              "cdp:recalc-style-ms": 3.0339999999999994,
+              "cdp:script-ms": 0.3349999999999985,
+              "cdp:task-ms": 24.192000000000004,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4226404,
+              "uc02:input-to-next-frame": 23.799999952316284,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.229999999999993,
+              "cdp:recalc-style-ms": 3.0950000000000006,
+              "cdp:script-ms": 0.46099999999999963,
+              "cdp:task-ms": 24.871999999999993,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4322048,
+              "uc02:input-to-next-frame": 24.40000009536743,
+              "uc02:change-text-size": 0.09999990463256836
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 16.594000000000012,
+              "cdp:recalc-style-ms": 2.9580000000000006,
+              "cdp:script-ms": 0.390999999999999,
+              "cdp:task-ms": 24.761000000000006,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4409304,
+              "uc02:input-to-next-frame": 24.200000047683716,
+              "uc02:change-text-size": 0.10000014305114746
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.709000000000001,
+              "cdp:recalc-style-ms": 3.0039999999999996,
+              "cdp:script-ms": 0.38799999999999946,
+              "cdp:task-ms": 24.068999999999978,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4505056,
+              "uc02:input-to-next-frame": 23.5,
+              "uc02:change-text-size": 0
+            },
+            {
+              "cdp:layout-count": 1,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 17.068,
+              "cdp:recalc-style-ms": 3.366000000000001,
+              "cdp:script-ms": 0.5209999999999971,
+              "cdp:task-ms": 25.894000000000002,
+              "cdp:dom-nodes": 2470,
+              "cdp:js-heap-used": 4591300,
+              "uc02:input-to-next-frame": 25.700000047683716,
+              "uc02:change-text-size": 0.09999990463256836
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc02:input-to-next-frame": {
+          "count": 5,
+          "min": 21,
+          "p25": 22.59999990463257,
+          "median": 23.5,
+          "p75": 23.700000047683716,
+          "p95": 24.100000047683714,
+          "max": 24.200000047683716,
+          "iqr": 1.1000001430511475,
+          "unit": "ms"
+        },
+        "uc02:change-text-size": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0.07999992370605467,
+          "max": 0.09999990463256836,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "p95": 1,
+          "max": 1,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "p95": 1,
+          "max": 1,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 13.948999999999996,
+          "p25": 15.166000000000006,
+          "median": 16.006999999999994,
+          "p75": 16.041,
+          "p95": 16.2626,
+          "max": 16.317999999999998,
+          "iqr": 0.8749999999999947,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 2.535999999999999,
+          "p25": 2.952999999999997,
+          "median": 2.9700000000000006,
+          "p75": 2.9980000000000007,
+          "p95": 3.0267999999999997,
+          "max": 3.0339999999999994,
+          "iqr": 0.04500000000000348,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 0.3279999999999984,
+          "p25": 0.3390000000000025,
+          "median": 0.3409999999999975,
+          "p75": 0.390999999999999,
+          "p95": 0.4077999999999991,
+          "max": 0.41199999999999914,
+          "iqr": 0.051999999999996493,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 21.27000000000001,
+          "p25": 22.94299999999999,
+          "median": 23.740000000000013,
+          "p75": 24.10000000000001,
+          "p95": 24.628800000000005,
+          "max": 24.761000000000006,
+          "iqr": 1.1570000000000178,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 2470,
+          "p25": 2470,
+          "median": 2470,
+          "p75": 2470,
+          "p95": 2470,
+          "max": 2470,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 4394748,
+          "p25": 4399740,
+          "median": 4404104,
+          "p75": 4407336,
+          "p95": 4408910.4,
+          "max": 4409304,
+          "iqr": 7596,
+          "unit": "bytes"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # Browser Performance Study
 
+[![ci](https://github.com/baco16g/web-browser-performance-study/actions/workflows/ci.yml/badge.svg)](https://github.com/baco16g/web-browser-performance-study/actions/workflows/ci.yml)
+
 A personal study project for learning browser performance measurement. Each use case pairs a deliberately slow implementation with an improved one, then measures both under the same conditions with the DevTools, in-page APIs, and automated Chrome DevTools Protocol runs. Documentation is written in Japanese.
 
 ブラウザの性能計測を学ぶための、個人の学習用リポジトリです。架空のストアを題材に、遅い実装と改善した実装を同じ条件で測り、原因の探し方と効果の確かめ方を身につけます。遅い実装は学習のために意図して作ったものです。
@@ -30,8 +32,18 @@ A personal study project for learning browser performance measurement. Each use 
 - **画像の取得を 860ms 早めても LCP は 116ms しか縮まなかった。** LCP を内訳に分けると、次の律速点は一覧の描画でした。取得を早めた分は描画の待ちに移っただけで、FCP は帯域の取り合いで 68ms 悪化しました（[UC4](docs/usecases/uc04-initial-load.md)）。
 - **フレーム間隔の指標はラスタライズの費用を映さなかった。** p95 が 16.7ms のままでも、トレースではラスタライズの時間が約5倍違いました（[UC5](docs/usecases/uc05-scroll-list.md)）。
 - **リスナーを外してもヒープの増加は止まらなかった。** 詳細データを保持する経路が2本あり、両方を切る必要がありました。予想した3本目の経路は実測で否定されました（[UC6](docs/usecases/uc06-memory-growth.md)）。
-- **ETag の再検証で縮んだのは 24ms だけだった。** 問い合わせは毎回行い、省けるのは本文の転送だけでした（[UC7](docs/usecases/uc07-cache-prefetch.md)）。
+- **計測のコードが画面を壊した。** `Array.prototype.at` がない環境を再現すると、HUD の初期化の例外で全ページが描かれなくなりました。ビルドの対象を下げても警告は出ません（[ブラウザごとの違いと古い環境](docs/browser-differences.md)）。
 - **ラボで小さな悪化が、遅い利用者では10倍近くになった。** HTML で取得を始めたときの FCP の悪化は UC4 の条件で約 70ms でしたが、遅い回線の利用者では 665ms でした。全体の p75 にはこの差が現れません（[計測を続ける仕組み](docs/continuous-measurement.md)）。
+
+## どこから読むか
+
+| 関心                           | 読む場所                                                                           |
+| ------------------------------ | ---------------------------------------------------------------------------------- |
+| 原因を順に切り分ける過程       | [UC1](docs/usecases/uc01-focus-grid.md)、[UC4](docs/usecases/uc04-initial-load.md) |
+| 計測の考え方                   | [計測ガイド](docs/measurement-guide.md)                                            |
+| 計測の誤りに気づいて直した過程 | [ADR 0004](docs/adr/0004-next-frame-approximation.md)                              |
+| 計測の実装                     | [src/perf/](src/perf/)、[bench/harness.ts](bench/harness.ts)                       |
+| CI で劣化を止める方法          | [計測を続ける仕組み](docs/continuous-measurement.md)                               |
 
 ## 動かし方
 
@@ -105,11 +117,12 @@ docs/       計測ガイド、ユースケースの解説、設計判断、実�
 npm run check   # 型検査、Lint、単体テスト
 npm run e2e     # Chromium と WebKit の動作確認
 npm run bench:budget   # 測った結果が性能の予算に収まるかを確かめる
+npm run build:safari15   # Safari 15 を対象にビルドする
 ```
 
 ## このリポジトリで測れないこと
 
-CPU 制限は JavaScript やレイアウトの遅さを再現しますが、GPU やメモリ帯域の違いは再現しません。入力から次フレームまでの値はメインスレッドの仕事が終わるまでの近似で、ラスタライズや表示装置の遅延は含みません。Playwright の WebKit は Safari そのものではなく、古い WebKit の挙動も確かめられません。
+CPU 制限は JavaScript やレイアウトの遅さを再現しますが、GPU やメモリ帯域の違いは再現しません。入力から次フレームまでの値はメインスレッドの仕事が終わるまでの近似で、ラスタライズや表示装置の遅延は含みません。Playwright の WebKit は Safari そのものではなく、古い WebKit の挙動も確かめられません（[ブラウザごとの違いと古い環境](docs/browser-differences.md)）。DevTools を手で操作する手順は、画面では確かめていません。
 
 ## 参考資料
 
@@ -117,3 +130,7 @@ CPU 制限は JavaScript やレイアウトの遅さを再現しますが、GPU 
 - [Performance パネルの概要](https://developer.chrome.com/docs/devtools/performance/overview)と [RenderingNG のアーキテクチャ](https://developer.chrome.com/docs/chromium/renderingng-architecture)（Chrome for Developers）
 - [Chrome DevTools Protocol: Performance ドメイン](https://chromedevtools.github.io/devtools-protocol/tot/Performance/)
 - [HTML Standard: イベントループ](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)
+
+## ライセンス
+
+[MIT](LICENSE)

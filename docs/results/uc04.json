@@ -1,0 +1,2847 @@
+{
+  "scenario": "uc04",
+  "title": "初期表示と操作可能になるまで",
+  "createdAt": "2026-11-01T03:47:43.684Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "chromium 156.0.8078.4",
+    "gitCommit": "67c00cf",
+    "gitDirty": false
+  },
+  "conditions": {
+    "runs": 9,
+    "warmupIterations": 2,
+    "iterations": 5,
+    "cpuThrottle": 4,
+    "seed": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "query": {
+      "count": "2000",
+      "delay": "100"
+    }
+  },
+  "variants": {
+    "bad": {
+      "runs": [
+        {
+          "run": 5,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 417.31800000000004,
+              "cdp:recalc-style-ms": 21.291999999999998,
+              "cdp:script-ms": 178.711,
+              "cdp:task-ms": 755.057,
+              "cdp:dom-nodes": 16068,
+              "cdp:js-heap-used": 5123820,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1696,
+              "vitals:lcp:ttfb": 2.5,
+              "vitals:lcp:resource-load-delay": 1454.7999999523163,
+              "vitals:lcp:resource-load-duration": 229.09999990463257,
+              "vitals:lcp:element-render-delay": 9.600000143051147,
+              "vitals:cls": 0.16950019306606717,
+              "uc04:data-ready": 894.6999998092651,
+              "uc04:usable": 1456.8999998569489,
+              "uc04:list-complete": 1462.2999999523163,
+              "browser:long-task-total": 561,
+              "uc04:hero-loaded": 1691.5999999046326
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 403.055,
+              "cdp:recalc-style-ms": 20.97,
+              "cdp:script-ms": 177.607,
+              "cdp:task-ms": 725.869,
+              "cdp:dom-nodes": 16068,
+              "cdp:js-heap-used": 5122744,
+              "browser:first-contentful-paint": 236,
+              "vitals:lcp": 1680,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 1436,
+              "vitals:lcp:resource-load-duration": 230.89999985694885,
+              "vitals:lcp:element-render-delay": 11.600000143051147,
+              "vitals:cls": 0.16950019306606717,
+              "uc04:data-ready": 890,
+              "uc04:usable": 1437.1999998092651,
+              "uc04:list-complete": 1441.6999998092651,
+              "browser:long-task-total": 546,
+              "uc04:hero-loaded": 1674
+            }
+          ]
+        },
+        {
+          "run": 8,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 398.471,
+              "cdp:recalc-style-ms": 22.175,
+              "cdp:script-ms": 176.291,
+              "cdp:task-ms": 725.792,
+              "cdp:dom-nodes": 16068,
+              "cdp:js-heap-used": 5124296,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1684,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 1434.2999999523163,
+              "vitals:lcp:resource-load-duration": 233.70000004768372,
+              "vitals:lcp:element-render-delay": 14.5,
+              "vitals:cls": 0.16950019306606717,
+              "uc04:data-ready": 892.7000000476837,
+              "uc04:usable": 1435.3999998569489,
+              "uc04:list-complete": 1439.7999999523163,
+              "browser:long-task-total": 541,
+              "uc04:hero-loaded": 1673
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 405.408,
+              "cdp:recalc-style-ms": 22.361,
+              "cdp:script-ms": 175.495,
+              "cdp:task-ms": 731.287,
+              "cdp:dom-nodes": 16068,
+              "cdp:js-heap-used": 5122996,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1684,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 1441.9000000953674,
+              "vitals:lcp:resource-load-duration": 230.89999985694885,
+              "vitals:lcp:element-render-delay": 9.600000143051147,
+              "vitals:cls": 0.16950019306606717,
+              "uc04:data-ready": 894.3999998569489,
+              "uc04:usable": 1443.2999999523163,
+              "uc04:list-complete": 1448.0999999046326,
+              "browser:long-task-total": 548,
+              "uc04:hero-loaded": 1679.7999999523163
+            }
+          ]
+        },
+        {
+          "run": 6,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 401.945,
+              "cdp:recalc-style-ms": 22,
+              "cdp:script-ms": 177.02499999999998,
+              "cdp:task-ms": 725.9100000000001,
+              "cdp:dom-nodes": 16068,
+              "cdp:js-heap-used": 5123704,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1644,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 1401.5999999046326,
+              "vitals:lcp:resource-load-duration": 229.5,
+              "vitals:lcp:element-render-delay": 11.400000095367432,
+              "vitals:cls": 0.16950019306606717,
+              "uc04:data-ready": 856.5,
+              "uc04:usable": 1402.7999999523163,
+              "uc04:list-complete": 1407.5999999046326,
+              "browser:long-task-total": 544,
+              "uc04:hero-loaded": 1637.6999998092651
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 401.924,
+              "cdp:recalc-style-ms": 22,
+              "cdp:script-ms": 175.368,
+              "cdp:task-ms": 725.3230000000001,
+              "cdp:dom-nodes": 16068,
+              "cdp:js-heap-used": 5123720,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1648,
+              "vitals:lcp:ttfb": 1.7000000476837158,
+              "vitals:lcp:resource-load-delay": 1403.2999999523163,
+              "vitals:lcp:resource-load-duration": 229.59999990463257,
+              "vitals:lcp:element-render-delay": 13.400000095367432,
+              "vitals:cls": 0.16950019306606717,
+              "uc04:data-ready": 857.5,
+              "uc04:usable": 1404.7000000476837,
+              "uc04:list-complete": 1409.3999998569489,
+              "browser:long-task-total": 545,
+              "uc04:hero-loaded": 1639.7999999523163
+            }
+          ]
+        },
+        {
+          "run": 7,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 401.785,
+              "cdp:recalc-style-ms": 20.948,
+              "cdp:script-ms": 175.509,
+              "cdp:task-ms": 726.887,
+              "cdp:dom-nodes": 16068,
+              "cdp:js-heap-used": 5123296,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1648,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 1401.5,
+              "vitals:lcp:resource-load-duration": 232.79999995231628,
+              "vitals:lcp:element-render-delay": 12.200000047683716,
+              "vitals:cls": 0.16950019306606717,
+              "uc04:data-ready": 856.2000000476837,
+              "uc04:usable": 1403.6000001430511,
+              "uc04:list-complete": 1407.2999999523163,
+              "browser:long-task-total": 546,
+              "uc04:hero-loaded": 1641.2999999523163
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 402.73900000000003,
+              "cdp:recalc-style-ms": 21.187,
+              "cdp:script-ms": 175.197,
+              "cdp:task-ms": 725.382,
+              "cdp:dom-nodes": 16068,
+              "cdp:js-heap-used": 5123452,
+              "browser:first-contentful-paint": 236,
+              "vitals:lcp": 1644,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 1399.8999998569489,
+              "vitals:lcp:resource-load-duration": 229.90000009536743,
+              "vitals:lcp:element-render-delay": 12.700000047683716,
+              "vitals:cls": 0.16950019306606717,
+              "uc04:data-ready": 854.1999998092651,
+              "uc04:usable": 1401.1999998092651,
+              "uc04:list-complete": 1405.7999999523163,
+              "browser:long-task-total": 546,
+              "uc04:hero-loaded": 1636.0999999046326
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 415.068,
+              "cdp:recalc-style-ms": 22.989,
+              "cdp:script-ms": 188.582,
+              "cdp:task-ms": 760.435,
+              "cdp:dom-nodes": 16068,
+              "cdp:js-heap-used": 5122524,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1704,
+              "vitals:lcp:ttfb": 1.7000000476837158,
+              "vitals:lcp:resource-load-delay": 1456.5,
+              "vitals:lcp:resource-load-duration": 232.69999980926514,
+              "vitals:lcp:element-render-delay": 13.100000143051147,
+              "vitals:cls": 0.16950019306606717,
+              "uc04:data-ready": 890.0999999046326,
+              "uc04:usable": 1457.8999998569489,
+              "uc04:list-complete": 1462.3999998569489,
+              "browser:long-task-total": 567,
+              "uc04:hero-loaded": 1697.2999999523163
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "browser:first-contentful-paint": {
+          "count": 9,
+          "min": 236,
+          "p25": 240,
+          "median": 240,
+          "p75": 240,
+          "p95": 244,
+          "max": 244,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "vitals:lcp": {
+          "count": 9,
+          "min": 1644,
+          "p25": 1648,
+          "median": 1680,
+          "p75": 1684,
+          "p95": 1700.8,
+          "max": 1704,
+          "iqr": 36,
+          "unit": "ms"
+        },
+        "vitals:lcp:ttfb": {
+          "count": 9,
+          "min": 1.5,
+          "p25": 1.5,
+          "median": 1.5,
+          "p75": 1.7000000476837158,
+          "p95": 2.180000019073486,
+          "max": 2.5,
+          "iqr": 0.20000004768371582,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-delay": {
+          "count": 9,
+          "min": 1399.8999998569489,
+          "p25": 1401.5999999046326,
+          "median": 1434.2999999523163,
+          "p75": 1441.9000000953674,
+          "p95": 1455.8199999809265,
+          "max": 1456.5,
+          "iqr": 40.30000019073486,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-duration": {
+          "count": 9,
+          "min": 229.09999990463257,
+          "p25": 229.59999990463257,
+          "median": 230.89999985694885,
+          "p75": 232.69999980926514,
+          "p95": 233.34000000953674,
+          "max": 233.70000004768372,
+          "iqr": 3.0999999046325684,
+          "unit": "ms"
+        },
+        "vitals:lcp:element-render-delay": {
+          "count": 9,
+          "min": 9.600000143051147,
+          "p25": 11.400000095367432,
+          "median": 12.200000047683716,
+          "p75": 13.100000143051147,
+          "p95": 14.060000038146972,
+          "max": 14.5,
+          "iqr": 1.7000000476837158,
+          "unit": "ms"
+        },
+        "vitals:cls": {
+          "count": 9,
+          "min": 0.16950019306606717,
+          "p25": 0.16950019306606717,
+          "median": 0.16950019306606717,
+          "p75": 0.16950019306606717,
+          "p95": 0.16950019306606717,
+          "max": 0.16950019306606717,
+          "iqr": 0,
+          "unit": "score"
+        },
+        "uc04:data-ready": {
+          "count": 9,
+          "min": 854.1999998092651,
+          "p25": 856.5,
+          "median": 890,
+          "p75": 892.7000000476837,
+          "p95": 894.5799998283386,
+          "max": 894.6999998092651,
+          "iqr": 36.200000047683716,
+          "unit": "ms"
+        },
+        "uc04:usable": {
+          "count": 9,
+          "min": 1401.1999998092651,
+          "p25": 1403.6000001430511,
+          "median": 1435.3999998569489,
+          "p75": 1443.2999999523163,
+          "p95": 1457.4999998569488,
+          "max": 1457.8999998569489,
+          "iqr": 39.69999980926514,
+          "unit": "ms"
+        },
+        "uc04:list-complete": {
+          "count": 9,
+          "min": 1405.7999999523163,
+          "p25": 1407.5999999046326,
+          "median": 1439.7999999523163,
+          "p75": 1448.0999999046326,
+          "p95": 1462.3599998950958,
+          "max": 1462.3999998569489,
+          "iqr": 40.5,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 9,
+          "min": 541,
+          "p25": 545,
+          "median": 546,
+          "p75": 548,
+          "p95": 564.6,
+          "max": 567,
+          "iqr": 3,
+          "unit": "ms"
+        },
+        "uc04:hero-loaded": {
+          "count": 9,
+          "min": 1636.0999999046326,
+          "p25": 1639.7999999523163,
+          "median": 1673,
+          "p75": 1679.7999999523163,
+          "p95": 1695.0199999332428,
+          "max": 1697.2999999523163,
+          "iqr": 40,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 9,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5,
+          "max": 5,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 9,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5,
+          "max": 5,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 9,
+          "min": 398.471,
+          "p25": 401.924,
+          "median": 402.73900000000003,
+          "p75": 405.408,
+          "p95": 416.418,
+          "max": 417.31800000000004,
+          "iqr": 3.4840000000000373,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 9,
+          "min": 20.948,
+          "p25": 21.187,
+          "median": 22,
+          "p75": 22.175,
+          "p95": 22.7378,
+          "max": 22.989,
+          "iqr": 0.9879999999999995,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 9,
+          "min": 175.197,
+          "p25": 175.495,
+          "median": 176.291,
+          "p75": 177.607,
+          "p95": 184.6336,
+          "max": 188.582,
+          "iqr": 2.1119999999999948,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 9,
+          "min": 725.3230000000001,
+          "p25": 725.792,
+          "median": 725.9100000000001,
+          "p75": 731.287,
+          "p95": 758.2837999999999,
+          "max": 760.435,
+          "iqr": 5.4950000000000045,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 9,
+          "min": 16068,
+          "p25": 16068,
+          "median": 16068,
+          "p75": 16068,
+          "p95": 16068,
+          "max": 16068,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 9,
+          "min": 5122524,
+          "p25": 5122996,
+          "median": 5123452,
+          "p75": 5123720,
+          "p95": 5124105.6,
+          "max": 5124296,
+          "iqr": 724,
+          "unit": "bytes"
+        }
+      }
+    },
+    "parallel": {
+      "runs": [
+        {
+          "run": 6,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 393.275,
+              "cdp:recalc-style-ms": 23.491999999999997,
+              "cdp:script-ms": 184.85399999999998,
+              "cdp:task-ms": 754.231,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5292496,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1564,
+              "vitals:lcp:ttfb": 1.7000000476837158,
+              "vitals:lcp:resource-load-delay": 1300.0999999046326,
+              "vitals:lcp:resource-load-duration": 233.5,
+              "vitals:lcp:element-render-delay": 28.700000047683716,
+              "vitals:cls": 0.18080817307366268,
+              "uc04:data-ready": 757.7999999523163,
+              "uc04:usable": 1301.5999999046326,
+              "uc04:list-complete": 1305.8999998569489,
+              "browser:long-task-total": 542,
+              "uc04:hero-loaded": 1538.2999999523163
+            }
+          ]
+        },
+        {
+          "run": 8,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 397.8,
+              "cdp:recalc-style-ms": 20.989,
+              "cdp:script-ms": 184.18699999999998,
+              "cdp:task-ms": 757.9970000000001,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5293236,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1588,
+              "vitals:lcp:ttfb": 1.6999998092651367,
+              "vitals:lcp:resource-load-delay": 1342.7000000476837,
+              "vitals:lcp:resource-load-duration": 230.60000014305115,
+              "vitals:lcp:element-render-delay": 13,
+              "vitals:cls": 0.18080817307366268,
+              "uc04:data-ready": 795.5999999046326,
+              "uc04:usable": 1344.0999999046326,
+              "uc04:list-complete": 1348.2999999523163,
+              "browser:long-task-total": 547,
+              "uc04:hero-loaded": 1577.8999998569489
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 391.93699999999995,
+              "cdp:recalc-style-ms": 22.178,
+              "cdp:script-ms": 182,
+              "cdp:task-ms": 751.2429999999999,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5294544,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1544,
+              "vitals:lcp:ttfb": 1.7000000476837158,
+              "vitals:lcp:resource-load-delay": 1296.7999999523163,
+              "vitals:lcp:resource-load-duration": 232,
+              "vitals:lcp:element-render-delay": 13.5,
+              "vitals:cls": 0.18080817307366268,
+              "uc04:data-ready": 757.1000001430511,
+              "uc04:usable": 1298.4000000953674,
+              "uc04:list-complete": 1302.1000001430511,
+              "browser:long-task-total": 540,
+              "uc04:hero-loaded": 1533.4000000953674
+            }
+          ]
+        },
+        {
+          "run": 5,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 395.46500000000003,
+              "cdp:recalc-style-ms": 20.877,
+              "cdp:script-ms": 182.21599999999998,
+              "cdp:task-ms": 749.666,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5292980,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1584,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 1329.5,
+              "vitals:lcp:resource-load-duration": 233,
+              "vitals:lcp:element-render-delay": 20,
+              "vitals:cls": 0.18080817307366268,
+              "uc04:data-ready": 788.7000000476837,
+              "uc04:usable": 1330.6000001430511,
+              "uc04:list-complete": 1334.4000000953674,
+              "browser:long-task-total": 540,
+              "uc04:hero-loaded": 1569.6000001430511
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 390.756,
+              "cdp:recalc-style-ms": 20.868000000000002,
+              "cdp:script-ms": 182.495,
+              "cdp:task-ms": 743.332,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5293408,
+              "browser:first-contentful-paint": 236,
+              "vitals:lcp": 1528,
+              "vitals:lcp:ttfb": 1.3000001907348633,
+              "vitals:lcp:resource-load-delay": 1286.1999998092651,
+              "vitals:lcp:resource-load-duration": 228.60000014305115,
+              "vitals:lcp:element-render-delay": 11.899999856948853,
+              "vitals:cls": 0.18080817307366268,
+              "uc04:data-ready": 748.7000000476837,
+              "uc04:usable": 1287.8000001907349,
+              "uc04:list-complete": 1291.6000001430511,
+              "browser:long-task-total": 537,
+              "uc04:hero-loaded": 1521.6000001430511
+            }
+          ]
+        },
+        {
+          "run": 7,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 389.146,
+              "cdp:recalc-style-ms": 20.452,
+              "cdp:script-ms": 181.04700000000003,
+              "cdp:task-ms": 734.904,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5293776,
+              "browser:first-contentful-paint": 236,
+              "vitals:lcp": 1532,
+              "vitals:lcp:ttfb": 1.7999999523162842,
+              "vitals:lcp:resource-load-delay": 1285.3999998569489,
+              "vitals:lcp:resource-load-duration": 232.40000009536743,
+              "vitals:lcp:element-render-delay": 12.400000095367432,
+              "vitals:cls": 0.18080817307366268,
+              "uc04:data-ready": 752.2999999523163,
+              "uc04:usable": 1287.7999999523163,
+              "uc04:list-complete": 1291.5,
+              "browser:long-task-total": 533,
+              "uc04:hero-loaded": 1525.2999999523163
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 396.661,
+              "cdp:recalc-style-ms": 21.316000000000003,
+              "cdp:script-ms": 182.423,
+              "cdp:task-ms": 749.522,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5292804,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1580,
+              "vitals:lcp:ttfb": 1.4000000953674316,
+              "vitals:lcp:resource-load-delay": 1335,
+              "vitals:lcp:resource-load-duration": 232.70000004768372,
+              "vitals:lcp:element-render-delay": 10.899999856948853,
+              "vitals:cls": 0.18080817307366268,
+              "uc04:data-ready": 790.2000000476837,
+              "uc04:usable": 1336.2000000476837,
+              "uc04:list-complete": 1340.3000001907349,
+              "browser:long-task-total": 544,
+              "uc04:hero-loaded": 1574.6000001430511
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 393.89000000000004,
+              "cdp:recalc-style-ms": 22.161,
+              "cdp:script-ms": 194.596,
+              "cdp:task-ms": 750.6800000000001,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5447552,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1540,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 1298.2999999523163,
+              "vitals:lcp:resource-load-duration": 228.5,
+              "vitals:lcp:element-render-delay": 11.700000047683716,
+              "vitals:cls": 0.18080817307366268,
+              "uc04:data-ready": 756.7999999523163,
+              "uc04:usable": 1299.5999999046326,
+              "uc04:list-complete": 1304,
+              "browser:long-task-total": 541,
+              "uc04:hero-loaded": 1534
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 415.808,
+              "cdp:recalc-style-ms": 22.717000000000002,
+              "cdp:script-ms": 198.506,
+              "cdp:task-ms": 805.5989999999999,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5294412,
+              "browser:first-contentful-paint": 248,
+              "vitals:lcp": 1624,
+              "vitals:lcp:ttfb": 1.6000001430511475,
+              "vitals:lcp:resource-load-delay": 1375.2000000476837,
+              "vitals:lcp:resource-load-duration": 231.79999995231628,
+              "vitals:lcp:element-render-delay": 15.399999856948853,
+              "vitals:cls": 0.18080817307366268,
+              "uc04:data-ready": 798,
+              "uc04:usable": 1376.9000000953674,
+              "uc04:list-complete": 1381.2000000476837,
+              "browser:long-task-total": 576,
+              "uc04:hero-loaded": 1611.3000001907349
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "browser:first-contentful-paint": {
+          "count": 9,
+          "min": 236,
+          "p25": 240,
+          "median": 244,
+          "p75": 244,
+          "p95": 246.4,
+          "max": 248,
+          "iqr": 4,
+          "unit": "ms"
+        },
+        "vitals:lcp": {
+          "count": 9,
+          "min": 1528,
+          "p25": 1540,
+          "median": 1564,
+          "p75": 1584,
+          "p95": 1609.6,
+          "max": 1624,
+          "iqr": 44,
+          "unit": "ms"
+        },
+        "vitals:lcp:ttfb": {
+          "count": 9,
+          "min": 1.3000001907348633,
+          "p25": 1.5,
+          "median": 1.6000001430511475,
+          "p75": 1.7000000476837158,
+          "p95": 1.7599999904632568,
+          "max": 1.7999999523162842,
+          "iqr": 0.20000004768371582,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-delay": {
+          "count": 9,
+          "min": 1285.3999998569489,
+          "p25": 1296.7999999523163,
+          "median": 1300.0999999046326,
+          "p75": 1335,
+          "p95": 1362.2000000476837,
+          "max": 1375.2000000476837,
+          "iqr": 38.200000047683716,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-duration": {
+          "count": 9,
+          "min": 228.5,
+          "p25": 230.60000014305115,
+          "median": 232,
+          "p75": 232.70000004768372,
+          "p95": 233.3,
+          "max": 233.5,
+          "iqr": 2.0999999046325684,
+          "unit": "ms"
+        },
+        "vitals:lcp:element-render-delay": {
+          "count": 9,
+          "min": 10.899999856948853,
+          "p25": 11.899999856948853,
+          "median": 13,
+          "p75": 15.399999856948853,
+          "p95": 25.220000028610226,
+          "max": 28.700000047683716,
+          "iqr": 3.5,
+          "unit": "ms"
+        },
+        "vitals:cls": {
+          "count": 9,
+          "min": 0.18080817307366268,
+          "p25": 0.18080817307366268,
+          "median": 0.18080817307366268,
+          "p75": 0.18080817307366268,
+          "p95": 0.18080817307366268,
+          "max": 0.18080817307366268,
+          "iqr": 0,
+          "unit": "score"
+        },
+        "uc04:data-ready": {
+          "count": 9,
+          "min": 748.7000000476837,
+          "p25": 756.7999999523163,
+          "median": 757.7999999523163,
+          "p75": 790.2000000476837,
+          "p95": 797.039999961853,
+          "max": 798,
+          "iqr": 33.40000009536743,
+          "unit": "ms"
+        },
+        "uc04:usable": {
+          "count": 9,
+          "min": 1287.7999999523163,
+          "p25": 1298.4000000953674,
+          "median": 1301.5999999046326,
+          "p75": 1336.2000000476837,
+          "p95": 1363.7800000190734,
+          "max": 1376.9000000953674,
+          "iqr": 37.799999952316284,
+          "unit": "ms"
+        },
+        "uc04:list-complete": {
+          "count": 9,
+          "min": 1291.5,
+          "p25": 1302.1000001430511,
+          "median": 1305.8999998569489,
+          "p75": 1340.3000001907349,
+          "p95": 1368.0400000095367,
+          "max": 1381.2000000476837,
+          "iqr": 38.200000047683716,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 9,
+          "min": 533,
+          "p25": 540,
+          "median": 541,
+          "p75": 544,
+          "p95": 564.4,
+          "max": 576,
+          "iqr": 4,
+          "unit": "ms"
+        },
+        "uc04:hero-loaded": {
+          "count": 9,
+          "min": 1521.6000001430511,
+          "p25": 1533.4000000953674,
+          "median": 1538.2999999523163,
+          "p75": 1574.6000001430511,
+          "p95": 1597.9400000572205,
+          "max": 1611.3000001907349,
+          "iqr": 41.200000047683716,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 9,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5,
+          "max": 5,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 9,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5,
+          "max": 5,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 9,
+          "min": 389.146,
+          "p25": 391.93699999999995,
+          "median": 393.89000000000004,
+          "p75": 396.661,
+          "p95": 408.6048,
+          "max": 415.808,
+          "iqr": 4.724000000000046,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 9,
+          "min": 20.452,
+          "p25": 20.877,
+          "median": 21.316000000000003,
+          "p75": 22.178,
+          "p95": 23.182,
+          "max": 23.491999999999997,
+          "iqr": 1.301000000000002,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 9,
+          "min": 181.04700000000003,
+          "p25": 182.21599999999998,
+          "median": 182.495,
+          "p75": 184.85399999999998,
+          "p95": 196.942,
+          "max": 198.506,
+          "iqr": 2.6380000000000052,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 9,
+          "min": 734.904,
+          "p25": 749.522,
+          "median": 750.6800000000001,
+          "p75": 754.231,
+          "p95": 786.5581999999999,
+          "max": 805.5989999999999,
+          "iqr": 4.708999999999946,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 9,
+          "min": 16064,
+          "p25": 16064,
+          "median": 16064,
+          "p75": 16064,
+          "p95": 16064,
+          "max": 16064,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 9,
+          "min": 5292496,
+          "p25": 5292980,
+          "median": 5293408,
+          "p75": 5294412,
+          "p95": 5386348.8,
+          "max": 5447552,
+          "iqr": 1432,
+          "unit": "bytes"
+        }
+      }
+    },
+    "priority": {
+      "runs": [
+        {
+          "run": 7,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 393.875,
+              "cdp:recalc-style-ms": 22.651,
+              "cdp:script-ms": 192.689,
+              "cdp:task-ms": 739.774,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5324676,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1360,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 922.9000000953674,
+              "vitals:lcp:resource-load-duration": 113.89999985694885,
+              "vitals:lcp:element-render-delay": 321.60000014305115,
+              "vitals:cls": 0.15988991440667047,
+              "uc04:data-ready": 794.1999998092651,
+              "uc04:usable": 1335.5,
+              "uc04:list-complete": 1353.2999999523163,
+              "browser:long-task-total": 538,
+              "uc04:hero-loaded": 1355.0999999046326
+            }
+          ]
+        },
+        {
+          "run": 5,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 394.278,
+              "cdp:recalc-style-ms": 22.057,
+              "cdp:script-ms": 195.993,
+              "cdp:task-ms": 744.5509999999999,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5438020,
+              "browser:first-contentful-paint": 236,
+              "vitals:lcp": 1316,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 879,
+              "vitals:lcp:resource-load-duration": 112.40000009536743,
+              "vitals:lcp:element-render-delay": 323.09999990463257,
+              "vitals:cls": 0.15988991440667047,
+              "uc04:data-ready": 750.5,
+              "uc04:usable": 1292.7000000476837,
+              "uc04:list-complete": 1310.2000000476837,
+              "browser:long-task-total": 540,
+              "uc04:hero-loaded": 1312.0999999046326
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 394.40500000000003,
+              "cdp:recalc-style-ms": 22.183999999999997,
+              "cdp:script-ms": 185.274,
+              "cdp:task-ms": 737.846,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5281084,
+              "browser:first-contentful-paint": 236,
+              "vitals:lcp": 1320,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 880.8999998569489,
+              "vitals:lcp:resource-load-duration": 116.60000014305115,
+              "vitals:lcp:element-render-delay": 321,
+              "vitals:cls": 0.15988991440667047,
+              "uc04:data-ready": 750.7000000476837,
+              "uc04:usable": 1296.2000000476837,
+              "uc04:list-complete": 1313.0999999046326,
+              "browser:long-task-total": 542,
+              "uc04:hero-loaded": 1315.0999999046326
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 390.904,
+              "cdp:recalc-style-ms": 22.582,
+              "cdp:script-ms": 195.708,
+              "cdp:task-ms": 738.955,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5436144,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1320,
+              "vitals:lcp:ttfb": 1.6000001430511475,
+              "vitals:lcp:resource-load-delay": 881.7999999523163,
+              "vitals:lcp:resource-load-duration": 117,
+              "vitals:lcp:element-render-delay": 319.59999990463257,
+              "vitals:cls": 0.15988991440667047,
+              "uc04:data-ready": 753.7999999523163,
+              "uc04:usable": 1294.1000001430511,
+              "uc04:list-complete": 1312.2999999523163,
+              "browser:long-task-total": 538,
+              "uc04:hero-loaded": 1314.4000000953674
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 393.128,
+              "cdp:recalc-style-ms": 21.382,
+              "cdp:script-ms": 183.868,
+              "cdp:task-ms": 735.771,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5284712,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1360,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 919.0999999046326,
+              "vitals:lcp:resource-load-duration": 115.5,
+              "vitals:lcp:element-render-delay": 323.90000009536743,
+              "vitals:cls": 0.15988991440667047,
+              "uc04:data-ready": 790.3999998569489,
+              "uc04:usable": 1335.5,
+              "uc04:list-complete": 1352.5,
+              "browser:long-task-total": 542,
+              "uc04:hero-loaded": 1354.7999999523163
+            }
+          ]
+        },
+        {
+          "run": 6,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 391.63,
+              "cdp:recalc-style-ms": 22.418,
+              "cdp:script-ms": 196.079,
+              "cdp:task-ms": 740.246,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5439048,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1356,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 920.1000001430511,
+              "vitals:lcp:resource-load-duration": 115.5,
+              "vitals:lcp:element-render-delay": 318.7999999523163,
+              "vitals:cls": 0.15988991440667047,
+              "uc04:data-ready": 792.5,
+              "uc04:usable": 1331.2999999523163,
+              "uc04:list-complete": 1349,
+              "browser:long-task-total": 536,
+              "uc04:hero-loaded": 1351.0999999046326
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 391.62,
+              "cdp:recalc-style-ms": 21.923000000000002,
+              "cdp:script-ms": 190.269,
+              "cdp:task-ms": 736.135,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5328576,
+              "browser:first-contentful-paint": 236,
+              "vitals:lcp": 1320,
+              "vitals:lcp:ttfb": 1.4000000953674316,
+              "vitals:lcp:resource-load-delay": 880.5999999046326,
+              "vitals:lcp:resource-load-duration": 112.20000004768372,
+              "vitals:lcp:element-render-delay": 325.7999999523163,
+              "vitals:cls": 0.15988991440667047,
+              "uc04:data-ready": 752.5,
+              "uc04:usable": 1294.6000001430511,
+              "uc04:list-complete": 1312.1000001430511,
+              "browser:long-task-total": 539,
+              "uc04:hero-loaded": 1313.7000000476837
+            }
+          ]
+        },
+        {
+          "run": 8,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 403.919,
+              "cdp:recalc-style-ms": 22.163999999999998,
+              "cdp:script-ms": 184.192,
+              "cdp:task-ms": 763.5999999999999,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5326232,
+              "browser:first-contentful-paint": 248,
+              "vitals:lcp": 1376,
+              "vitals:lcp:ttfb": 2,
+              "vitals:lcp:resource-load-delay": 925.2000000476837,
+              "vitals:lcp:resource-load-duration": 115.69999980926514,
+              "vitals:lcp:element-render-delay": 333.10000014305115,
+              "vitals:cls": 0.15988991440667047,
+              "uc04:data-ready": 794.7999999523163,
+              "uc04:usable": 1349.8999998569489,
+              "uc04:list-complete": 1368.0999999046326,
+              "browser:long-task-total": 552,
+              "uc04:hero-loaded": 1370.0999999046326
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 441.608,
+              "cdp:recalc-style-ms": 23.061,
+              "cdp:script-ms": 204.519,
+              "cdp:task-ms": 812.688,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5438480,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1420,
+              "vitals:lcp:ttfb": 1.3000001907348633,
+              "vitals:lcp:resource-load-delay": 927.2999999523163,
+              "vitals:lcp:resource-load-duration": 116.89999985694885,
+              "vitals:lcp:element-render-delay": 374.5,
+              "vitals:cls": 0.15988991440667047,
+              "uc04:data-ready": 794.3000001907349,
+              "uc04:usable": 1392.5,
+              "uc04:list-complete": 1411.6000001430511,
+              "browser:long-task-total": 595,
+              "uc04:hero-loaded": 1413.8000001907349
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "browser:first-contentful-paint": {
+          "count": 9,
+          "min": 236,
+          "p25": 236,
+          "median": 240,
+          "p75": 244,
+          "p95": 246.4,
+          "max": 248,
+          "iqr": 8,
+          "unit": "ms"
+        },
+        "vitals:lcp": {
+          "count": 9,
+          "min": 1316,
+          "p25": 1320,
+          "median": 1356,
+          "p75": 1360,
+          "p95": 1402.4,
+          "max": 1420,
+          "iqr": 40,
+          "unit": "ms"
+        },
+        "vitals:lcp:ttfb": {
+          "count": 9,
+          "min": 1.3000001907348633,
+          "p25": 1.5,
+          "median": 1.5,
+          "p75": 1.5999999046325684,
+          "p95": 1.840000057220459,
+          "max": 2,
+          "iqr": 0.09999990463256836,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-delay": {
+          "count": 9,
+          "min": 879,
+          "p25": 880.8999998569489,
+          "median": 919.0999999046326,
+          "p75": 922.9000000953674,
+          "p95": 926.4599999904633,
+          "max": 927.2999999523163,
+          "iqr": 42.00000023841858,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-duration": {
+          "count": 9,
+          "min": 112.20000004768372,
+          "p25": 113.89999985694885,
+          "median": 115.5,
+          "p75": 116.60000014305115,
+          "p95": 116.95999994277955,
+          "max": 117,
+          "iqr": 2.700000286102295,
+          "unit": "ms"
+        },
+        "vitals:lcp:element-render-delay": {
+          "count": 9,
+          "min": 318.7999999523163,
+          "p25": 321,
+          "median": 323.09999990463257,
+          "p75": 325.7999999523163,
+          "p95": 357.94000005722046,
+          "max": 374.5,
+          "iqr": 4.799999952316284,
+          "unit": "ms"
+        },
+        "vitals:cls": {
+          "count": 9,
+          "min": 0.15988991440667047,
+          "p25": 0.15988991440667047,
+          "median": 0.15988991440667047,
+          "p75": 0.15988991440667047,
+          "p95": 0.15988991440667047,
+          "max": 0.15988991440667047,
+          "iqr": 0,
+          "unit": "score"
+        },
+        "uc04:data-ready": {
+          "count": 9,
+          "min": 750.5,
+          "p25": 752.5,
+          "median": 790.3999998569489,
+          "p75": 794.1999998092651,
+          "p95": 794.6000000476837,
+          "max": 794.7999999523163,
+          "iqr": 41.69999980926514,
+          "unit": "ms"
+        },
+        "uc04:usable": {
+          "count": 9,
+          "min": 1292.7000000476837,
+          "p25": 1294.6000001430511,
+          "median": 1331.2999999523163,
+          "p75": 1335.5,
+          "p95": 1375.4599999427796,
+          "max": 1392.5,
+          "iqr": 40.89999985694885,
+          "unit": "ms"
+        },
+        "uc04:list-complete": {
+          "count": 9,
+          "min": 1310.2000000476837,
+          "p25": 1312.2999999523163,
+          "median": 1349,
+          "p75": 1353.2999999523163,
+          "p95": 1394.2000000476837,
+          "max": 1411.6000001430511,
+          "iqr": 41,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 9,
+          "min": 536,
+          "p25": 538,
+          "median": 540,
+          "p75": 542,
+          "p95": 577.8,
+          "max": 595,
+          "iqr": 4,
+          "unit": "ms"
+        },
+        "uc04:hero-loaded": {
+          "count": 9,
+          "min": 1312.0999999046326,
+          "p25": 1314.4000000953674,
+          "median": 1351.0999999046326,
+          "p75": 1355.0999999046326,
+          "p95": 1396.320000076294,
+          "max": 1413.8000001907349,
+          "iqr": 40.69999980926514,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 9,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5,
+          "max": 5,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 9,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5,
+          "max": 5,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 9,
+          "min": 390.904,
+          "p25": 391.63,
+          "median": 393.875,
+          "p75": 394.40500000000003,
+          "p95": 426.5324,
+          "max": 441.608,
+          "iqr": 2.775000000000034,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 9,
+          "min": 21.382,
+          "p25": 22.057,
+          "median": 22.183999999999997,
+          "p75": 22.582,
+          "p95": 22.897,
+          "max": 23.061,
+          "iqr": 0.5250000000000021,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 9,
+          "min": 183.868,
+          "p25": 185.274,
+          "median": 192.689,
+          "p75": 195.993,
+          "p95": 201.143,
+          "max": 204.519,
+          "iqr": 10.718999999999994,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 9,
+          "min": 735.771,
+          "p25": 737.846,
+          "median": 739.774,
+          "p75": 744.5509999999999,
+          "p95": 793.0527999999999,
+          "max": 812.688,
+          "iqr": 6.704999999999927,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 9,
+          "min": 16064,
+          "p25": 16064,
+          "median": 16064,
+          "p75": 16064,
+          "p95": 16064,
+          "max": 16064,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 9,
+          "min": 5281084,
+          "p25": 5324676,
+          "median": 5328576,
+          "p75": 5438020,
+          "p95": 5438820.8,
+          "max": 5439048,
+          "iqr": 113344,
+          "unit": "bytes"
+        }
+      }
+    },
+    "reserved": {
+      "runs": [
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 405.786,
+              "cdp:recalc-style-ms": 21.177,
+              "cdp:script-ms": 189.726,
+              "cdp:task-ms": 737.078,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5275252,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1384,
+              "vitals:lcp:ttfb": 5.5,
+              "vitals:lcp:resource-load-delay": 924.0999999046326,
+              "vitals:lcp:resource-load-duration": 114.29999995231628,
+              "vitals:lcp:element-render-delay": 340.10000014305115,
+              "vitals:cls": 0,
+              "uc04:data-ready": 797.5,
+              "uc04:usable": 1355.6999998092651,
+              "uc04:list-complete": 1375.1999998092651,
+              "browser:long-task-total": 555,
+              "uc04:hero-loaded": 1359.1999998092651
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 396.402,
+              "cdp:recalc-style-ms": 21.119,
+              "cdp:script-ms": 183.464,
+              "cdp:task-ms": 716.2460000000001,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5274980,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1368,
+              "vitals:lcp:ttfb": 2.1999998092651367,
+              "vitals:lcp:resource-load-delay": 922.7000000476837,
+              "vitals:lcp:resource-load-duration": 117,
+              "vitals:lcp:element-render-delay": 326.10000014305115,
+              "vitals:cls": 0,
+              "uc04:data-ready": 794.1999998092651,
+              "uc04:usable": 1339.6999998092651,
+              "uc04:list-complete": 1360.5999999046326,
+              "browser:long-task-total": 541,
+              "uc04:hero-loaded": 1343.0999999046326
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 396.503,
+              "cdp:recalc-style-ms": 21.01,
+              "cdp:script-ms": 181.727,
+              "cdp:task-ms": 719.9010000000001,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5277164,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1348,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 916,
+              "vitals:lcp:resource-load-duration": 117.40000009536743,
+              "vitals:lcp:element-render-delay": 313,
+              "vitals:cls": 0,
+              "uc04:data-ready": 788.2999999523163,
+              "uc04:usable": 1333.0999999046326,
+              "uc04:list-complete": 1340.3999998569489,
+              "browser:long-task-total": 542,
+              "uc04:hero-loaded": 1342.5
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 391.789,
+              "cdp:recalc-style-ms": 21.211000000000002,
+              "cdp:script-ms": 181.659,
+              "cdp:task-ms": 713.469,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5276960,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1344,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 920.7999999523163,
+              "vitals:lcp:resource-load-duration": 111.29999995231628,
+              "vitals:lcp:element-render-delay": 310.40000009536743,
+              "vitals:cls": 0,
+              "uc04:data-ready": 792,
+              "uc04:usable": 1332,
+              "uc04:list-complete": 1339.5,
+              "browser:long-task-total": 537,
+              "uc04:hero-loaded": 1341.3999998569489
+            }
+          ]
+        },
+        {
+          "run": 6,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 391.186,
+              "cdp:recalc-style-ms": 22.504,
+              "cdp:script-ms": 185.144,
+              "cdp:task-ms": 711.219,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5276420,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1316,
+              "vitals:lcp:ttfb": 1.4000000953674316,
+              "vitals:lcp:resource-load-delay": 882.8999998569489,
+              "vitals:lcp:resource-load-duration": 111.79999995231628,
+              "vitals:lcp:element-render-delay": 319.90000009536743,
+              "vitals:cls": 0,
+              "uc04:data-ready": 753.2000000476837,
+              "uc04:usable": 1295,
+              "uc04:list-complete": 1311.0999999046326,
+              "browser:long-task-total": 540,
+              "uc04:hero-loaded": 1298.9000000953674
+            }
+          ]
+        },
+        {
+          "run": 5,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 391.444,
+              "cdp:recalc-style-ms": 21.916,
+              "cdp:script-ms": 178.03199999999998,
+              "cdp:task-ms": 708.785,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5276492,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1316,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 881,
+              "vitals:lcp:resource-load-duration": 116.29999995231628,
+              "vitals:lcp:element-render-delay": 317.10000014305115,
+              "vitals:cls": 0,
+              "uc04:data-ready": 752.2999999523163,
+              "uc04:usable": 1295.0999999046326,
+              "uc04:list-complete": 1310,
+              "browser:long-task-total": 539,
+              "uc04:hero-loaded": 1298.3999998569489
+            }
+          ]
+        },
+        {
+          "run": 7,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 393.289,
+              "cdp:recalc-style-ms": 22.508,
+              "cdp:script-ms": 180.686,
+              "cdp:task-ms": 714.4209999999999,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5277596,
+              "browser:first-contentful-paint": 240,
+              "vitals:lcp": 1316,
+              "vitals:lcp:ttfb": 1.2999999523162842,
+              "vitals:lcp:resource-load-delay": 884,
+              "vitals:lcp:resource-load-duration": 112.40000009536743,
+              "vitals:lcp:element-render-delay": 318.2999999523163,
+              "vitals:cls": 0,
+              "uc04:data-ready": 755.7000000476837,
+              "uc04:usable": 1299.2000000476837,
+              "uc04:list-complete": 1308.2999999523163,
+              "browser:long-task-total": 541,
+              "uc04:hero-loaded": 1302.5
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 391.956,
+              "cdp:recalc-style-ms": 21.278,
+              "cdp:script-ms": 182.876,
+              "cdp:task-ms": 706.868,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5277284,
+              "browser:first-contentful-paint": 236,
+              "vitals:lcp": 1316,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 879.5999999046326,
+              "vitals:lcp:resource-load-duration": 116.60000014305115,
+              "vitals:lcp:element-render-delay": 318.2000000476837,
+              "vitals:cls": 0,
+              "uc04:data-ready": 751.1999998092651,
+              "uc04:usable": 1293.3999998569489,
+              "uc04:list-complete": 1309.2999999523163,
+              "browser:long-task-total": 538,
+              "uc04:hero-loaded": 1296.7999999523163
+            }
+          ]
+        },
+        {
+          "run": 8,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 407.072,
+              "cdp:recalc-style-ms": 22.962,
+              "cdp:script-ms": 187.862,
+              "cdp:task-ms": 736.881,
+              "cdp:dom-nodes": 16064,
+              "cdp:js-heap-used": 5276456,
+              "browser:first-contentful-paint": 244,
+              "vitals:lcp": 1372,
+              "vitals:lcp:ttfb": 2.4000000953674316,
+              "vitals:lcp:resource-load-delay": 924.7999999523163,
+              "vitals:lcp:resource-load-duration": 117.20000004768372,
+              "vitals:lcp:element-render-delay": 327.59999990463257,
+              "vitals:cls": 0,
+              "uc04:data-ready": 794.2000000476837,
+              "uc04:usable": 1355.1000001430511,
+              "uc04:list-complete": 1363.7000000476837,
+              "browser:long-task-total": 558,
+              "uc04:hero-loaded": 1358.9000000953674
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "browser:first-contentful-paint": {
+          "count": 9,
+          "min": 236,
+          "p25": 240,
+          "median": 240,
+          "p75": 244,
+          "p95": 244,
+          "max": 244,
+          "iqr": 4,
+          "unit": "ms"
+        },
+        "vitals:lcp": {
+          "count": 9,
+          "min": 1316,
+          "p25": 1316,
+          "median": 1344,
+          "p75": 1368,
+          "p95": 1379.2,
+          "max": 1384,
+          "iqr": 52,
+          "unit": "ms"
+        },
+        "vitals:lcp:ttfb": {
+          "count": 9,
+          "min": 1.2999999523162842,
+          "p25": 1.5,
+          "median": 1.5999999046325684,
+          "p75": 2.1999998092651367,
+          "p95": 4.260000038146972,
+          "max": 5.5,
+          "iqr": 0.6999998092651367,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-delay": {
+          "count": 9,
+          "min": 879.5999999046326,
+          "p25": 882.8999998569489,
+          "median": 916,
+          "p75": 922.7000000476837,
+          "p95": 924.5199999332428,
+          "max": 924.7999999523163,
+          "iqr": 39.80000019073486,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-duration": {
+          "count": 9,
+          "min": 111.29999995231628,
+          "p25": 112.40000009536743,
+          "median": 116.29999995231628,
+          "p75": 117,
+          "p95": 117.32000007629395,
+          "max": 117.40000009536743,
+          "iqr": 4.599999904632568,
+          "unit": "ms"
+        },
+        "vitals:lcp:element-render-delay": {
+          "count": 9,
+          "min": 310.40000009536743,
+          "p25": 317.10000014305115,
+          "median": 318.2999999523163,
+          "p75": 326.10000014305115,
+          "p95": 335.1000000476837,
+          "max": 340.10000014305115,
+          "iqr": 9,
+          "unit": "ms"
+        },
+        "vitals:cls": {
+          "count": 9,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "score"
+        },
+        "uc04:data-ready": {
+          "count": 9,
+          "min": 751.1999998092651,
+          "p25": 753.2000000476837,
+          "median": 788.2999999523163,
+          "p75": 794.1999998092651,
+          "p95": 796.1800000190735,
+          "max": 797.5,
+          "iqr": 40.99999976158142,
+          "unit": "ms"
+        },
+        "uc04:usable": {
+          "count": 9,
+          "min": 1293.3999998569489,
+          "p25": 1295.0999999046326,
+          "median": 1332,
+          "p75": 1339.6999998092651,
+          "p95": 1355.4599999427796,
+          "max": 1355.6999998092651,
+          "iqr": 44.59999990463257,
+          "unit": "ms"
+        },
+        "uc04:list-complete": {
+          "count": 9,
+          "min": 1308.2999999523163,
+          "p25": 1310,
+          "median": 1339.5,
+          "p75": 1360.5999999046326,
+          "p95": 1370.5999999046326,
+          "max": 1375.1999998092651,
+          "iqr": 50.59999990463257,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 9,
+          "min": 537,
+          "p25": 539,
+          "median": 541,
+          "p75": 542,
+          "p95": 556.8,
+          "max": 558,
+          "iqr": 3,
+          "unit": "ms"
+        },
+        "uc04:hero-loaded": {
+          "count": 9,
+          "min": 1296.7999999523163,
+          "p25": 1298.9000000953674,
+          "median": 1341.3999998569489,
+          "p75": 1343.0999999046326,
+          "p95": 1359.079999923706,
+          "max": 1359.1999998092651,
+          "iqr": 44.19999980926514,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 9,
+          "min": 4,
+          "p25": 4,
+          "median": 4,
+          "p75": 5,
+          "p95": 5.6,
+          "max": 6,
+          "iqr": 1,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 9,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5.6,
+          "max": 6,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 9,
+          "min": 391.186,
+          "p25": 391.789,
+          "median": 393.289,
+          "p75": 396.503,
+          "p95": 406.5576,
+          "max": 407.072,
+          "iqr": 4.713999999999999,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 9,
+          "min": 21.01,
+          "p25": 21.177,
+          "median": 21.278,
+          "p75": 22.504,
+          "p95": 22.7804,
+          "max": 22.962,
+          "iqr": 1.3270000000000017,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 9,
+          "min": 178.03199999999998,
+          "p25": 181.659,
+          "median": 182.876,
+          "p75": 185.144,
+          "p95": 188.9804,
+          "max": 189.726,
+          "iqr": 3.4850000000000136,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 9,
+          "min": 706.868,
+          "p25": 711.219,
+          "median": 714.4209999999999,
+          "p75": 719.9010000000001,
+          "p95": 736.9992,
+          "max": 737.078,
+          "iqr": 8.682000000000016,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 9,
+          "min": 16064,
+          "p25": 16064,
+          "median": 16064,
+          "p75": 16064,
+          "p95": 16064,
+          "max": 16064,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 9,
+          "min": 5274980,
+          "p25": 5276420,
+          "median": 5276492,
+          "p75": 5277164,
+          "p95": 5277471.2,
+          "max": 5277596,
+          "iqr": 744,
+          "unit": "bytes"
+        }
+      }
+    },
+    "early": {
+      "runs": [
+        {
+          "run": 7,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 391.278,
+              "cdp:recalc-style-ms": 22.377000000000002,
+              "cdp:script-ms": 184.086,
+              "cdp:task-ms": 708.688,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5274508,
+              "browser:first-contentful-paint": 308,
+              "vitals:lcp": 1224,
+              "vitals:lcp:ttfb": 1.7999999523162842,
+              "vitals:lcp:resource-load-delay": 56.299999952316284,
+              "vitals:lcp:resource-load-duration": 196.70000004768372,
+              "vitals:lcp:element-render-delay": 969.2000000476837,
+              "vitals:cls": 0,
+              "uc04:data-ready": 680.5,
+              "uc04:usable": 1219.7000000476837,
+              "uc04:list-complete": 1223.5,
+              "browser:long-task-total": 537,
+              "uc04:hero-loaded": 1221.5
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 393.13300000000004,
+              "cdp:recalc-style-ms": 22.249000000000002,
+              "cdp:script-ms": 180.27599999999998,
+              "cdp:task-ms": 713.3080000000001,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5274724,
+              "browser:first-contentful-paint": 308,
+              "vitals:lcp": 1228,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 60.80000019073486,
+              "vitals:lcp:resource-load-duration": 195.09999990463257,
+              "vitals:lcp:element-render-delay": 970.5999999046326,
+              "vitals:cls": 0,
+              "uc04:data-ready": 682.1000001430511,
+              "uc04:usable": 1221.8000001907349,
+              "uc04:list-complete": 1225.5,
+              "browser:long-task-total": 538,
+              "uc04:hero-loaded": 1223.7000000476837
+            }
+          ]
+        },
+        {
+          "run": 8,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 393.293,
+              "cdp:recalc-style-ms": 21.76,
+              "cdp:script-ms": 184.15,
+              "cdp:task-ms": 713.24,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5276328,
+              "browser:first-contentful-paint": 312,
+              "vitals:lcp": 1228,
+              "vitals:lcp:ttfb": 1.6999998092651367,
+              "vitals:lcp:resource-load-delay": 61.90000009536743,
+              "vitals:lcp:resource-load-duration": 196,
+              "vitals:lcp:element-render-delay": 968.4000000953674,
+              "vitals:cls": 0,
+              "uc04:data-ready": 683.5999999046326,
+              "uc04:usable": 1223,
+              "uc04:list-complete": 1226.7999999523163,
+              "browser:long-task-total": 537,
+              "uc04:hero-loaded": 1224.6999998092651
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 392.049,
+              "cdp:recalc-style-ms": 22.901999999999997,
+              "cdp:script-ms": 181.938,
+              "cdp:task-ms": 709.4200000000001,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5274636,
+              "browser:first-contentful-paint": 308,
+              "vitals:lcp": 1228,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 59,
+              "vitals:lcp:resource-load-duration": 196.29999995231628,
+              "vitals:lcp:element-render-delay": 971.1000001430511,
+              "vitals:cls": 0,
+              "uc04:data-ready": 682,
+              "uc04:usable": 1223.0999999046326,
+              "uc04:list-complete": 1227.0999999046326,
+              "browser:long-task-total": 539,
+              "uc04:hero-loaded": 1225.0999999046326
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 391.17600000000004,
+              "cdp:recalc-style-ms": 21.671,
+              "cdp:script-ms": 182.149,
+              "cdp:task-ms": 707.375,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5273692,
+              "browser:first-contentful-paint": 316,
+              "vitals:lcp": 1228,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 61.200000047683716,
+              "vitals:lcp:resource-load-duration": 199.39999985694885,
+              "vitals:lcp:element-render-delay": 965.9000000953674,
+              "vitals:cls": 0,
+              "uc04:data-ready": 687.5999999046326,
+              "uc04:usable": 1223.5,
+              "uc04:list-complete": 1227.4000000953674,
+              "browser:long-task-total": 534,
+              "uc04:hero-loaded": 1225.2000000476837
+            }
+          ]
+        },
+        {
+          "run": 6,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 388.532,
+              "cdp:recalc-style-ms": 21.522,
+              "cdp:script-ms": 182.32000000000002,
+              "cdp:task-ms": 703.623,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5274300,
+              "browser:first-contentful-paint": 308,
+              "vitals:lcp": 1224,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 56.299999952316284,
+              "vitals:lcp:resource-load-duration": 199.40000009536743,
+              "vitals:lcp:element-render-delay": 966.7000000476837,
+              "vitals:cls": 0,
+              "uc04:data-ready": 682.5,
+              "uc04:usable": 1218.2999999523163,
+              "uc04:list-complete": 1222.5,
+              "browser:long-task-total": 534,
+              "uc04:hero-loaded": 1220.6999998092651
+            }
+          ]
+        },
+        {
+          "run": 5,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 390.34999999999997,
+              "cdp:recalc-style-ms": 21.816,
+              "cdp:script-ms": 182.757,
+              "cdp:task-ms": 706.7620000000001,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5274240,
+              "browser:first-contentful-paint": 308,
+              "vitals:lcp": 1228,
+              "vitals:lcp:ttfb": 1.6000001430511475,
+              "vitals:lcp:resource-load-delay": 56.39999985694885,
+              "vitals:lcp:resource-load-duration": 199.20000004768372,
+              "vitals:lcp:element-render-delay": 970.7999999523163,
+              "vitals:cls": 0,
+              "uc04:data-ready": 682.8000001907349,
+              "uc04:usable": 1221.1000001430511,
+              "uc04:list-complete": 1225,
+              "browser:long-task-total": 536,
+              "uc04:hero-loaded": 1223.1000001430511
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 392.36,
+              "cdp:recalc-style-ms": 20.922,
+              "cdp:script-ms": 181.22,
+              "cdp:task-ms": 709.673,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5273144,
+              "browser:first-contentful-paint": 304,
+              "vitals:lcp": 1224,
+              "vitals:lcp:ttfb": 1.6999998092651367,
+              "vitals:lcp:resource-load-delay": 54.90000009536743,
+              "vitals:lcp:resource-load-duration": 194.70000004768372,
+              "vitals:lcp:element-render-delay": 972.7000000476837,
+              "vitals:cls": 0,
+              "uc04:data-ready": 676.6999998092651,
+              "uc04:usable": 1216.0999999046326,
+              "uc04:list-complete": 1220.0999999046326,
+              "browser:long-task-total": 538,
+              "uc04:hero-loaded": 1218.3999998569489
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 5,
+              "cdp:layout-ms": 390.39,
+              "cdp:recalc-style-ms": 21.616,
+              "cdp:script-ms": 179.696,
+              "cdp:task-ms": 708.723,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5274104,
+              "browser:first-contentful-paint": 304,
+              "vitals:lcp": 1220,
+              "vitals:lcp:ttfb": 1.3999998569488525,
+              "vitals:lcp:resource-load-delay": 56,
+              "vitals:lcp:resource-load-duration": 197.60000014305115,
+              "vitals:lcp:element-render-delay": 965,
+              "vitals:cls": 0,
+              "uc04:data-ready": 678.7999999523163,
+              "uc04:usable": 1213.5999999046326,
+              "uc04:list-complete": 1217.5999999046326,
+              "browser:long-task-total": 534,
+              "uc04:hero-loaded": 1216
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "browser:first-contentful-paint": {
+          "count": 9,
+          "min": 304,
+          "p25": 308,
+          "median": 308,
+          "p75": 308,
+          "p95": 314.4,
+          "max": 316,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "vitals:lcp": {
+          "count": 9,
+          "min": 1220,
+          "p25": 1224,
+          "median": 1228,
+          "p75": 1228,
+          "p95": 1228,
+          "max": 1228,
+          "iqr": 4,
+          "unit": "ms"
+        },
+        "vitals:lcp:ttfb": {
+          "count": 9,
+          "min": 1.3999998569488525,
+          "p25": 1.5,
+          "median": 1.5999999046325684,
+          "p75": 1.6999998092651367,
+          "p95": 1.759999895095825,
+          "max": 1.7999999523162842,
+          "iqr": 0.19999980926513672,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-delay": {
+          "count": 9,
+          "min": 54.90000009536743,
+          "p25": 56.299999952316284,
+          "median": 56.39999985694885,
+          "p75": 60.80000019073486,
+          "p95": 61.62000007629395,
+          "max": 61.90000009536743,
+          "iqr": 4.500000238418579,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-duration": {
+          "count": 9,
+          "min": 194.70000004768372,
+          "p25": 196,
+          "median": 196.70000004768372,
+          "p75": 199.20000004768372,
+          "p95": 199.4,
+          "max": 199.40000009536743,
+          "iqr": 3.200000047683716,
+          "unit": "ms"
+        },
+        "vitals:lcp:element-render-delay": {
+          "count": 9,
+          "min": 965,
+          "p25": 966.7000000476837,
+          "median": 969.2000000476837,
+          "p75": 970.7999999523163,
+          "p95": 972.0600000858307,
+          "max": 972.7000000476837,
+          "iqr": 4.099999904632568,
+          "unit": "ms"
+        },
+        "vitals:cls": {
+          "count": 9,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "score"
+        },
+        "uc04:data-ready": {
+          "count": 9,
+          "min": 676.6999998092651,
+          "p25": 680.5,
+          "median": 682.1000001430511,
+          "p75": 682.8000001907349,
+          "p95": 685.9999999046325,
+          "max": 687.5999999046326,
+          "iqr": 2.3000001907348633,
+          "unit": "ms"
+        },
+        "uc04:usable": {
+          "count": 9,
+          "min": 1213.5999999046326,
+          "p25": 1218.2999999523163,
+          "median": 1221.1000001430511,
+          "p75": 1223,
+          "p95": 1223.339999961853,
+          "max": 1223.5,
+          "iqr": 4.700000047683716,
+          "unit": "ms"
+        },
+        "uc04:list-complete": {
+          "count": 9,
+          "min": 1217.5999999046326,
+          "p25": 1222.5,
+          "median": 1225,
+          "p75": 1226.7999999523163,
+          "p95": 1227.2800000190734,
+          "max": 1227.4000000953674,
+          "iqr": 4.299999952316284,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 9,
+          "min": 534,
+          "p25": 534,
+          "median": 537,
+          "p75": 538,
+          "p95": 538.6,
+          "max": 539,
+          "iqr": 4,
+          "unit": "ms"
+        },
+        "uc04:hero-loaded": {
+          "count": 9,
+          "min": 1216,
+          "p25": 1220.6999998092651,
+          "median": 1223.1000001430511,
+          "p75": 1224.6999998092651,
+          "p95": 1225.1599999904633,
+          "max": 1225.2000000476837,
+          "iqr": 4,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 9,
+          "min": 4,
+          "p25": 4,
+          "median": 4,
+          "p75": 4,
+          "p95": 4,
+          "max": 4,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 9,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5,
+          "max": 5,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 9,
+          "min": 388.532,
+          "p25": 390.39,
+          "median": 391.278,
+          "p75": 392.36,
+          "p95": 393.22900000000004,
+          "max": 393.293,
+          "iqr": 1.9700000000000273,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 9,
+          "min": 20.922,
+          "p25": 21.616,
+          "median": 21.76,
+          "p75": 22.249000000000002,
+          "p95": 22.692,
+          "max": 22.901999999999997,
+          "iqr": 0.6330000000000027,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 9,
+          "min": 179.696,
+          "p25": 181.22,
+          "median": 182.149,
+          "p75": 182.757,
+          "p95": 184.1244,
+          "max": 184.15,
+          "iqr": 1.5370000000000061,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 9,
+          "min": 703.623,
+          "p25": 707.375,
+          "median": 708.723,
+          "p75": 709.673,
+          "p95": 713.2808000000001,
+          "max": 713.3080000000001,
+          "iqr": 2.298000000000002,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 9,
+          "min": 16065,
+          "p25": 16065,
+          "median": 16065,
+          "p75": 16065,
+          "p95": 16065,
+          "max": 16065,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 9,
+          "min": 5273144,
+          "p25": 5274104,
+          "median": 5274300,
+          "p75": 5274636,
+          "p95": 5275686.4,
+          "max": 5276328,
+          "iqr": 532,
+          "unit": "bytes"
+        }
+      }
+    },
+    "good": {
+      "runs": [
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 428.363,
+              "cdp:recalc-style-ms": 22.605,
+              "cdp:script-ms": 236.736,
+              "cdp:task-ms": 804.9079999999999,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5536804,
+              "browser:first-contentful-paint": 312,
+              "vitals:lcp": 748,
+              "vitals:lcp:ttfb": 1.7999999523162842,
+              "vitals:lcp:resource-load-delay": 60.799999952316284,
+              "vitals:lcp:resource-load-duration": 195.70000004768372,
+              "vitals:lcp:element-render-delay": 489.7000000476837,
+              "vitals:cls": 0,
+              "uc04:data-ready": 685.5,
+              "uc04:usable": 741.7000000476837,
+              "uc04:list-complete": 1321.3999998569489,
+              "browser:long-task-total": 0,
+              "uc04:hero-loaded": 743.7000000476837
+            }
+          ]
+        },
+        {
+          "run": 7,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 419.776,
+              "cdp:recalc-style-ms": 22.335,
+              "cdp:script-ms": 229.129,
+              "cdp:task-ms": 777.706,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5520776,
+              "browser:first-contentful-paint": 312,
+              "vitals:lcp": 748,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 59.90000009536743,
+              "vitals:lcp:resource-load-duration": 199.40000009536743,
+              "vitals:lcp:element-render-delay": 487.09999990463257,
+              "vitals:cls": 0,
+              "uc04:data-ready": 686.2999999523163,
+              "uc04:usable": 739.2999999523163,
+              "uc04:list-complete": 1319,
+              "browser:long-task-total": 0,
+              "uc04:hero-loaded": 741.2000000476837
+            }
+          ]
+        },
+        {
+          "run": 5,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 404.074,
+              "cdp:recalc-style-ms": 22.634999999999998,
+              "cdp:script-ms": 228.81099999999998,
+              "cdp:task-ms": 760.378,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5523760,
+              "browser:first-contentful-paint": 300,
+              "vitals:lcp": 736,
+              "vitals:lcp:ttfb": 1.7000000476837158,
+              "vitals:lcp:resource-load-delay": 56.19999980926514,
+              "vitals:lcp:resource-load-duration": 194.40000009536743,
+              "vitals:lcp:element-render-delay": 483.7000000476837,
+              "vitals:cls": 0,
+              "uc04:data-ready": 677.5999999046326,
+              "uc04:usable": 731,
+              "uc04:list-complete": 1297.3999998569489,
+              "browser:long-task-total": 0,
+              "uc04:hero-loaded": 733.2000000476837
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 403.49,
+              "cdp:recalc-style-ms": 24.465,
+              "cdp:script-ms": 224.67000000000002,
+              "cdp:task-ms": 758.5690000000001,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5523192,
+              "browser:first-contentful-paint": 304,
+              "vitals:lcp": 736,
+              "vitals:lcp:ttfb": 1.5999999046325684,
+              "vitals:lcp:resource-load-delay": 56.799999952316284,
+              "vitals:lcp:resource-load-duration": 195.40000009536743,
+              "vitals:lcp:element-render-delay": 482.2000000476837,
+              "vitals:cls": 0,
+              "uc04:data-ready": 678.0999999046326,
+              "uc04:usable": 731.5999999046326,
+              "uc04:list-complete": 1293.7999999523163,
+              "browser:long-task-total": 0,
+              "uc04:hero-loaded": 733.5999999046326
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 401.245,
+              "cdp:recalc-style-ms": 22.065,
+              "cdp:script-ms": 227.56699999999998,
+              "cdp:task-ms": 757.881,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5533116,
+              "browser:first-contentful-paint": 308,
+              "vitals:lcp": 744,
+              "vitals:lcp:ttfb": 1.6000001430511475,
+              "vitals:lcp:resource-load-delay": 61.09999990463257,
+              "vitals:lcp:resource-load-duration": 194.70000004768372,
+              "vitals:lcp:element-render-delay": 486.59999990463257,
+              "vitals:cls": 0,
+              "uc04:data-ready": 683.1000001430511,
+              "uc04:usable": 735.7999999523163,
+              "uc04:list-complete": 1298.2999999523163,
+              "browser:long-task-total": 0,
+              "uc04:hero-loaded": 738.1000001430511
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 404.548,
+              "cdp:recalc-style-ms": 21.944000000000003,
+              "cdp:script-ms": 228.268,
+              "cdp:task-ms": 763.2339999999999,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5521612,
+              "browser:first-contentful-paint": 304,
+              "vitals:lcp": 740,
+              "vitals:lcp:ttfb": 1.2999999523162842,
+              "vitals:lcp:resource-load-delay": 56,
+              "vitals:lcp:resource-load-duration": 196.5,
+              "vitals:lcp:element-render-delay": 486.2000000476837,
+              "vitals:cls": 0,
+              "uc04:data-ready": 678.8999998569489,
+              "uc04:usable": 732.2000000476837,
+              "uc04:list-complete": 1296.3999998569489,
+              "browser:long-task-total": 0,
+              "uc04:hero-loaded": 734.5
+            }
+          ]
+        },
+        {
+          "run": 8,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 404.81600000000003,
+              "cdp:recalc-style-ms": 21.27,
+              "cdp:script-ms": 227.132,
+              "cdp:task-ms": 760.046,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5520200,
+              "browser:first-contentful-paint": 312,
+              "vitals:lcp": 748,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 61.5,
+              "vitals:lcp:resource-load-duration": 199.09999990463257,
+              "vitals:lcp:element-render-delay": 485.90000009536743,
+              "vitals:cls": 0,
+              "uc04:data-ready": 687,
+              "uc04:usable": 740.0999999046326,
+              "uc04:list-complete": 1302.8999998569489,
+              "browser:long-task-total": 0,
+              "uc04:hero-loaded": 742.2999999523163
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 405.45599999999996,
+              "cdp:recalc-style-ms": 22.104,
+              "cdp:script-ms": 233.11499999999998,
+              "cdp:task-ms": 766.437,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5524992,
+              "browser:first-contentful-paint": 312,
+              "vitals:lcp": 744,
+              "vitals:lcp:ttfb": 1.7000000476837158,
+              "vitals:lcp:resource-load-delay": 61.299999952316284,
+              "vitals:lcp:resource-load-duration": 194.29999995231628,
+              "vitals:lcp:element-render-delay": 486.7000000476837,
+              "vitals:cls": 0,
+              "uc04:data-ready": 682.7000000476837,
+              "uc04:usable": 737.7999999523163,
+              "uc04:list-complete": 1289.2999999523163,
+              "browser:long-task-total": 0,
+              "uc04:hero-loaded": 739.7999999523163
+            }
+          ]
+        },
+        {
+          "run": 6,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 6,
+              "cdp:layout-ms": 399.847,
+              "cdp:recalc-style-ms": 21.829,
+              "cdp:script-ms": 225.998,
+              "cdp:task-ms": 757.1750000000001,
+              "cdp:dom-nodes": 16065,
+              "cdp:js-heap-used": 5521568,
+              "browser:first-contentful-paint": 312,
+              "vitals:lcp": 748,
+              "vitals:lcp:ttfb": 1.5,
+              "vitals:lcp:resource-load-delay": 62,
+              "vitals:lcp:resource-load-duration": 198.59999990463257,
+              "vitals:lcp:element-render-delay": 485.90000009536743,
+              "vitals:cls": 0,
+              "uc04:data-ready": 687.3999998569489,
+              "uc04:usable": 740.6999998092651,
+              "uc04:list-complete": 1298,
+              "browser:long-task-total": 0,
+              "uc04:hero-loaded": 742.2999999523163
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "browser:first-contentful-paint": {
+          "count": 9,
+          "min": 300,
+          "p25": 304,
+          "median": 312,
+          "p75": 312,
+          "p95": 312,
+          "max": 312,
+          "iqr": 8,
+          "unit": "ms"
+        },
+        "vitals:lcp": {
+          "count": 9,
+          "min": 736,
+          "p25": 740,
+          "median": 744,
+          "p75": 748,
+          "p95": 748,
+          "max": 748,
+          "iqr": 8,
+          "unit": "ms"
+        },
+        "vitals:lcp:ttfb": {
+          "count": 9,
+          "min": 1.2999999523162842,
+          "p25": 1.5,
+          "median": 1.5999999046325684,
+          "p75": 1.7000000476837158,
+          "p95": 1.7599999904632568,
+          "max": 1.7999999523162842,
+          "iqr": 0.20000004768371582,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-delay": {
+          "count": 9,
+          "min": 56,
+          "p25": 56.799999952316284,
+          "median": 60.799999952316284,
+          "p75": 61.299999952316284,
+          "p95": 61.8,
+          "max": 62,
+          "iqr": 4.5,
+          "unit": "ms"
+        },
+        "vitals:lcp:resource-load-duration": {
+          "count": 9,
+          "min": 194.29999995231628,
+          "p25": 194.70000004768372,
+          "median": 195.70000004768372,
+          "p75": 198.59999990463257,
+          "p95": 199.2800000190735,
+          "max": 199.40000009536743,
+          "iqr": 3.8999998569488525,
+          "unit": "ms"
+        },
+        "vitals:lcp:element-render-delay": {
+          "count": 9,
+          "min": 482.2000000476837,
+          "p25": 485.90000009536743,
+          "median": 486.2000000476837,
+          "p75": 486.7000000476837,
+          "p95": 488.65999999046323,
+          "max": 489.7000000476837,
+          "iqr": 0.7999999523162842,
+          "unit": "ms"
+        },
+        "vitals:cls": {
+          "count": 9,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "score"
+        },
+        "uc04:data-ready": {
+          "count": 9,
+          "min": 677.5999999046326,
+          "p25": 678.8999998569489,
+          "median": 683.1000001430511,
+          "p75": 686.2999999523163,
+          "p95": 687.2399999141693,
+          "max": 687.3999998569489,
+          "iqr": 7.400000095367432,
+          "unit": "ms"
+        },
+        "uc04:usable": {
+          "count": 9,
+          "min": 731,
+          "p25": 732.2000000476837,
+          "median": 737.7999999523163,
+          "p75": 740.0999999046326,
+          "p95": 741.2999999523163,
+          "max": 741.7000000476837,
+          "iqr": 7.8999998569488525,
+          "unit": "ms"
+        },
+        "uc04:list-complete": {
+          "count": 9,
+          "min": 1289.2999999523163,
+          "p25": 1296.3999998569489,
+          "median": 1298,
+          "p75": 1302.8999998569489,
+          "p95": 1320.4399999141692,
+          "max": 1321.3999998569489,
+          "iqr": 6.5,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 9,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc04:hero-loaded": {
+          "count": 9,
+          "min": 733.2000000476837,
+          "p25": 734.5,
+          "median": 739.7999999523163,
+          "p75": 742.2999999523163,
+          "p95": 743.1400000095367,
+          "max": 743.7000000476837,
+          "iqr": 7.799999952316284,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 9,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5,
+          "max": 5,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 9,
+          "min": 6,
+          "p25": 6,
+          "median": 6,
+          "p75": 6,
+          "p95": 6,
+          "max": 6,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 9,
+          "min": 399.847,
+          "p25": 403.49,
+          "median": 404.548,
+          "p75": 405.45599999999996,
+          "p95": 424.9282,
+          "max": 428.363,
+          "iqr": 1.9659999999999513,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 9,
+          "min": 21.27,
+          "p25": 21.944000000000003,
+          "median": 22.104,
+          "p75": 22.605,
+          "p95": 23.732999999999997,
+          "max": 24.465,
+          "iqr": 0.6609999999999978,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 9,
+          "min": 224.67000000000002,
+          "p25": 227.132,
+          "median": 228.268,
+          "p75": 229.129,
+          "p95": 235.2876,
+          "max": 236.736,
+          "iqr": 1.9969999999999857,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 9,
+          "min": 757.1750000000001,
+          "p25": 758.5690000000001,
+          "median": 760.378,
+          "p75": 766.437,
+          "p95": 794.0272,
+          "max": 804.9079999999999,
+          "iqr": 7.867999999999938,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 9,
+          "min": 16065,
+          "p25": 16065,
+          "median": 16065,
+          "p75": 16065,
+          "p95": 16065,
+          "max": 16065,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 9,
+          "min": 5520200,
+          "p25": 5521568,
+          "median": 5523192,
+          "p75": 5524992,
+          "p95": 5535328.8,
+          "max": 5536804,
+          "iqr": 3424,
+          "unit": "bytes"
+        }
+      }
+    }
+  }
+}

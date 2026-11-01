@@ -1,0 +1,72 @@
+uc05-bad
+  FunctionCall          660 回    3031.6ms
+  RunMicrotasks         157 回       8.7ms
+  UpdateLayoutTree        1 回       0.3ms
+  Layout                  6 回       5.7ms
+  PrePaint               77 回      17.5ms
+  Paint                  18 回      42.5ms
+  Layerize               60 回       7.8ms
+  RasterTask             46 回     276.7ms
+  ImageDecodeTask        69 回      54.0ms
+  Decode Image           40 回      52.9ms
+  強制されたレイアウト 6 回
+uc05-good
+  FunctionCall         1422 回     287.0ms
+  RunMicrotasks          74 回      29.8ms
+  UpdateLayoutTree       45 回      10.6ms
+  Layout                 60 回      30.8ms
+  PrePaint              184 回      28.4ms
+  Paint                 130 回      32.5ms
+  Layerize              159 回      32.4ms
+  RasterTask            305 回     127.3ms
+  ImageDecodeTask       136 回      23.6ms
+  Decode Image           85 回      21.3ms
+  強制されたレイアウト 60 回
+uc05-isolated
+  FunctionCall          998 回      74.3ms
+  RunMicrotasks           8 回       4.1ms
+  UpdateLayoutTree       16 回       1.6ms
+  Layout                 15 回      11.7ms
+  PrePaint              185 回      37.8ms
+  Paint                  44 回     122.0ms
+  Layerize              137 回      27.6ms
+  RasterTask            110 回     568.3ms
+  ImageDecodeTask       105 回     135.1ms
+  Decode Image          100 回     132.4ms
+  強制されたレイアウト 15 回
+uc05-lazy
+  FunctionCall         1177 回      88.8ms
+  RunMicrotasks          38 回      14.8ms
+  UpdateLayoutTree       16 回       0.3ms
+  Layout                 30 回      23.8ms
+  PrePaint              184 回      54.1ms
+  Paint                  72 回     125.5ms
+  Layerize              141 回      32.9ms
+  RasterTask            110 回      92.0ms
+  ImageDecodeTask       109 回      25.0ms
+  Decode Image          100 回      22.3ms
+  強制されたレイアウト 30 回
+uc05-light
+  FunctionCall         1510 回     234.8ms
+  RunMicrotasks          15 回       5.6ms
+  UpdateLayoutTree       16 回       1.8ms
+  Layout                 22 回      29.7ms
+  PrePaint              186 回      63.8ms
+  Paint                  60 回     124.0ms
+  Layerize              130 回      22.2ms
+  RasterTask            110 回     117.2ms
+  ImageDecodeTask       104 回     143.3ms
+  Decode Image          100 回     140.3ms
+  強制されたレイアウト 16 回
+uc05-sized
+  FunctionCall          999 回      65.5ms
+  RunMicrotasks           8 回       3.7ms
+  UpdateLayoutTree       16 回       0.9ms
+  Layout                 15 回       7.8ms
+  PrePaint              185 回      38.4ms
+  Paint                  44 回      79.9ms
+  Layerize              121 回      18.7ms
+  RasterTask            110 回     100.9ms
+  ImageDecodeTask       109 回      22.3ms
+  Decode Image          100 回      20.5ms
+  強制されたレイアウト 15 回

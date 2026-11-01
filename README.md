@@ -27,6 +27,8 @@ A personal study project for learning browser performance measurement. Each use 
 - **`transform` に変えてもレイアウトは消えなかった。** フォーカスしたタイルの拡大を `transform` に変えても、レイアウトは1回残りました。CSS を1項目ずつ変えて切り分けると、スタッキングコンテキストの有無の変化が関係していると推定できました（[UC1](docs/usecases/uc01-focus-grid.md)）。
 - **計測器のほうが間違っていた。** 自作の計測値が `scheduler.yield()` の続きの処理に追い越され、入力の応答を 126.9ms と誤って示しました。Event Timing の値と比べて気づき、修正後は 14.5ms になりました（[UC3](docs/usecases/uc03-search-input.md)）。
 - **CPU 制限は Worker に効かなかった。** Worker の検索時間は CPU 1倍でも8倍でも 18〜21ms でした。制限下の比較では Worker が速く見えますが、制限なしで比べると結果が出るまでの時間は同期処理とほぼ同じです（[UC3](docs/usecases/uc03-search-input.md)）。
+- **画像の取得を 860ms 早めても LCP は 116ms しか縮まなかった。** LCP を内訳に分けると、次の律速点は一覧の描画でした。取得を早めた分は描画の待ちに移っただけで、FCP は帯域の取り合いで 68ms 悪化しました（[UC4](docs/usecases/uc04-initial-load.md)）。
+- **フレーム間隔の指標はラスタライズの費用を映さなかった。** p95 が 16.7ms のままでも、トレースではラスタライズの時間が約5倍違いました（[UC5](docs/usecases/uc05-scroll-list.md)）。
 - **`useDeferredValue` は最初の1文字しか救わなかった。** 検索中に打った2文字目は 52.8ms 待たされ、Long Task も残りました。1文字だけの計測では見逃す問題です（[UC3](docs/usecases/uc03-search-input.md)）。
 
 ## 動かし方
@@ -51,6 +53,12 @@ React の Profiler の値は通常の本番ビルドでは取れないので、�
 npm run bench:profiling -- --scenario uc01
 ```
 
+CDP の指標に出ないラスタライズや画像のデコードは、保存したトレースから集計できます。
+
+```sh
+npm run bench:trace-summary -- --scenario uc05
+```
+
 ## ユースケース
 
 | #                                          | 症状                               | 学ぶこと                                             | 状態     |
@@ -58,8 +66,8 @@ npm run bench:profiling -- --scenario uc01
 | [UC1](docs/usecases/uc01-focus-grid.md)    | 十字キーでのフォーカス移動が遅い   | React の再レンダリングの範囲、Event Timing、Profiler | 実装済み |
 | [UC2](docs/usecases/uc02-forced-layout.md) | カードの高さ揃えが重い             | 強制同期レイアウト、レイアウト回数の読み方           | 実装済み |
 | [UC3](docs/usecases/uc03-search-input.md)  | 絞り込み中に入力が固まる           | Long Tasks、メインスレッドの明け渡し、Web Worker     | 実装済み |
-| UC4                                        | 初期表示と操作可能になるまでが遅い | LCP、CLS、Resource Timing                            | 準備中   |
-| UC5                                        | スクロールがカクつく               | フレーム間隔、レイヤー、画像のデコード               | 準備中   |
+| [UC4](docs/usecases/uc04-initial-load.md)  | 初期表示と操作可能になるまでが遅い | LCP の内訳、CLS、Resource Timing                     | 実装済み |
+| [UC5](docs/usecases/uc05-scroll-list.md)   | スクロールがカクつく               | フレーム間隔、トレースの集計、画像のデコード         | 実装済み |
 | UC6                                        | 画面を行き来するとメモリが増える   | ヒープの比較、リークの見つけ方                       | 準備中   |
 | UC7                                        | 再表示や詳細表示が遅い             | HTTP キャッシュ、先読みの効果測定                    | 準備中   |
 

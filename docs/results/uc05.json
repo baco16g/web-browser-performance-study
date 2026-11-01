@@ -1,0 +1,1706 @@
+{
+  "scenario": "uc05",
+  "title": "画像の多い一覧のスクロール",
+  "createdAt": "2026-11-01T03:49:45.931Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "chromium 156.0.8078.4",
+    "gitCommit": "67c00cf",
+    "gitDirty": false
+  },
+  "conditions": {
+    "runs": 3,
+    "warmupIterations": 1,
+    "iterations": 3,
+    "cpuThrottle": 4,
+    "seed": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "query": {
+      "count": "1000"
+    }
+  },
+  "variants": {
+    "bad": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 7,
+              "cdp:recalc-style-count": 0,
+              "cdp:layout-ms": 3.1290000000000067,
+              "cdp:recalc-style-ms": 0,
+              "cdp:script-ms": 3007.012,
+              "cdp:task-ms": 3088.5660000000003,
+              "cdp:dom-nodes": 7259,
+              "cdp:js-heap-used": 9391340,
+              "uc05:p95-frame": 50.004999999999974,
+              "uc05:dropped-frames": 17,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 7,
+              "cdp:recalc-style-count": 0,
+              "cdp:layout-ms": 3.388000000000002,
+              "cdp:recalc-style-ms": 0,
+              "cdp:script-ms": 2981.0040000000004,
+              "cdp:task-ms": 3063.5209999999997,
+              "cdp:dom-nodes": 7259,
+              "cdp:js-heap-used": 10221292,
+              "uc05:p95-frame": 50.09500000000035,
+              "uc05:dropped-frames": 16,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 7,
+              "cdp:recalc-style-count": 0,
+              "cdp:layout-ms": 2.4099999999999957,
+              "cdp:recalc-style-ms": 0,
+              "cdp:script-ms": 2980.5979999999986,
+              "cdp:task-ms": 3061.4790000000003,
+              "cdp:dom-nodes": 7259,
+              "cdp:js-heap-used": 10973248,
+              "uc05:p95-frame": 50.099999999998545,
+              "uc05:dropped-frames": 18,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 7,
+              "cdp:recalc-style-count": 0,
+              "cdp:layout-ms": 2.2670000000000052,
+              "cdp:recalc-style-ms": 0,
+              "cdp:script-ms": 3003.5040000000004,
+              "cdp:task-ms": 3082.3559999999998,
+              "cdp:dom-nodes": 7259,
+              "cdp:js-heap-used": 11476864,
+              "uc05:p95-frame": 50,
+              "uc05:dropped-frames": 17,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 7,
+              "cdp:recalc-style-count": 0,
+              "cdp:layout-ms": 2.3969999999999962,
+              "cdp:recalc-style-ms": 0,
+              "cdp:script-ms": 2980.3240000000005,
+              "cdp:task-ms": 3065.5350000000008,
+              "cdp:dom-nodes": 7259,
+              "cdp:js-heap-used": 12223352,
+              "uc05:p95-frame": 50,
+              "uc05:dropped-frames": 14,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 7,
+              "cdp:recalc-style-count": 0,
+              "cdp:layout-ms": 1.4809999999999963,
+              "cdp:recalc-style-ms": 0,
+              "cdp:script-ms": 2997.058000000001,
+              "cdp:task-ms": 3072.0649999999987,
+              "cdp:dom-nodes": 7259,
+              "cdp:js-heap-used": 12953516,
+              "uc05:p95-frame": 50,
+              "uc05:dropped-frames": 18,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 7,
+              "cdp:recalc-style-count": 0,
+              "cdp:layout-ms": 3.388000000000002,
+              "cdp:recalc-style-ms": 0,
+              "cdp:script-ms": 2974.141,
+              "cdp:task-ms": 3059.014,
+              "cdp:dom-nodes": 7259,
+              "cdp:js-heap-used": 10509840,
+              "uc05:p95-frame": 50.004999999999974,
+              "uc05:dropped-frames": 18,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 7,
+              "cdp:recalc-style-count": 0,
+              "cdp:layout-ms": 2.6139999999999914,
+              "cdp:recalc-style-ms": 0,
+              "cdp:script-ms": 3011.6819999999993,
+              "cdp:task-ms": 3094.8909999999996,
+              "cdp:dom-nodes": 7259,
+              "cdp:js-heap-used": 11931428,
+              "uc05:p95-frame": 50,
+              "uc05:dropped-frames": 18,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 8,
+              "cdp:recalc-style-count": 0,
+              "cdp:layout-ms": 2.671999999999994,
+              "cdp:recalc-style-ms": 0,
+              "cdp:script-ms": 3012.6919999999996,
+              "cdp:task-ms": 3083.0909999999994,
+              "cdp:dom-nodes": 7259,
+              "cdp:js-heap-used": 13741496,
+              "uc05:p95-frame": 50.084999999998765,
+              "uc05:dropped-frames": 11,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc05:p95-frame": {
+          "count": 3,
+          "min": 50,
+          "p25": 50.00249999999998,
+          "median": 50.004999999999974,
+          "p75": 50.05000000000016,
+          "p95": 50.08600000000031,
+          "max": 50.09500000000035,
+          "iqr": 0.04750000000017707,
+          "unit": "ms"
+        },
+        "uc05:dropped-frames": {
+          "count": 3,
+          "min": 17,
+          "p25": 17,
+          "median": 17,
+          "p75": 17.5,
+          "p95": 17.9,
+          "max": 18,
+          "iqr": 0.5,
+          "unit": "count"
+        },
+        "uc05:decoded-image-bytes": {
+          "count": 3,
+          "min": 4194304000,
+          "p25": 4194304000,
+          "median": 4194304000,
+          "p75": 4194304000,
+          "p95": 4194304000,
+          "max": 4194304000,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "browser:long-task-total": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 3,
+          "min": 7,
+          "p25": 7,
+          "median": 7,
+          "p75": 7,
+          "p95": 7,
+          "max": 7,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 3,
+          "min": 2.2670000000000052,
+          "p25": 2.4694999999999996,
+          "median": 2.671999999999994,
+          "p75": 2.9005,
+          "p95": 3.0833000000000053,
+          "max": 3.1290000000000067,
+          "iqr": 0.4310000000000005,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 3,
+          "min": 2981.0040000000004,
+          "p25": 2989.031000000001,
+          "median": 2997.058000000001,
+          "p75": 3004.37,
+          "p95": 3010.2195999999994,
+          "max": 3011.6819999999993,
+          "iqr": 15.338999999999032,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 3,
+          "min": 3063.5209999999997,
+          "p25": 3067.792999999999,
+          "median": 3072.0649999999987,
+          "p75": 3077.577999999999,
+          "p95": 3081.9883999999993,
+          "max": 3083.0909999999994,
+          "iqr": 9.784999999999854,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 3,
+          "min": 7259,
+          "p25": 7259,
+          "median": 7259,
+          "p75": 7259,
+          "p95": 7259,
+          "max": 7259,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 3,
+          "min": 10221292,
+          "p25": 11076360,
+          "median": 11931428,
+          "p75": 12077390,
+          "p95": 12194159.6,
+          "max": 12223352,
+          "iqr": 1001030,
+          "unit": "bytes"
+        }
+      }
+    },
+    "isolated": {
+      "runs": [
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 2.156000000000005,
+              "cdp:recalc-style-ms": 0.17599999999999907,
+              "cdp:script-ms": 8.897999999999989,
+              "cdp:task-ms": 173.27899999999997,
+              "cdp:dom-nodes": 7290,
+              "cdp:js-heap-used": 7415068,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.845000000000001,
+              "cdp:recalc-style-ms": 0.3310000000000014,
+              "cdp:script-ms": 12.233999999999995,
+              "cdp:task-ms": 178.37400000000002,
+              "cdp:dom-nodes": 7306,
+              "cdp:js-heap-used": 7744008,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.652999999999991,
+              "cdp:recalc-style-ms": 0.29199999999999715,
+              "cdp:script-ms": 7.377999999999996,
+              "cdp:task-ms": 170.38299999999995,
+              "cdp:dom-nodes": 7322,
+              "cdp:js-heap-used": 8056956,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.130000000000008,
+              "cdp:recalc-style-ms": 0.4720000000000002,
+              "cdp:script-ms": 11.659000000000002,
+              "cdp:task-ms": 183.40500000000003,
+              "cdp:dom-nodes": 7290,
+              "cdp:js-heap-used": 7428336,
+              "uc05:p95-frame": 16.799999999999272,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.0869999999999935,
+              "cdp:recalc-style-ms": 0.675000000000002,
+              "cdp:script-ms": 10.609000000000007,
+              "cdp:task-ms": 189.0320000000001,
+              "cdp:dom-nodes": 7306,
+              "cdp:js-heap-used": 7757000,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.56100000000001,
+              "cdp:recalc-style-ms": 1.162,
+              "cdp:script-ms": 10.087000000000012,
+              "cdp:task-ms": 191.00500000000008,
+              "cdp:dom-nodes": 7322,
+              "cdp:js-heap-used": 8075748,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.820000000000004,
+              "cdp:recalc-style-ms": 0.22699999999999804,
+              "cdp:script-ms": 20.62999999999998,
+              "cdp:task-ms": 220.78799999999998,
+              "cdp:dom-nodes": 7290,
+              "cdp:js-heap-used": 7431700,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.2370000000000045,
+              "cdp:recalc-style-ms": 0.51,
+              "cdp:script-ms": 6.996000000000002,
+              "cdp:task-ms": 171.93199999999996,
+              "cdp:dom-nodes": 7306,
+              "cdp:js-heap-used": 7757844,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.298999999999998,
+              "cdp:recalc-style-ms": 0.19900000000000126,
+              "cdp:script-ms": 14.157999999999948,
+              "cdp:task-ms": 199.2259999999999,
+              "cdp:dom-nodes": 7322,
+              "cdp:js-heap-used": 8072672,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc05:p95-frame": {
+          "count": 3,
+          "min": 16.700000000000728,
+          "p25": 16.700000000000728,
+          "median": 16.700000000000728,
+          "p75": 16.700000000000728,
+          "p95": 16.700000000000728,
+          "max": 16.700000000000728,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc05:dropped-frames": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "uc05:decoded-image-bytes": {
+          "count": 3,
+          "min": 4194304000,
+          "p25": 4194304000,
+          "median": 4194304000,
+          "p75": 4194304000,
+          "p95": 4194304000,
+          "max": 4194304000,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "browser:long-task-total": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 3,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 3,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 3,
+          "min": 3.845000000000001,
+          "p25": 3.9659999999999975,
+          "median": 4.0869999999999935,
+          "p75": 4.161999999999999,
+          "p95": 4.222000000000003,
+          "max": 4.2370000000000045,
+          "iqr": 0.1960000000000015,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 3,
+          "min": 0.22699999999999804,
+          "p25": 0.2594999999999976,
+          "median": 0.29199999999999715,
+          "p75": 0.4834999999999996,
+          "p95": 0.6367000000000016,
+          "max": 0.675000000000002,
+          "iqr": 0.22400000000000198,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 3,
+          "min": 8.897999999999989,
+          "p25": 9.753499999999999,
+          "median": 10.609000000000007,
+          "p75": 12.383499999999977,
+          "p95": 13.803099999999954,
+          "max": 14.157999999999948,
+          "iqr": 2.6299999999999777,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 3,
+          "min": 173.27899999999997,
+          "p25": 181.15550000000002,
+          "median": 189.0320000000001,
+          "p75": 194.12900000000002,
+          "p95": 198.20659999999992,
+          "max": 199.2259999999999,
+          "iqr": 12.973500000000001,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 3,
+          "min": 7306,
+          "p25": 7306,
+          "median": 7306,
+          "p75": 7306,
+          "p95": 7306,
+          "max": 7306,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 3,
+          "min": 7744008,
+          "p25": 7750504,
+          "median": 7757000,
+          "p75": 7757422,
+          "p95": 7757759.6,
+          "max": 7757844,
+          "iqr": 6918,
+          "unit": "bytes"
+        }
+      }
+    },
+    "light": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.5419999999999896,
+              "cdp:recalc-style-ms": 0.1820000000000016,
+              "cdp:script-ms": 9.894999999999987,
+              "cdp:task-ms": 136.43800000000005,
+              "cdp:dom-nodes": 7290,
+              "cdp:js-heap-used": 7433036,
+              "uc05:p95-frame": 16.800000000000182,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.382000000000011,
+              "cdp:recalc-style-ms": 0.19800000000000026,
+              "cdp:script-ms": 12.023000000000007,
+              "cdp:task-ms": 155.281,
+              "cdp:dom-nodes": 7306,
+              "cdp:js-heap-used": 7760904,
+              "uc05:p95-frame": 16.799999999999272,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.7190000000000003,
+              "cdp:recalc-style-ms": 0.30099999999999916,
+              "cdp:script-ms": 11.496000000000034,
+              "cdp:task-ms": 150.37600000000006,
+              "cdp:dom-nodes": 7322,
+              "cdp:js-heap-used": 8076740,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 5.400999999999989,
+              "cdp:recalc-style-ms": 0.4910000000000019,
+              "cdp:script-ms": 23.154000000000007,
+              "cdp:task-ms": 201.48999999999995,
+              "cdp:dom-nodes": 7290,
+              "cdp:js-heap-used": 7433088,
+              "uc05:p95-frame": 16.799999999999272,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.5630000000000104,
+              "cdp:recalc-style-ms": 0.36599999999999827,
+              "cdp:script-ms": 19.467000000000013,
+              "cdp:task-ms": 176.71400000000003,
+              "cdp:dom-nodes": 7306,
+              "cdp:js-heap-used": 7761480,
+              "uc05:p95-frame": 16.799999999999272,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.25099999999999,
+              "cdp:recalc-style-ms": 1.243000000000001,
+              "cdp:script-ms": 9.384000000000004,
+              "cdp:task-ms": 149.33300000000017,
+              "cdp:dom-nodes": 7322,
+              "cdp:js-heap-used": 8075924,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 5.038000000000001,
+              "cdp:recalc-style-ms": 0.6619999999999994,
+              "cdp:script-ms": 19.813,
+              "cdp:task-ms": 198.17099999999988,
+              "cdp:dom-nodes": 7290,
+              "cdp:js-heap-used": 7431604,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 5.0089999999999995,
+              "cdp:recalc-style-ms": 0.5760000000000001,
+              "cdp:script-ms": 21.222999999999992,
+              "cdp:task-ms": 188.32399999999993,
+              "cdp:dom-nodes": 7306,
+              "cdp:js-heap-used": 7758576,
+              "uc05:p95-frame": 16.799999999999272,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.13200000000001,
+              "cdp:recalc-style-ms": 0.3849999999999999,
+              "cdp:script-ms": 18.78099999999999,
+              "cdp:task-ms": 185.6309999999999,
+              "cdp:dom-nodes": 7322,
+              "cdp:js-heap-used": 8076444,
+              "uc05:p95-frame": 16.799999999999272,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 4194304000,
+              "browser:long-task-total": 0
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc05:p95-frame": {
+          "count": 3,
+          "min": 16.799999999999272,
+          "p25": 16.799999999999272,
+          "median": 16.799999999999272,
+          "p75": 16.799999999999272,
+          "p95": 16.799999999999272,
+          "max": 16.799999999999272,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc05:dropped-frames": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "uc05:decoded-image-bytes": {
+          "count": 3,
+          "min": 4194304000,
+          "p25": 4194304000,
+          "median": 4194304000,
+          "p75": 4194304000,
+          "p95": 4194304000,
+          "max": 4194304000,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "browser:long-task-total": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 3,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 3,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 3,
+          "min": 3.5630000000000104,
+          "p25": 3.6410000000000053,
+          "median": 3.7190000000000003,
+          "p75": 4.364,
+          "p95": 4.879999999999999,
+          "max": 5.0089999999999995,
+          "iqr": 0.7229999999999945,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 3,
+          "min": 0.19800000000000026,
+          "p25": 0.344500000000001,
+          "median": 0.4910000000000019,
+          "p75": 0.533500000000001,
+          "p95": 0.5675000000000002,
+          "max": 0.5760000000000001,
+          "iqr": 0.18899999999999995,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 3,
+          "min": 11.496000000000034,
+          "p25": 15.481500000000024,
+          "median": 19.467000000000013,
+          "p75": 19.640000000000008,
+          "p95": 19.7784,
+          "max": 19.813,
+          "iqr": 4.158499999999984,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 3,
+          "min": 150.37600000000006,
+          "p25": 163.54500000000004,
+          "median": 176.71400000000003,
+          "p75": 182.51899999999998,
+          "p95": 187.16299999999993,
+          "max": 188.32399999999993,
+          "iqr": 18.973999999999933,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 3,
+          "min": 7306,
+          "p25": 7306,
+          "median": 7306,
+          "p75": 7306,
+          "p95": 7306,
+          "max": 7306,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 3,
+          "min": 7758576,
+          "p25": 7759740,
+          "median": 7760904,
+          "p75": 7761192,
+          "p95": 7761422.4,
+          "max": 7761480,
+          "iqr": 1452,
+          "unit": "bytes"
+        }
+      }
+    },
+    "sized": {
+      "runs": [
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.268999999999994,
+              "cdp:recalc-style-ms": 0.5999999999999999,
+              "cdp:script-ms": 16.158999999999978,
+              "cdp:task-ms": 168.63099999999997,
+              "cdp:dom-nodes": 7305,
+              "cdp:js-heap-used": 8206560,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 262144000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.1770000000000005,
+              "cdp:recalc-style-ms": 1.246999999999998,
+              "cdp:script-ms": 20.347000000000005,
+              "cdp:task-ms": 185.26299999999995,
+              "cdp:dom-nodes": 7321,
+              "cdp:js-heap-used": 8523136,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 262144000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.2859999999999974,
+              "cdp:recalc-style-ms": 0.7720000000000018,
+              "cdp:script-ms": 20.880999999999982,
+              "cdp:task-ms": 204.19700000000017,
+              "cdp:dom-nodes": 7337,
+              "cdp:js-heap-used": 8832860,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 262144000,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.098000000000004,
+              "cdp:recalc-style-ms": 0.9800000000000018,
+              "cdp:script-ms": 18.167000000000016,
+              "cdp:task-ms": 163.04399999999995,
+              "cdp:dom-nodes": 7305,
+              "cdp:js-heap-used": 8188228,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 262144000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 5.001999999999993,
+              "cdp:recalc-style-ms": 0.4129999999999967,
+              "cdp:script-ms": 10.182000000000023,
+              "cdp:task-ms": 136.579,
+              "cdp:dom-nodes": 7321,
+              "cdp:js-heap-used": 8503532,
+              "uc05:p95-frame": 16.799999999999272,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 262144000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 2.3040000000000003,
+              "cdp:recalc-style-ms": 0.6000000000000033,
+              "cdp:script-ms": 10.294000000000025,
+              "cdp:task-ms": 135.41999999999987,
+              "cdp:dom-nodes": 7337,
+              "cdp:js-heap-used": 8809312,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 262144000,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.50600000000001,
+              "cdp:recalc-style-ms": 0.9380000000000013,
+              "cdp:script-ms": 14.822000000000003,
+              "cdp:task-ms": 155.61800000000002,
+              "cdp:dom-nodes": 7305,
+              "cdp:js-heap-used": 8181388,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 262144000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.9349999999999943,
+              "cdp:recalc-style-ms": 0.4469999999999995,
+              "cdp:script-ms": 18.16000000000001,
+              "cdp:task-ms": 167.06299999999996,
+              "cdp:dom-nodes": 7321,
+              "cdp:js-heap-used": 8501784,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 262144000,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.5270000000000024,
+              "cdp:recalc-style-ms": 0.7390000000000001,
+              "cdp:script-ms": 11.334999999999983,
+              "cdp:task-ms": 154.81900000000005,
+              "cdp:dom-nodes": 7337,
+              "cdp:js-heap-used": 8806788,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 262144000,
+              "browser:long-task-total": 0
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc05:p95-frame": {
+          "count": 3,
+          "min": 16.700000000000728,
+          "p25": 16.700000000000728,
+          "median": 16.700000000000728,
+          "p75": 16.700000000000728,
+          "p95": 16.700000000000728,
+          "max": 16.700000000000728,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc05:dropped-frames": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "uc05:decoded-image-bytes": {
+          "count": 3,
+          "min": 262144000,
+          "p25": 262144000,
+          "median": 262144000,
+          "p75": 262144000,
+          "p95": 262144000,
+          "max": 262144000,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "browser:long-task-total": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 3,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 3,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 3,
+          "min": 3.2859999999999974,
+          "p25": 3.6104999999999956,
+          "median": 3.9349999999999943,
+          "p75": 4.016499999999999,
+          "p95": 4.081700000000003,
+          "max": 4.098000000000004,
+          "iqr": 0.40600000000000325,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 3,
+          "min": 0.6000000000000033,
+          "p25": 0.6695000000000018,
+          "median": 0.7390000000000001,
+          "p75": 0.755500000000001,
+          "p95": 0.7687000000000016,
+          "max": 0.7720000000000018,
+          "iqr": 0.08599999999999919,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 3,
+          "min": 10.294000000000025,
+          "p25": 12.558000000000014,
+          "median": 14.822000000000003,
+          "p75": 17.584500000000006,
+          "p95": 19.794500000000003,
+          "max": 20.347000000000005,
+          "iqr": 5.0264999999999915,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 3,
+          "min": 136.579,
+          "p25": 146.0985,
+          "median": 155.61800000000002,
+          "p75": 170.4405,
+          "p95": 182.29849999999996,
+          "max": 185.26299999999995,
+          "iqr": 24.341999999999985,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 3,
+          "min": 7321,
+          "p25": 7321,
+          "median": 7321,
+          "p75": 7321,
+          "p95": 7321,
+          "max": 7321,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 3,
+          "min": 8501784,
+          "p25": 8502658,
+          "median": 8503532,
+          "p75": 8513334,
+          "p95": 8521175.6,
+          "max": 8523136,
+          "iqr": 10676,
+          "unit": "bytes"
+        }
+      }
+    },
+    "lazy": {
+      "runs": [
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.803000000000001,
+              "cdp:recalc-style-ms": 0.950999999999997,
+              "cdp:script-ms": 26.39600000000003,
+              "cdp:task-ms": 774.499,
+              "cdp:dom-nodes": 7305,
+              "cdp:js-heap-used": 7938360,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 36700160,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 6.683999999999996,
+              "cdp:recalc-style-ms": 0.21200000000000038,
+              "cdp:script-ms": 22.54099999999998,
+              "cdp:task-ms": 764.696,
+              "cdp:dom-nodes": 7321,
+              "cdp:js-heap-used": 8257144,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 36700160,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 5.022000000000013,
+              "cdp:recalc-style-ms": 0.3970000000000015,
+              "cdp:script-ms": 21.372999999999976,
+              "cdp:task-ms": 713.5849999999997,
+              "cdp:dom-nodes": 7337,
+              "cdp:js-heap-used": 8562812,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 36700160,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.611000000000004,
+              "cdp:recalc-style-ms": 0.3440000000000005,
+              "cdp:script-ms": 19.475999999999992,
+              "cdp:task-ms": 616.2140000000003,
+              "cdp:dom-nodes": 7305,
+              "cdp:js-heap-used": 7950368,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 36700160,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 5.562999999999999,
+              "cdp:recalc-style-ms": 0.3939999999999985,
+              "cdp:script-ms": 26.324000000000012,
+              "cdp:task-ms": 737.1599999999999,
+              "cdp:dom-nodes": 7321,
+              "cdp:js-heap-used": 8259468,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 36700160,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.894999999999997,
+              "cdp:recalc-style-ms": 0.22000000000000144,
+              "cdp:script-ms": 17.04699999999998,
+              "cdp:task-ms": 625.6530000000002,
+              "cdp:dom-nodes": 7337,
+              "cdp:js-heap-used": 8563040,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 36700160,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.105999999999998,
+              "cdp:recalc-style-ms": 0.3929999999999975,
+              "cdp:script-ms": 10.677999999999994,
+              "cdp:task-ms": 503.83299999999997,
+              "cdp:dom-nodes": 7305,
+              "cdp:js-heap-used": 7942000,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 36700160,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.166000000000002,
+              "cdp:recalc-style-ms": 0.4190000000000027,
+              "cdp:script-ms": 15.123999999999999,
+              "cdp:task-ms": 527.078,
+              "cdp:dom-nodes": 7321,
+              "cdp:js-heap-used": 8262832,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 36700160,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 16,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 2.9649999999999954,
+              "cdp:recalc-style-ms": 0.4389999999999984,
+              "cdp:script-ms": 21.963999999999984,
+              "cdp:task-ms": 602.1900000000003,
+              "cdp:dom-nodes": 7337,
+              "cdp:js-heap-used": 8568500,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 36700160,
+              "browser:long-task-total": 0
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc05:p95-frame": {
+          "count": 3,
+          "min": 16.700000000000728,
+          "p25": 16.700000000000728,
+          "median": 16.700000000000728,
+          "p75": 16.700000000000728,
+          "p95": 16.700000000000728,
+          "max": 16.700000000000728,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc05:dropped-frames": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "uc05:decoded-image-bytes": {
+          "count": 3,
+          "min": 36700160,
+          "p25": 36700160,
+          "median": 36700160,
+          "p75": 36700160,
+          "p95": 36700160,
+          "max": 36700160,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "browser:long-task-total": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 3,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 3,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 3,
+          "min": 3.166000000000002,
+          "p25": 4.0305,
+          "median": 4.894999999999997,
+          "p75": 4.958500000000004,
+          "p95": 5.009300000000011,
+          "max": 5.022000000000013,
+          "iqr": 0.9280000000000044,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 3,
+          "min": 0.3440000000000005,
+          "p25": 0.37050000000000105,
+          "median": 0.3970000000000015,
+          "p75": 0.40800000000000214,
+          "p95": 0.41680000000000256,
+          "max": 0.4190000000000027,
+          "iqr": 0.03750000000000109,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 3,
+          "min": 15.123999999999999,
+          "p25": 17.299999999999997,
+          "median": 19.475999999999992,
+          "p75": 21.008499999999984,
+          "p95": 22.23449999999998,
+          "max": 22.54099999999998,
+          "iqr": 3.7084999999999866,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 3,
+          "min": 527.078,
+          "p25": 576.3655000000001,
+          "median": 625.6530000000002,
+          "p75": 695.1745000000001,
+          "p95": 750.7917,
+          "max": 764.696,
+          "iqr": 118.80899999999997,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 3,
+          "min": 7321,
+          "p25": 7321,
+          "median": 7321,
+          "p75": 7321,
+          "p95": 7321,
+          "max": 7321,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 3,
+          "min": 8257144,
+          "p25": 8258306,
+          "median": 8259468,
+          "p75": 8261150,
+          "p95": 8262495.6,
+          "max": 8262832,
+          "iqr": 2844,
+          "unit": "bytes"
+        }
+      }
+    },
+    "good": {
+      "runs": [
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 46,
+              "cdp:recalc-style-count": 46,
+              "cdp:layout-ms": 16.216000000000008,
+              "cdp:recalc-style-ms": 9.045000000000002,
+              "cdp:script-ms": 111.22399999999999,
+              "cdp:task-ms": 244.29599999999996,
+              "cdp:dom-nodes": 1545,
+              "cdp:js-heap-used": 4742092,
+              "uc05:p95-frame": 16.800000000000182,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 9175040,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 46,
+              "cdp:recalc-style-count": 46,
+              "cdp:layout-ms": 19.51499999999999,
+              "cdp:recalc-style-ms": 8.059000000000001,
+              "cdp:script-ms": 114.63499999999999,
+              "cdp:task-ms": 266.06099999999986,
+              "cdp:dom-nodes": 2281,
+              "cdp:js-heap-used": 5053804,
+              "uc05:p95-frame": 16.800000000000182,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 9175040,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 46,
+              "cdp:recalc-style-count": 46,
+              "cdp:layout-ms": 20.042000000000005,
+              "cdp:recalc-style-ms": 8.685000000000002,
+              "cdp:script-ms": 117.38299999999995,
+              "cdp:task-ms": 260.791,
+              "cdp:dom-nodes": 3017,
+              "cdp:js-heap-used": 5228200,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 9175040,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 46,
+              "cdp:recalc-style-count": 46,
+              "cdp:layout-ms": 13.939000000000007,
+              "cdp:recalc-style-ms": 10.617999999999999,
+              "cdp:script-ms": 95.09799999999998,
+              "cdp:task-ms": 207.247,
+              "cdp:dom-nodes": 1545,
+              "cdp:js-heap-used": 4683600,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 9175040,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 46,
+              "cdp:recalc-style-count": 46,
+              "cdp:layout-ms": 19.33499999999999,
+              "cdp:recalc-style-ms": 6.473000000000003,
+              "cdp:script-ms": 83.97699999999998,
+              "cdp:task-ms": 191.01999999999998,
+              "cdp:dom-nodes": 2281,
+              "cdp:js-heap-used": 5008944,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 9175040,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 46,
+              "cdp:recalc-style-count": 46,
+              "cdp:layout-ms": 14.382000000000005,
+              "cdp:recalc-style-ms": 7.1610000000000005,
+              "cdp:script-ms": 86.85499999999996,
+              "cdp:task-ms": 186.13599999999985,
+              "cdp:dom-nodes": 3017,
+              "cdp:js-heap-used": 5209056,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 9175040,
+              "browser:long-task-total": 0
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 46,
+              "cdp:recalc-style-count": 46,
+              "cdp:layout-ms": 14.591999999999993,
+              "cdp:recalc-style-ms": 5.215999999999999,
+              "cdp:script-ms": 74.56400000000002,
+              "cdp:task-ms": 153.52299999999997,
+              "cdp:dom-nodes": 1545,
+              "cdp:js-heap-used": 4700700,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 9175040,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 46,
+              "cdp:recalc-style-count": 46,
+              "cdp:layout-ms": 14.781000000000002,
+              "cdp:recalc-style-ms": 5.7810000000000015,
+              "cdp:script-ms": 87.77000000000001,
+              "cdp:task-ms": 179.844,
+              "cdp:dom-nodes": 2281,
+              "cdp:js-heap-used": 5012980,
+              "uc05:p95-frame": 16.700000000000728,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 9175040,
+              "browser:long-task-total": 0
+            },
+            {
+              "cdp:layout-count": 46,
+              "cdp:recalc-style-count": 46,
+              "cdp:layout-ms": 17.089000000000006,
+              "cdp:recalc-style-ms": 5.687999999999999,
+              "cdp:script-ms": 90.47899999999997,
+              "cdp:task-ms": 196.49399999999994,
+              "cdp:dom-nodes": 3017,
+              "cdp:js-heap-used": 5201484,
+              "uc05:p95-frame": 16.799999999999272,
+              "uc05:dropped-frames": 0,
+              "uc05:decoded-image-bytes": 9175040,
+              "browser:long-task-total": 0
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc05:p95-frame": {
+          "count": 3,
+          "min": 16.700000000000728,
+          "p25": 16.700000000000728,
+          "median": 16.700000000000728,
+          "p75": 16.750000000000455,
+          "p95": 16.790000000000237,
+          "max": 16.800000000000182,
+          "iqr": 0.04999999999972715,
+          "unit": "ms"
+        },
+        "uc05:dropped-frames": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "uc05:decoded-image-bytes": {
+          "count": 3,
+          "min": 9175040,
+          "p25": 9175040,
+          "median": 9175040,
+          "p75": 9175040,
+          "p95": 9175040,
+          "max": 9175040,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "browser:long-task-total": {
+          "count": 3,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 3,
+          "min": 46,
+          "p25": 46,
+          "median": 46,
+          "p75": 46,
+          "p95": 46,
+          "max": 46,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 3,
+          "min": 46,
+          "p25": 46,
+          "median": 46,
+          "p75": 46,
+          "p95": 46,
+          "max": 46,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 3,
+          "min": 14.382000000000005,
+          "p25": 14.581500000000004,
+          "median": 14.781000000000002,
+          "p75": 17.147999999999996,
+          "p95": 19.041599999999992,
+          "max": 19.51499999999999,
+          "iqr": 2.5664999999999925,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 3,
+          "min": 5.687999999999999,
+          "p25": 6.4245,
+          "median": 7.1610000000000005,
+          "p75": 7.923000000000002,
+          "p95": 8.532600000000002,
+          "max": 8.685000000000002,
+          "iqr": 1.4985000000000017,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 3,
+          "min": 86.85499999999996,
+          "p25": 87.31249999999999,
+          "median": 87.77000000000001,
+          "p75": 101.2025,
+          "p95": 111.9485,
+          "max": 114.63499999999999,
+          "iqr": 13.890000000000015,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 3,
+          "min": 179.844,
+          "p25": 185.432,
+          "median": 191.01999999999998,
+          "p75": 225.9055,
+          "p95": 253.8139,
+          "max": 260.791,
+          "iqr": 40.4735,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 3,
+          "min": 2281,
+          "p25": 2281,
+          "median": 2281,
+          "p75": 2281,
+          "p95": 2281,
+          "max": 2281,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 3,
+          "min": 5008944,
+          "p25": 5010962,
+          "median": 5012980,
+          "p75": 5033392,
+          "p95": 5049721.6,
+          "max": 5053804,
+          "iqr": 22430,
+          "unit": "bytes"
+        }
+      }
+    }
+  }
+}

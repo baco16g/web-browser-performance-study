@@ -1,0 +1,311 @@
+{
+  "createdAt": "2026-11-01T06:21:06.665Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "chromium 156.0.8078.4",
+    "gitCommit": "7af69c5",
+    "gitDirty": false
+  },
+  "segments": [
+    {
+      "name": "fast",
+      "share": 0.6,
+      "cpuThrottle": 1,
+      "network": {
+        "latencyMs": 20,
+        "downloadKbps": 50000,
+        "uploadKbps": 20000
+      }
+    },
+    {
+      "name": "middle",
+      "share": 0.3,
+      "cpuThrottle": 4,
+      "network": {
+        "latencyMs": 40,
+        "downloadKbps": 10000,
+        "uploadKbps": 5000
+      }
+    },
+    {
+      "name": "slow",
+      "share": 0.1,
+      "cpuThrottle": 8,
+      "network": {
+        "latencyMs": 150,
+        "downloadKbps": 1600,
+        "uploadKbps": 750
+      }
+    }
+  ],
+  "sessionsPerVariant": 40,
+  "seed": 1,
+  "expectedSessions": 80,
+  "summaries": {
+    "byVariant": [
+      {
+        "group": "bad",
+        "metric": "browser:first-contentful-paint",
+        "count": 40,
+        "p50": 96,
+        "p75": 246,
+        "p95": 924.4
+      },
+      {
+        "group": "bad",
+        "metric": "vitals:lcp",
+        "count": 40,
+        "p50": 622,
+        "p75": 1712,
+        "p95": 6513.2
+      },
+      {
+        "group": "bad",
+        "metric": "vitals:cls",
+        "count": 40,
+        "p50": 0.1587858312394884,
+        "p75": 0.16950019306606717,
+        "p95": 0.16950019306606717
+      },
+      {
+        "group": "bad",
+        "metric": "uc04:usable",
+        "count": 40,
+        "p50": 540.2000000476837,
+        "p75": 1470.2749999761581,
+        "p95": 5170.92499986887
+      },
+      {
+        "group": "good",
+        "metric": "browser:first-contentful-paint",
+        "count": 40,
+        "p50": 112,
+        "p75": 316,
+        "p95": 1596.4
+      },
+      {
+        "group": "good",
+        "metric": "vitals:lcp",
+        "count": 40,
+        "p50": 280,
+        "p75": 748,
+        "p95": 4072.2
+      },
+      {
+        "group": "good",
+        "metric": "vitals:cls",
+        "count": 40,
+        "p50": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      {
+        "group": "good",
+        "metric": "uc04:usable",
+        "count": 40,
+        "p50": 265.9999998807907,
+        "p75": 741.5499999523163,
+        "p95": 4066.675
+      }
+    ],
+    "bySegment": [
+      {
+        "group": "bad middle",
+        "metric": "browser:first-contentful-paint",
+        "count": 12,
+        "p50": 248,
+        "p75": 257,
+        "p95": 275.6
+      },
+      {
+        "group": "bad middle",
+        "metric": "vitals:lcp",
+        "count": 12,
+        "p50": 1716,
+        "p75": 1753,
+        "p95": 1765
+      },
+      {
+        "group": "bad middle",
+        "metric": "vitals:cls",
+        "count": 12,
+        "p50": 0.16950019306606717,
+        "p75": 0.16950019306606717,
+        "p95": 0.16950019306606717
+      },
+      {
+        "group": "bad middle",
+        "metric": "uc04:usable",
+        "count": 12,
+        "p50": 1473.75,
+        "p75": 1507.3499999642372,
+        "p95": 1523.0199999213219
+      },
+      {
+        "group": "bad fast",
+        "metric": "browser:first-contentful-paint",
+        "count": 24,
+        "p50": 92,
+        "p75": 96,
+        "p95": 99.39999999999999
+      },
+      {
+        "group": "bad fast",
+        "metric": "vitals:lcp",
+        "count": 24,
+        "p50": 606,
+        "p75": 617,
+        "p95": 634.1999999999999
+      },
+      {
+        "group": "bad fast",
+        "metric": "vitals:cls",
+        "count": 24,
+        "p50": 0.1587858312394884,
+        "p75": 0.1587858312394884,
+        "p95": 0.1587858312394884
+      },
+      {
+        "group": "bad fast",
+        "metric": "uc04:usable",
+        "count": 24,
+        "p50": 532.9499999284744,
+        "p75": 537.2249999642372,
+        "p95": 549.3049999117851
+      },
+      {
+        "group": "good middle",
+        "metric": "browser:first-contentful-paint",
+        "count": 12,
+        "p50": 316,
+        "p75": 321,
+        "p95": 335.6
+      },
+      {
+        "group": "good middle",
+        "metric": "vitals:lcp",
+        "count": 12,
+        "p50": 748,
+        "p75": 757,
+        "p95": 760
+      },
+      {
+        "group": "good middle",
+        "metric": "vitals:cls",
+        "count": 12,
+        "p50": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      {
+        "group": "good middle",
+        "metric": "uc04:usable",
+        "count": 12,
+        "p50": 741.7999999523163,
+        "p75": 748.1000000834465,
+        "p95": 753.1149999737739
+      },
+      {
+        "group": "good fast",
+        "metric": "browser:first-contentful-paint",
+        "count": 24,
+        "p50": 112,
+        "p75": 112,
+        "p95": 112
+      },
+      {
+        "group": "good fast",
+        "metric": "vitals:lcp",
+        "count": 24,
+        "p50": 272,
+        "p75": 273,
+        "p95": 280
+      },
+      {
+        "group": "good fast",
+        "metric": "vitals:cls",
+        "count": 24,
+        "p50": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      {
+        "group": "good fast",
+        "metric": "uc04:usable",
+        "count": 24,
+        "p50": 264.14999997615814,
+        "p75": 265.5499999523163,
+        "p95": 266.7099999308586
+      },
+      {
+        "group": "bad slow",
+        "metric": "browser:first-contentful-paint",
+        "count": 4,
+        "p50": 928,
+        "p75": 940,
+        "p95": 959.2
+      },
+      {
+        "group": "bad slow",
+        "metric": "vitals:lcp",
+        "count": 4,
+        "p50": 6524,
+        "p75": 6549,
+        "p95": 6580.2
+      },
+      {
+        "group": "bad slow",
+        "metric": "vitals:cls",
+        "count": 4,
+        "p50": 0.16950019306606717,
+        "p75": 0.16950019306606717,
+        "p95": 0.16950019306606717
+      },
+      {
+        "group": "bad slow",
+        "metric": "uc04:usable",
+        "count": 4,
+        "p50": 5184.649999976158,
+        "p75": 5212.350000023842,
+        "p95": 5242.22999985218
+      },
+      {
+        "group": "good slow",
+        "metric": "browser:first-contentful-paint",
+        "count": 4,
+        "p50": 1600,
+        "p75": 1605,
+        "p95": 1607.4
+      },
+      {
+        "group": "good slow",
+        "metric": "vitals:lcp",
+        "count": 4,
+        "p50": 4074,
+        "p75": 4086,
+        "p95": 4110
+      },
+      {
+        "group": "good slow",
+        "metric": "vitals:cls",
+        "count": 4,
+        "p50": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      {
+        "group": "good slow",
+        "metric": "uc04:usable",
+        "count": 4,
+        "p50": 4068.25,
+        "p75": 4079.025000035763,
+        "p95": 4100.6850001215935
+      }
+    ]
+  }
+}

@@ -82,6 +82,8 @@ UC3 の修正後は、自作の計測値と Event Timing の値が 206.1ms と 2
 npm run bench:compare -- --baseline before.json --candidate after.json --variant good
 ```
 
+CI でどう使い分けているかは[計測を続ける仕組み](continuous-measurement.md)に書きました。
+
 ## 逆引き
 
 | やりたいこと                 | 方法                                                        |
@@ -95,6 +97,8 @@ npm run bench:compare -- --baseline before.json --candidate after.json --variant
 | ラスタライズなどの合計を見る | `npm run bench:trace-summary -- --scenario uc05`            |
 | React の Profiler の値を見る | `npm run bench:profiling -- --scenario uc01`                |
 | 別名で結果を残す             | `--label` を付ける                                          |
+| 性能の予算を確かめる         | `npm run bench:budget`                                      |
+| 利用者の分布を模擬する       | `npm run bench:field`                                       |
 
 保存したトレースでは関数名が圧縮されたままです。元の名前を見たいときは、`npm run preview` で配信したページを DevTools で直接記録してください。
 

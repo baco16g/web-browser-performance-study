@@ -31,7 +31,7 @@ A personal study project for learning browser performance measurement. Each use 
 - **フレーム間隔の指標はラスタライズの費用を映さなかった。** p95 が 16.7ms のままでも、トレースではラスタライズの時間が約5倍違いました（[UC5](docs/usecases/uc05-scroll-list.md)）。
 - **リスナーを外してもヒープの増加は止まらなかった。** 詳細データを保持する経路が2本あり、両方を切る必要がありました。予想した3本目の経路は実測で否定されました（[UC6](docs/usecases/uc06-memory-growth.md)）。
 - **ETag の再検証で縮んだのは 24ms だけだった。** 問い合わせは毎回行い、省けるのは本文の転送だけでした（[UC7](docs/usecases/uc07-cache-prefetch.md)）。
-- **`useDeferredValue` は最初の1文字しか救わなかった。** 検索中に打った2文字目は 52.8ms 待たされ、Long Task も残りました。1文字だけの計測では見逃す問題です（[UC3](docs/usecases/uc03-search-input.md)）。
+- **ラボで小さな悪化が、遅い利用者では10倍近くになった。** HTML で取得を始めたときの FCP の悪化は UC4 の条件で約 70ms でしたが、遅い回線の利用者では 665ms でした。全体の p75 にはこの差が現れません（[計測を続ける仕組み](docs/continuous-measurement.md)）。
 
 ## 動かし方
 
@@ -75,14 +75,14 @@ npm run bench:trace-summary -- --scenario uc05
 
 ## 計測の4つの層
 
-同じ現象でも、層によって分かることが違います。考え方は[計測ガイド](docs/measurement-guide.md)にまとめました。
+同じ現象でも、層によって分かることが違います。考え方は[計測ガイド](docs/measurement-guide.md)に、継続して測る方法は[計測を続ける仕組み](docs/continuous-measurement.md)にまとめました。
 
 | 層           | 道具                                         | 向いていること               |
 | ------------ | -------------------------------------------- | ---------------------------- |
 | 手動         | DevTools の Performance、Network、Memory     | 原因の特定                   |
 | ページ内     | User Timing、PerformanceObserver、web-vitals | 操作に合わせた指標の定義     |
 | 自動         | Playwright と Chrome DevTools Protocol       | 同じ条件での反復と回帰の検知 |
-| 実利用の模擬 | `sendBeacon` とローカル集計（準備中）        | 分布の見方の練習             |
+| 実利用の模擬 | `sendBeacon` とローカル集計                  | 利用者の分類ごとの分布       |
 
 ## 構成
 
@@ -94,6 +94,7 @@ server/     遅延を指定できるモック API
 bench/      自動計測、集計、回帰判定
 e2e/        Playwright の動作確認
 docs/       計測ガイド、ユースケースの解説、設計判断、実測結果
+.github/    型検査、テスト、性能の予算を実行する CI
 ```
 
 設計判断は [docs/adr/](docs/adr/) に、選ばなかった案とともに記録しています。
@@ -103,6 +104,7 @@ docs/       計測ガイド、ユースケースの解説、設計判断、実�
 ```sh
 npm run check   # 型検査、Lint、単体テスト
 npm run e2e     # Chromium と WebKit の動作確認
+npm run bench:budget   # 測った結果が性能の予算に収まるかを確かめる
 ```
 
 ## このリポジトリで測れないこと

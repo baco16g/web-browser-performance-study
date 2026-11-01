@@ -1,0 +1,44 @@
+{
+  "name": "web-browser-performance-study",
+  "version": "0.1.0",
+  "private": true,
+  "description": "遅い実装と改善した実装を同じ条件で測り、ブラウザの性能計測を学ぶ個人学習リポジトリ",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "assets": "tsx scripts/generate-assets.ts",
+    "predev": "npm run assets",
+    "dev": "vite",
+    "prebuild": "npm run assets",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "check": "npm run typecheck && npm run lint && npm run test",
+    "bench": "npm run -s build && tsx bench/run.ts",
+    "bench:compare": "tsx bench/compare.ts"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "web-vitals": "^6.2.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.4",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "sharp": "^0.35.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

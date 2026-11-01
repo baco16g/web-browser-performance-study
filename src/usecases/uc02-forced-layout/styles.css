@@ -1,0 +1,31 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  align-items: start;
+  gap: 12px;
+  font-size: 0.875rem;
+}
+
+.card-grid[data-stretch="true"] {
+  align-items: stretch;
+}
+
+.card-grid[data-text-size="large"] {
+  font-size: 1rem;
+}
+
+.card {
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.card h2 {
+  margin: 0 0 4px;
+  font-size: 1em;
+}
+
+.card p {
+  margin: 0 0 8px;
+  color: var(--color-text-muted);
+}

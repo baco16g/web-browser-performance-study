@@ -1,6 +1,6 @@
 import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { type Browser, type CDPSession, chromium, type Page } from '@playwright/test';
+import { type Browser, type CDPSession, chromium, type Page, webkit } from '@playwright/test';
 import type { Unit } from '../src/perf/recorder.ts';
 import { createRunOrder } from './order.ts';
 import {
@@ -55,7 +55,8 @@ export type BenchOptions = {
   seed: number;
 };
 
-type OpenedPage = { page: Page; cdp: CDPSession; close(): Promise<void> };
+/** cdp は Chromium でだけ使える。他のブラウザではページ内の計測値だけを集める */
+type OpenedPage = { page: Page; cdp: CDPSession | null; close(): Promise<void> };
 
 function createPageUrl(scenario: Scenario, baseUrl: string, variant: string): string {
   // HUD の描画が計測値に混ざらないようにする
@@ -72,6 +73,15 @@ export async function createThrottledPage(
 ): Promise<OpenedPage> {
   const context = await browser.newContext({ viewport: VIEWPORT });
   const page = await context.newPage();
+  const close = () => context.close();
+
+  if (browser.browserType().name() !== 'chromium') {
+    if (cpuThrottle !== 1 || network !== undefined) {
+      throw new Error('CPU と通信の制限は Chromium でしか使えません');
+    }
+    return { page, cdp: null, close };
+  }
+
   const cdp = await context.newCDPSession(page);
   await cdp.send('Performance.enable');
   await cdp.send('Emulation.setCPUThrottlingRate', { rate: cpuThrottle });
@@ -85,7 +95,7 @@ export async function createThrottledPage(
       uploadThroughput: uploadKbps * BYTES_PER_KILOBIT,
     });
   }
-  return { page, cdp, close: () => context.close() };
+  return { page, cdp, close };
 }
 
 function toConditions(scenario: Scenario, { cpuThrottle }: BenchOptions): DeviceConditions {
@@ -105,7 +115,10 @@ async function openInteractionPage(
   return opened;
 }
 
-async function readCdpMetrics(cdp: CDPSession): Promise<Map<string, number>> {
+async function readCdpMetrics(cdp: CDPSession | null): Promise<Map<string, number>> {
+  if (cdp === null) {
+    return new Map();
+  }
   const { metrics } = await cdp.send('Performance.getMetrics');
   return new Map(metrics.map(({ name, value }) => [name, value]));
 }
@@ -125,17 +138,17 @@ function hasForcedGc(scenario: Scenario): boolean {
 }
 
 async function readCdpMetricsAfterGc(
-  cdp: CDPSession,
+  cdp: CDPSession | null,
   scenario: Scenario,
 ): Promise<Map<string, number>> {
-  if (hasForcedGc(scenario)) {
+  if (cdp !== null && hasForcedGc(scenario)) {
     await cdp.send('HeapProfiler.collectGarbage');
   }
   return readCdpMetrics(cdp);
 }
 
 async function collectValues(
-  { page }: OpenedPage,
+  { page, cdp }: OpenedPage,
   scenario: Scenario,
   before: ReadonlyMap<string, number>,
   after: ReadonlyMap<string, number>,
@@ -143,18 +156,27 @@ async function collectValues(
   await settle(page);
   await page.waitForTimeout(OBSERVER_FLUSH_MS);
   const samples = await page.evaluate(() => window.__perf.drain());
+  const supportedEntryTypes = await page.evaluate(() => [
+    ...PerformanceObserver.supportedEntryTypes,
+  ]);
 
   const values: MetricValues = {};
-  const deltaMetrics = hasForcedGc(scenario)
-    ? [...CDP_METRICS, ...CDP_RETAINED_METRICS]
-    : CDP_METRICS;
-  for (const { source, name, scale } of deltaMetrics) {
-    values[name] = ((after.get(source) ?? 0) - (before.get(source) ?? 0)) * scale;
-  }
-  for (const { source, name, scale } of CDP_GAUGES) {
-    values[name] = (after.get(source) ?? 0) * scale;
+  if (cdp !== null) {
+    const deltaMetrics = hasForcedGc(scenario)
+      ? [...CDP_METRICS, ...CDP_RETAINED_METRICS]
+      : CDP_METRICS;
+    for (const { source, name, scale } of deltaMetrics) {
+      values[name] = ((after.get(source) ?? 0) - (before.get(source) ?? 0)) * scale;
+    }
+    for (const { source, name, scale } of CDP_GAUGES) {
+      values[name] = (after.get(source) ?? 0) * scale;
+    }
   }
   for (const metric of scenario.metrics) {
+    // 対応していない計測値は、0 件ではなく値なしとして扱う
+    if (metric.entryType !== undefined && !supportedEntryTypes.includes(metric.entryType)) {
+      continue;
+    }
     const value = aggregateSamples(samples, metric);
     if (value !== undefined) {
       values[metric.name] = value;
@@ -234,7 +256,7 @@ async function measureRun(
   }
 }
 
-function collectDefinitions(scenario: Scenario): MetricDefinition[] {
+function collectDefinitions(scenario: Scenario, usesCdp: boolean): MetricDefinition[] {
   const cdpMetrics = [
     ...CDP_METRICS,
     ...CDP_GAUGES,
@@ -242,7 +264,7 @@ function collectDefinitions(scenario: Scenario): MetricDefinition[] {
   ];
   return [
     ...scenario.metrics.map(({ name, unit, optional }) => ({ name, unit, optional })),
-    ...cdpMetrics.map(({ name, unit }) => ({ name, unit, optional: false })),
+    ...(usesCdp ? cdpMetrics : []).map(({ name, unit }) => ({ name, unit, optional: false })),
   ];
 }
 
@@ -260,7 +282,8 @@ export async function runScenario(
     runsByVariant.set(variant, [...(runsByVariant.get(variant) ?? []), result]);
   }
 
-  const definitions = collectDefinitions(scenario);
+  const usesCdp = browser.browserType().name() === 'chromium';
+  const definitions = collectDefinitions(scenario, usesCdp);
   return Object.fromEntries(
     scenario.variants.map((variant) => {
       const runs = runsByVariant.get(variant) ?? [];
@@ -304,6 +327,8 @@ export async function recordTraces(
   return paths;
 }
 
-export async function launchBrowser(): Promise<Browser> {
-  return chromium.launch();
+export type BrowserName = 'chromium' | 'webkit';
+
+export async function launchBrowser(name: BrowserName = 'chromium'): Promise<Browser> {
+  return name === 'webkit' ? webkit.launch() : chromium.launch();
 }

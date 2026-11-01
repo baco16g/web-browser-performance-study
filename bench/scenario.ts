@@ -16,6 +16,8 @@ export type SampleMetric = {
   unit: Unit;
   /** 環境や処理の長さによって記録されないことがある指標 */
   optional: boolean;
+  /** PerformanceObserver の種類。ブラウザが対応していなければ値なしとして扱う */
+  entryType?: string;
 };
 
 /** 操作ごとに 1 件だけ記録される時間の指標 */

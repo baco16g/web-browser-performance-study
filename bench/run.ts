@@ -4,6 +4,7 @@ import { parseArgs } from 'node:util';
 import { preview } from 'vite';
 import {
   type BenchOptions,
+  type BrowserName,
   launchBrowser,
   recordTraces,
   runScenario,
@@ -26,6 +27,7 @@ const { values } = parseArgs({
     seed: { type: 'string', default: '1' },
     trace: { type: 'boolean', default: false },
     label: { type: 'string', default: 'latest' },
+    browser: { type: 'string', default: 'chromium' },
   },
 });
 
@@ -43,8 +45,24 @@ if (scenario === undefined) {
   throw new Error(`シナリオ ${values.scenario} はありません。選べる値: ${ids}`);
 }
 
+function readBrowserName(value: string): BrowserName {
+  if (value === 'chromium' || value === 'webkit') {
+    return value;
+  }
+  throw new Error(`--browser には chromium か webkit を指定してください: ${value}`);
+}
+
+const browserName = readBrowserName(values.browser);
+
+if (browserName !== 'chromium' && scenario.kind === 'interaction' && scenario.forceGc) {
+  throw new Error(`${scenario.id} は GC の実行に CDP を使うので、Chromium でしか測れません`);
+}
+if (browserName !== 'chromium' && values.trace) {
+  throw new Error('--trace は Chromium でしか使えません');
+}
+
 const server = await preview({ preview: { port: PREVIEW_PORT, strictPort: true } });
-const browser = await launchBrowser();
+const browser = await launchBrowser(browserName);
 
 try {
   const options: BenchOptions = {

@@ -19,7 +19,8 @@ export const uc05: InteractionScenario = {
       name: 'browser:long-task-total',
       aggregate: 'sum',
       unit: 'ms',
-      optional: false,
+      optional: true,
+      entryType: 'longtask',
     },
   ],
   async prepare(page) {

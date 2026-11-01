@@ -9,8 +9,12 @@ const pageDirectories = readdirSync(resolve(root, 'pages'), { withFileTypes: tru
   (entry) => entry.isDirectory(),
 );
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react(), mockApi()],
+  resolve: {
+    // React の Profiler は通常の本番ビルドでは動かないので、専用のビルドに差し替える
+    alias: mode === 'profiling' ? { 'react-dom/client': 'react-dom/profiling' } : {},
+  },
   build: {
     // DevTools で元の関数名を読めるようにする
     sourcemap: true,
@@ -23,4 +27,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

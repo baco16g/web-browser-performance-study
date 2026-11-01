@@ -1,0 +1,79 @@
+.focus-grid {
+  --tile-height: 136px;
+  --tile-growth: 12px;
+  height: 560px;
+  padding: 8px;
+  overflow: auto;
+}
+
+.focus-grid > div {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  grid-auto-rows: var(--tile-height);
+  gap: 12px;
+}
+
+.tile {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-raised);
+  color: inherit;
+  font: inherit;
+  font-size: 0.8125rem;
+  text-align: left;
+}
+
+.tile:focus {
+  outline: none;
+}
+
+.tile[data-focused="true"] {
+  z-index: 1;
+  outline: 3px solid var(--color-accent);
+}
+
+.tile__thumbnail {
+  min-height: 0;
+  margin-bottom: 6px;
+  border-radius: 4px;
+}
+
+.tile__title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tile__price {
+  font-weight: 600;
+}
+
+/* 寸法を変える実装。周りの項目の位置を確かめ直すのでレイアウトが必要になる */
+.focus-grid[data-emphasis="resize"] .tile[data-focused="true"] {
+  width: calc(100% + var(--tile-growth));
+  height: calc(100% + var(--tile-growth));
+  margin: calc(var(--tile-growth) / -2);
+}
+
+.focus-grid[data-emphasis="transform"] .tile[data-focused="true"],
+.focus-grid[data-emphasis="stable-transform"] .tile[data-focused="true"] {
+  transform: scale(1.06);
+}
+
+/*
+ * transform と z-index はどちらもスタッキングコンテキストを作る。
+ * 全項目を最初からスタッキングコンテキストにしておくと、フォーカスの移動で有無が変わらない。
+ */
+.focus-grid[data-emphasis="stable-transform"] .tile {
+  z-index: 0;
+}
+
+.focus-grid[data-emphasis="stable-transform"] .tile[data-focused="true"] {
+  z-index: 1;
+}

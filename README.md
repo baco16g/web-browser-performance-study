@@ -2,9 +2,13 @@
 
 [![ci](https://github.com/baco16g/web-browser-performance-study/actions/workflows/ci.yml/badge.svg)](https://github.com/baco16g/web-browser-performance-study/actions/workflows/ci.yml)
 
-A personal study project for learning browser performance measurement. Each use case pairs a deliberately slow implementation with an improved one, then measures both under the same conditions with the DevTools, in-page APIs, and automated Chrome DevTools Protocol runs. Documentation is written in Japanese.
+A personal study project for learning browser performance measurement. Each use case pairs a deliberately slow implementation with an improved one, then measures both under the same conditions with the DevTools, in-page APIs, and automated Chrome DevTools Protocol runs. Documentation is written in Japanese. The analysis in the documents was written by Claude (Anthropic's AI) based on the measured results.
 
 ブラウザの性能計測を学ぶための、個人の学習用リポジトリです。架空のストアを題材に、遅い実装と改善した実装を同じ条件で測り、原因の探し方と効果の確かめ方を身につけます。遅い実装は学習のために意図して作ったものです。
+
+解説と考察は、Claude（Anthropic の AI）が実測の結果をもとに書いたものです。
+
+[公開サイト](https://baco16g.github.io/web-browser-performance-study/)で UC1、UC2、UC3、UC5、UC6 を試せます。UC4 と UC7 はモック API が必要なので、手元で動かしてください。
 
 ## 実測の例: 強制同期レイアウトを避けると待ち時間が約77%減った
 

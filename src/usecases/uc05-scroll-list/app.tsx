@@ -38,7 +38,7 @@ function Tile({ product, index, strategy }: TileProps) {
     <article className="list-tile">
       {/* 実際の商品のように画像ごとにデコードされるよう、URL を項目ごとに分ける */}
       <img
-        src={`/generated/product-${product.imageId}-${size}.jpg?tile=${index}`}
+        src={`${import.meta.env.BASE_URL}generated/product-${product.imageId}-${size}.jpg?tile=${index}`}
         alt=""
         width={FITTED_IMAGE}
         height={FITTED_IMAGE}

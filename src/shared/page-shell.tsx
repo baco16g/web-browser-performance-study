@@ -18,7 +18,7 @@ export function PageShell({ title, symptom, variants, activeVariant, children }:
   return (
     <main className="page">
       <header className="page__header">
-        <a href="/" className="page__back">
+        <a href={import.meta.env.BASE_URL} className="page__back">
           一覧へ戻る
         </a>
         <h1>{title}</h1>

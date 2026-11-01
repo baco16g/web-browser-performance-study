@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { installPerf } from '../../perf/install.ts';
+import { ServerRequiredNotice } from '../../shared/server-required-notice.tsx';
 import '../../shared/styles.css';
 import { App } from './app.tsx';
 
@@ -13,6 +14,10 @@ if (container === null) {
 
 createRoot(container).render(
   <StrictMode>
-    <App />
+    {import.meta.env.MODE === 'pages' ? (
+      <ServerRequiredNotice title="UC4 初期表示と操作可能になるまでが遅い" />
+    ) : (
+      <App />
+    )}
   </StrictMode>,
 );

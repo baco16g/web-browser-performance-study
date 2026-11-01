@@ -26,7 +26,8 @@
     "bench:trace-summary": "tsx bench/summarize-trace.ts",
     "bench:budget": "tsx bench/check-budgets.ts",
     "bench:field": "npm run -s build && tsx bench/simulate-field.ts",
-    "build:safari15": "vite build --mode safari15"
+    "build:safari15": "vite build --mode safari15",
+    "build:pages": "npm run -s assets && vite build --mode pages"
   },
   "dependencies": {
     "@tanstack/react-virtual": "^3.14.24",

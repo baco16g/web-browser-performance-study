@@ -5,11 +5,14 @@ import { defineConfig } from 'vite';
 import { mockApi } from './server/mock-api.ts';
 
 const root = import.meta.dirname;
+/** GitHub Pages はリポジトリ名のパスの下で配信する */
+const PAGES_BASE = '/web-browser-performance-study/';
 const pageDirectories = readdirSync(resolve(root, 'pages'), { withFileTypes: true }).filter(
   (entry) => entry.isDirectory(),
 );
 
 export default defineConfig(({ mode }) => ({
+  base: mode === 'pages' ? PAGES_BASE : '/',
   plugins: [react(), mockApi()],
   resolve: {
     // React の Profiler は通常の本番ビルドでは動かないので、専用のビルドに差し替える

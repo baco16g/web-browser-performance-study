@@ -19,6 +19,7 @@ const { values } = parseArgs({
     baseline: { type: 'string' },
     candidate: { type: 'string' },
     variant: { type: 'string', default: 'good' },
+    markdown: { type: 'boolean', default: false },
   },
 });
 
@@ -37,17 +38,27 @@ function readVariant(result: BenchResult, variant: string): VariantResult {
   return found;
 }
 
-function formatJudgement(name: string, { verdict, delta, relativeDelta }: Judgement): string {
+function formatJudgement(name: string, judgement: Judgement): string {
+  const { verdict, delta, relativeDelta, baselineMedian, candidateMedian } = judgement;
   const percent = Number.isFinite(relativeDelta) ? `${(relativeDelta * 100).toFixed(1)}%` : '-';
-  return `${verdict.padEnd(4)} ${name}: ${delta >= 0 ? '+' : ''}${delta.toFixed(1)} (${percent})`;
+  const change = `${delta >= 0 ? '+' : ''}${delta.toFixed(1)}`;
+  if (values.markdown) {
+    const medians = `${baselineMedian.toFixed(1)} → ${candidateMedian.toFixed(1)}`;
+    return `| ${verdict} | ${name} | ${medians} | ${change} (${percent}) |`;
+  }
+  return `${verdict.padEnd(4)} ${name}: ${change} (${percent})`;
 }
 
 const baseline = readVariant(readResult(values.baseline, 'baseline'), values.variant);
 const candidate = readVariant(readResult(values.candidate, 'candidate'), values.variant);
 
+if (values.markdown) {
+  console.log('| 判定 | 指標 | 基準 → 候補 | 差 |\n| --- | --- | --- | --- |');
+}
+
 const judgements = Object.entries(baseline.metrics).flatMap(([name, { unit }]) => {
   if (candidate.metrics[name] === undefined) {
-    console.log(`skip ${name}: 比較先に値がありません`);
+    console.error(`skip ${name}: 比較先に値がありません`);
     return [];
   }
   const judgement = judge(

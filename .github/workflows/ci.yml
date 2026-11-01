@@ -1,0 +1,114 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: 24
+
+jobs:
+  check:
+    name: 型検査、Lint、単体テスト
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+
+  e2e:
+    name: E2E (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, webkit]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps ${{ matrix.browser }}
+      - run: npx playwright test --project=${{ matrix.browser }}
+      - uses: actions/upload-artifact@v7
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report-${{ matrix.browser }}
+          path: playwright-report/
+          retention-days: 7
+
+  performance-budget:
+    name: 性能の予算
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      # 予算は回数の指標だけなので、実行環境が変わっても判定できる
+      - name: 予算の対象のシナリオを測る
+        run: |
+          for scenario in uc01 uc02 uc04 uc06 uc07; do
+            npx tsx bench/run.ts --scenario "$scenario" --runs 2 --warmup 2 --iterations 3
+          done
+      - run: npm run bench:budget
+
+  performance-comparison:
+    name: 基準との時間の比較（参考）
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    # ランナーの性能は揺れるので、時間の差では失敗にせず、結果の表だけを残す
+    continue-on-error: true
+    env:
+      BASE_DIR: ${{ github.workspace }}/../base
+      SCENARIO: uc01
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: 候補を測る
+        run: |
+          npm run build
+          npx tsx bench/run.ts --scenario "$SCENARIO" --runs 5
+      - name: 基準を同じランナーで測る
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git worktree add "$BASE_DIR" "$BASE_SHA"
+          cd "$BASE_DIR"
+          npm ci
+          npm run build
+          npx tsx bench/run.ts --scenario "$SCENARIO" --runs 5
+      - name: 差を表にする
+        run: |
+          {
+            echo "### $SCENARIO の時間の比較"
+            npx tsx bench/compare.ts \
+              --baseline "$BASE_DIR/bench/results/$SCENARIO-latest.json" \
+              --candidate "bench/results/$SCENARIO-latest.json" \
+              --markdown
+          } >> "$GITHUB_STEP_SUMMARY"

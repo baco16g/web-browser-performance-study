@@ -1,6 +1,7 @@
 import { mountHud } from './hud.ts';
 import { installObservers } from './observers.ts';
 import { type PerfRecorder, recorder } from './recorder.ts';
+import { installRum } from './rum.ts';
 
 declare global {
   interface Window {
@@ -14,7 +15,11 @@ export function installPerf(): void {
   window.__perf = recorder;
   installObservers();
 
-  if (new URLSearchParams(location.search).get('hud') !== '0') {
+  const params = new URLSearchParams(location.search);
+  if (params.get('hud') !== '0') {
     mountHud(recorder);
+  }
+  if (params.get('rum') === '1') {
+    installRum(recorder, params);
   }
 }

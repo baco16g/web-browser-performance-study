@@ -1,6 +1,7 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import type { Connect, Plugin } from 'vite';
 import { createProducts, findProduct } from '../src/shared/products.ts';
+import { createRumStore, parseBeacons } from './rum-collector.ts';
 
 const DEFAULT_PRODUCT_COUNT = 60;
 const MAX_PRODUCT_COUNT = 5_000;
@@ -13,6 +14,10 @@ const CACHE_POLICIES: Readonly<Record<string, string>> = {
   revalidate: 'no-cache',
   'max-age': 'max-age=60',
 };
+
+const MAX_RUM_BODY_BYTES = 64 * 1024;
+
+const rumStore = createRumStore();
 
 /** 商品ごとの更新回数。古い内容が見えているかを確かめるために使う */
 const catalogRevisions = new Map<string, number>();
@@ -69,11 +74,43 @@ function handleCatalog(req: IncomingMessage, res: ServerResponse, url: URL, id: 
   );
 }
 
+async function readBody(req: IncomingMessage): Promise<string> {
+  let body = '';
+  for await (const chunk of req) {
+    body += chunk;
+    if (body.length > MAX_RUM_BODY_BYTES) {
+      return '';
+    }
+  }
+  return body;
+}
+
+async function handleRum(req: IncomingMessage, res: ServerResponse): Promise<void> {
+  if (req.method === 'POST') {
+    rumStore.add(parseBeacons(await readBody(req)));
+    res.statusCode = 204;
+    res.end();
+    return;
+  }
+  if (req.method === 'DELETE') {
+    rumStore.clear();
+    res.statusCode = 204;
+    res.end();
+    return;
+  }
+  sendJson(res, 200, { beacons: rumStore.list() });
+}
+
 /** 遅延を `?delay=` で指定できる固定データの API。通信の揺れを計測から取り除く */
 async function handleApi(req: IncomingMessage, res: ServerResponse, next: () => void) {
   const url = new URL(req.url ?? '/', 'http://localhost');
   if (!url.pathname.startsWith('/api/')) {
     next();
+    return;
+  }
+
+  if (url.pathname === '/api/rum') {
+    await handleRum(req, res);
     return;
   }
 

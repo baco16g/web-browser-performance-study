@@ -1,5 +1,23 @@
 import { createRandom } from '../src/shared/random.ts';
 
+/** 乱数の種を固定して配列を混ぜる。同じ種なら同じ順番になる */
+export function shuffle<T>(items: readonly T[], seed: number): T[] {
+  const shuffled = [...items];
+  const random = createRandom(seed);
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(random() * (index + 1));
+    const current = shuffled[index];
+    const swapped = shuffled[swapIndex];
+    if (current !== undefined && swapped !== undefined) {
+      shuffled[index] = swapped;
+      shuffled[swapIndex] = current;
+    }
+  }
+
+  return shuffled;
+}
+
 export type RunPlan = { variant: string; run: number };
 
 /**
@@ -10,17 +28,5 @@ export function createRunOrder(variants: readonly string[], runs: number, seed: 
   const plans = variants.flatMap((variant) =>
     Array.from({ length: runs }, (_, run) => ({ variant, run })),
   );
-  const random = createRandom(seed);
-
-  for (let index = plans.length - 1; index > 0; index -= 1) {
-    const swapIndex = Math.floor(random() * (index + 1));
-    const current = plans[index];
-    const swapped = plans[swapIndex];
-    if (current !== undefined && swapped !== undefined) {
-      plans[index] = swapped;
-      plans[swapIndex] = current;
-    }
-  }
-
-  return plans;
+  return shuffle(plans, seed);
 }

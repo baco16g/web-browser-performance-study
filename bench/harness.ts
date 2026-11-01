@@ -11,7 +11,7 @@ import {
   type RunResult,
   type VariantResult,
 } from './result.ts';
-import type { InteractionScenario, LoadScenario, Scenario } from './scenario.ts';
+import type { InteractionScenario, LoadScenario, NetworkConditions, Scenario } from './scenario.ts';
 
 export const VIEWPORT = { width: 1280, height: 720 };
 
@@ -63,19 +63,20 @@ function createPageUrl(scenario: Scenario, baseUrl: string, variant: string): st
   return `${baseUrl}${scenario.path}?${params}`;
 }
 
+type DeviceConditions = { cpuThrottle: number; network?: NetworkConditions | undefined };
+
 /** 新しいコンテキストを作り、計測の条件を設定する。ページはまだ開かない */
-async function createThrottledPage(
+export async function createThrottledPage(
   browser: Browser,
-  scenario: Scenario,
-  options: BenchOptions,
+  { cpuThrottle, network }: DeviceConditions,
 ): Promise<OpenedPage> {
   const context = await browser.newContext({ viewport: VIEWPORT });
   const page = await context.newPage();
   const cdp = await context.newCDPSession(page);
   await cdp.send('Performance.enable');
-  await cdp.send('Emulation.setCPUThrottlingRate', { rate: options.cpuThrottle });
-  if (scenario.network !== undefined) {
-    const { latencyMs, downloadKbps, uploadKbps } = scenario.network;
+  await cdp.send('Emulation.setCPUThrottlingRate', { rate: cpuThrottle });
+  if (network !== undefined) {
+    const { latencyMs, downloadKbps, uploadKbps } = network;
     await cdp.send('Network.enable');
     await cdp.send('Network.emulateNetworkConditions', {
       offline: false,
@@ -87,13 +88,17 @@ async function createThrottledPage(
   return { page, cdp, close: () => context.close() };
 }
 
+function toConditions(scenario: Scenario, { cpuThrottle }: BenchOptions): DeviceConditions {
+  return { cpuThrottle, network: scenario.network };
+}
+
 async function openInteractionPage(
   browser: Browser,
   scenario: InteractionScenario,
   options: BenchOptions,
   variant: string,
 ): Promise<OpenedPage> {
-  const opened = await createThrottledPage(browser, scenario, options);
+  const opened = await createThrottledPage(browser, toConditions(scenario, options));
   await opened.page.goto(createPageUrl(scenario, options.baseUrl, variant), { waitUntil: 'load' });
   await scenario.prepare(opened.page);
   await opened.page.evaluate(() => window.__perf.drain());
@@ -221,7 +226,7 @@ async function measureRun(
   if (scenario.kind === 'interaction') {
     return measureInteractionRun(browser, scenario, options, variant, run);
   }
-  const opened = await createThrottledPage(browser, scenario, options);
+  const opened = await createThrottledPage(browser, toConditions(scenario, options));
   try {
     return { run, iterations: [await measureLoad(opened, scenario, options, variant)] };
   } finally {
@@ -280,7 +285,7 @@ export async function recordTraces(
   for (const variant of scenario.variants) {
     const path = resolve(outputDirectory, `${scenario.id}-${variant}.trace.json`);
     if (scenario.kind === 'load') {
-      const opened = await createThrottledPage(browser, scenario, options);
+      const opened = await createThrottledPage(browser, toConditions(scenario, options));
       await browser.startTracing(opened.page, { path, screenshots: true });
       await measureLoad(opened, scenario, options, variant);
       await browser.stopTracing();

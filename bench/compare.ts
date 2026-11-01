@@ -45,14 +45,18 @@ function formatJudgement(name: string, { verdict, delta, relativeDelta }: Judgem
 const baseline = readVariant(readResult(values.baseline, 'baseline'), values.variant);
 const candidate = readVariant(readResult(values.candidate, 'candidate'), values.variant);
 
-const judgements = Object.entries(baseline.metrics).map(([name, { unit }]) => {
+const judgements = Object.entries(baseline.metrics).flatMap(([name, { unit }]) => {
+  if (candidate.metrics[name] === undefined) {
+    console.log(`skip ${name}: 比較先に値がありません`);
+    return [];
+  }
   const judgement = judge(
     readRunMedians(baseline.runs, name),
     readRunMedians(candidate.runs, name),
     LIMITS_BY_UNIT[unit],
   );
   console.log(formatJudgement(name, judgement));
-  return judgement;
+  return [judgement];
 });
 
 if (judgements.some(({ verdict }) => verdict === 'fail')) {

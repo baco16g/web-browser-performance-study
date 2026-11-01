@@ -23,12 +23,13 @@ export function measureSync<T>(name: string, task: () => T): T {
  * 描画が終わった後に実行される。setTimeout は遅延が丸められるので MessageChannel を使う。
  * ラスタライズ、合成、表示装置の遅延は含まない近似値である。
  */
-export function recordNextFrame(name: string, inputEvent: Event): void {
+export function recordNextFrame(name: string, inputEvent: Event, onRecorded?: () => void): void {
   const start = inputEvent.timeStamp;
   requestAnimationFrame(() => {
     const { port1, port2 } = new MessageChannel();
     port1.onmessage = () => {
       recorder.record(name, performance.now() - start);
+      onRecorded?.();
       port1.close();
     };
     port2.postMessage(null);

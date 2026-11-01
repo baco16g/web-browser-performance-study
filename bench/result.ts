@@ -1,5 +1,6 @@
-import type { Unit } from '../src/perf/recorder.ts';
+import type { PerfSample, Unit } from '../src/perf/recorder.ts';
 import { median, type Summary, summarize } from '../src/perf/stats.ts';
+import type { SampleMetric } from './scenario.ts';
 
 export type MetricValues = Record<string, number>;
 
@@ -44,9 +45,35 @@ export type BenchResult = {
   variants: Record<string, VariantResult>;
 };
 
-/** 読み込みごとの中央値を並べる */
+/** 結果の指標の定義。optional な指標は値がなくても失敗にしない */
+export type MetricDefinition = { name: string; unit: Unit; optional: boolean };
+
+/** 1 回の操作で記録された計測値を、指標の定義に従って 1 つの値にまとめる */
+export function aggregateSamples(
+  samples: readonly PerfSample[],
+  { sample, aggregate }: SampleMetric,
+): number | undefined {
+  const values = samples.filter(({ name }) => name === sample).map(({ value }) => value);
+  switch (aggregate) {
+    case 'first':
+      return values[0];
+    case 'last':
+      return values.at(-1);
+    case 'max':
+      return values.length === 0 ? undefined : Math.max(...values);
+    case 'sum':
+      return values.reduce((total, value) => total + value, 0);
+    case 'count':
+      return values.length;
+  }
+}
+
+/** 読み込みごとの中央値を並べる。値が 1 件もない読み込みは除く */
 export function readRunMedians(runs: readonly RunResult[], name: string): number[] {
-  return runs.map(({ iterations }) => median(iterations.flatMap((metrics) => metrics[name] ?? [])));
+  return runs.flatMap(({ iterations }) => {
+    const values = iterations.flatMap((metrics) => metrics[name] ?? []);
+    return values.length === 0 ? [] : [median(values)];
+  });
 }
 
 /**
@@ -57,12 +84,14 @@ export function readRunMedians(runs: readonly RunResult[], name: string): number
  */
 export function aggregateRuns(
   runs: readonly RunResult[],
-  units: Readonly<Record<string, Unit>>,
+  definitions: readonly MetricDefinition[],
 ): Record<string, MetricSummary> {
   return Object.fromEntries(
-    Object.entries(units).map(([name, unit]) => [
-      name,
-      { ...summarize(readRunMedians(runs, name)), unit },
-    ]),
+    definitions.flatMap(({ name, unit, optional }) => {
+      const runMedians = readRunMedians(runs, name);
+      return optional && runMedians.length === 0
+        ? []
+        : [[name, { ...summarize(runMedians), unit }]];
+    }),
   );
 }

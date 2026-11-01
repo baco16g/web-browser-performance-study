@@ -34,7 +34,10 @@ function formatMetric(metric: MetricSummary | undefined): string {
 /** 指標ごとに、実装の中央値と四分位範囲を Markdown の表にする */
 export function formatResultTable(result: BenchResult): string {
   const variantIds = Object.keys(result.variants);
-  const metricNames = Object.keys(result.variants[variantIds[0] ?? '']?.metrics ?? {});
+  // 記録されない実装がある指標も表に残す
+  const metricNames = [
+    ...new Set(Object.values(result.variants).flatMap(({ metrics }) => Object.keys(metrics))),
+  ];
 
   const rows = metricNames.map((name) => {
     const cells = variantIds.map((variant) =>

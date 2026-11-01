@@ -25,6 +25,7 @@ const { values } = parseArgs({
     cpu: { type: 'string', default: '4' },
     seed: { type: 'string', default: '1' },
     trace: { type: 'boolean', default: false },
+    label: { type: 'string', default: 'latest' },
   },
 });
 
@@ -73,7 +74,7 @@ try {
   };
 
   mkdirSync(RESULTS_DIRECTORY, { recursive: true });
-  const path = resolve(RESULTS_DIRECTORY, `${scenario.id}-latest.json`);
+  const path = resolve(RESULTS_DIRECTORY, `${scenario.id}-${values.label}.json`);
   writeFileSync(path, `${JSON.stringify(result, null, 2)}\n`);
 
   console.log(`\n${formatResultTable(result)}\n\n保存先: ${path}`);

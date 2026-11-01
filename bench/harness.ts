@@ -3,14 +3,21 @@ import { resolve } from 'node:path';
 import { type Browser, type CDPSession, chromium, type Page } from '@playwright/test';
 import type { Unit } from '../src/perf/recorder.ts';
 import { createRunOrder } from './order.ts';
-import { aggregateRuns, type MetricValues, type RunResult, type VariantResult } from './result.ts';
+import {
+  aggregateRuns,
+  aggregateSamples,
+  type MetricDefinition,
+  type MetricValues,
+  type RunResult,
+  type VariantResult,
+} from './result.ts';
 import type { Scenario } from './scenario.ts';
 
 export const VIEWPORT = { width: 1280, height: 720 };
 
 const SECONDS_TO_MS = 1_000;
-const DONE_POLLING_MS = 50;
-const DONE_TIMEOUT_MS = 120_000;
+/** PerformanceObserver の通知は描画の後に届くので、集計の前に少し待つ */
+const OBSERVER_FLUSH_MS = 100;
 
 type CdpMetric = { source: string; name: string; unit: Unit; scale: number };
 
@@ -76,28 +83,26 @@ async function settle(page: Page): Promise<void> {
 async function measureIteration(
   { page, cdp }: OpenedPage,
   scenario: Scenario,
+  iteration: number,
 ): Promise<MetricValues> {
   await settle(page);
   const before = await readCdpMetrics(cdp);
 
-  await scenario.act(page);
-  await page.waitForFunction(
-    (doneSample) => window.__perf.snapshot().some(({ name }) => name === doneSample),
-    scenario.doneSample,
-    { polling: DONE_POLLING_MS, timeout: DONE_TIMEOUT_MS },
-  );
+  await scenario.act(page, iteration);
 
   const after = await readCdpMetrics(cdp);
+  await settle(page);
+  await page.waitForTimeout(OBSERVER_FLUSH_MS);
   const samples = await page.evaluate(() => window.__perf.drain());
 
   const values: MetricValues = {};
   for (const { source, name, scale } of CDP_METRICS) {
     values[name] = ((after.get(source) ?? 0) - (before.get(source) ?? 0)) * scale;
   }
-  for (const name of scenario.samples) {
-    const sample = samples.find((candidate) => candidate.name === name);
-    if (sample !== undefined) {
-      values[name] = sample.value;
+  for (const metric of scenario.metrics) {
+    const value = aggregateSamples(samples, metric);
+    if (value !== undefined) {
+      values[metric.name] = value;
     }
   }
   return values;
@@ -114,11 +119,13 @@ async function measureRun(
   try {
     // 初回だけの処理（JIT の準備など）を結果から除く
     for (let iteration = 0; iteration < options.warmupIterations; iteration += 1) {
-      await measureIteration(opened, scenario);
+      await measureIteration(opened, scenario, iteration);
     }
     const iterations: MetricValues[] = [];
     for (let iteration = 0; iteration < options.iterations; iteration += 1) {
-      iterations.push(await measureIteration(opened, scenario));
+      iterations.push(
+        await measureIteration(opened, scenario, options.warmupIterations + iteration),
+      );
     }
     return { run, iterations };
   } finally {
@@ -126,11 +133,11 @@ async function measureRun(
   }
 }
 
-export function collectUnits(scenario: Scenario): Record<string, Unit> {
-  return Object.fromEntries([
-    ...scenario.samples.map((name): [string, Unit] => [name, 'ms']),
-    ...CDP_METRICS.map(({ name, unit }): [string, Unit] => [name, unit]),
-  ]);
+function collectDefinitions(scenario: Scenario): MetricDefinition[] {
+  return [
+    ...scenario.metrics.map(({ name, unit, optional }) => ({ name, unit, optional })),
+    ...CDP_METRICS.map(({ name, unit }) => ({ name, unit, optional: false })),
+  ];
 }
 
 export async function runScenario(
@@ -147,11 +154,11 @@ export async function runScenario(
     runsByVariant.set(variant, [...(runsByVariant.get(variant) ?? []), result]);
   }
 
-  const units = collectUnits(scenario);
+  const definitions = collectDefinitions(scenario);
   return Object.fromEntries(
     scenario.variants.map((variant) => {
       const runs = runsByVariant.get(variant) ?? [];
-      return [variant, { runs, metrics: aggregateRuns(runs, units) }];
+      return [variant, { runs, metrics: aggregateRuns(runs, definitions) }];
     }),
   );
 }
@@ -174,7 +181,7 @@ export async function recordTraces(
     const path = resolve(outputDirectory, `${scenario.id}-${variant}.trace.json`);
     await settle(opened.page);
     await browser.startTracing(opened.page, { path, screenshots: true });
-    await measureIteration(opened, scenario);
+    await measureIteration(opened, scenario, 0);
     await browser.stopTracing();
     await opened.close();
     paths.push(path);

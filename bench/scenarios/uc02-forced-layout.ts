@@ -1,6 +1,7 @@
-import type { Scenario } from '../scenario.ts';
+import { type Scenario, timeMetric, waitForSample } from '../scenario.ts';
 
 const BUTTON_TEST_ID = 'change-text-size';
+const DONE_SAMPLE = 'uc02:input-to-next-frame';
 
 export const uc02: Scenario = {
   id: 'uc02',
@@ -8,13 +9,13 @@ export const uc02: Scenario = {
   path: '/pages/uc02-forced-layout/',
   query: { count: '300' },
   variants: ['bad', 'good', 'css'],
-  doneSample: 'uc02:input-to-next-frame',
-  samples: ['uc02:input-to-next-frame', 'uc02:change-text-size'],
+  metrics: [timeMetric(DONE_SAMPLE), timeMetric('uc02:change-text-size')],
   async prepare(page) {
     await page.getByTestId(BUTTON_TEST_ID).focus();
   },
   async act(page) {
     // click() は事前の位置確認でレイアウトを起こすので、フォーカス済みのボタンをキーで押す
     await page.keyboard.press('Enter');
+    await waitForSample(page, DONE_SAMPLE);
   },
 };

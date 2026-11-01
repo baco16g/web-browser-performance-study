@@ -7,11 +7,12 @@ type Props = {
   products: readonly Product[];
   columns: number;
   memoized: boolean;
+  priceFormat?: Intl.NumberFormat | undefined;
   onMove(event: KeyboardEvent): void;
 };
 
 /** 遅い実装。フォーカス位置が親の state にあるので、移動のたびに全項目を処理する */
-export function StateGrid({ products, columns, memoized, onMove }: Props) {
+export function StateGrid({ products, columns, memoized, priceFormat, onMove }: Props) {
   const [focusedIndex, setFocusedIndex] = useState(0);
   const TileComponent = memoized ? MemoTile : Tile;
 
@@ -35,6 +36,7 @@ export function StateGrid({ products, columns, memoized, onMove }: Props) {
           index={index}
           product={product}
           focused={index === focusedIndex}
+          priceFormat={priceFormat}
         />
       ))}
     </div>

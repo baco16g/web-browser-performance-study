@@ -12,7 +12,7 @@ import { createProducts } from '../../shared/products.ts';
 import { readPositiveInt, readVariant } from '../../shared/query.ts';
 import { StateGrid } from './state-grid.tsx';
 import { StoreGrid } from './store-grid.tsx';
-import { tileRenderCounter } from './tile.tsx';
+import { PRICE_LOCALE, tileRenderCounter } from './tile.tsx';
 import './styles.css';
 
 const COLUMNS = 5;
@@ -20,6 +20,7 @@ const DEFAULT_TILE_COUNT = 3_000;
 
 const VARIANTS = [
   { id: 'bad', label: '親の state（遅い）' },
+  { id: 'formatter', label: '親の state + 整形の使い回し' },
   { id: 'memo', label: '親の state + memo' },
   { id: 'store', label: '外部ストア' },
   { id: 'transform', label: '外部ストア + transform' },
@@ -31,6 +32,7 @@ type VariantId = (typeof VARIANTS)[number]['id'];
 /** フォーカスしたタイルを目立たせる方法 */
 const EMPHASIS: Record<VariantId, 'resize' | 'transform' | 'stable-transform'> = {
   bad: 'resize',
+  formatter: 'resize',
   memo: 'resize',
   store: 'resize',
   transform: 'transform',
@@ -53,9 +55,13 @@ function trackMove(event: KeyboardEvent): void {
 }
 
 export function App() {
-  const variant = readVariant(['bad', 'memo', 'store', 'transform', 'good']);
+  const variant = readVariant(['bad', 'formatter', 'memo', 'store', 'transform', 'good']);
   const products = useMemo(() => createProducts(readPositiveInt('count', DEFAULT_TILE_COUNT)), []);
-  const usesParentState = variant === 'bad' || variant === 'memo';
+  const usesParentState = variant === 'bad' || variant === 'formatter' || variant === 'memo';
+  const priceFormat = useMemo(
+    () => (variant === 'formatter' ? new Intl.NumberFormat(PRICE_LOCALE) : undefined),
+    [variant],
+  );
 
   return (
     <PageShell
@@ -76,6 +82,7 @@ export function App() {
               products={products}
               columns={COLUMNS}
               memoized={variant === 'memo'}
+              priceFormat={priceFormat}
               onMove={trackMove}
             />
           ) : (

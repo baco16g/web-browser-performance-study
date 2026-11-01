@@ -8,7 +8,7 @@ export const uc01: Scenario = {
   title: '十字キーのフォーカス移動',
   path: '/pages/uc01-focus-grid/',
   query: { count: '3000' },
-  variants: ['bad', 'memo', 'store', 'transform', 'good'],
+  variants: ['bad', 'formatter', 'memo', 'store', 'transform', 'good'],
   metrics: [
     timeMetric('uc01:input-to-next-frame'),
     { ...timeMetric(DONE_SAMPLE), unit: 'count' },

@@ -3,7 +3,19 @@ import { expect, test } from '@playwright/test';
 const PAGE_PATH = '/pages/uc01-focus-grid/?count=60';
 const COLUMNS = 5;
 
-for (const variant of ['bad', 'memo', 'store', 'transform', 'good']) {
+test('整形を使い回しても価格の表示は変わらない', async ({ page }) => {
+  const readPrices = async (variant: string): Promise<string[]> => {
+    await page.goto(`${PAGE_PATH}&variant=${variant}`);
+    await expect(page.getByTestId('tile-0')).toBeFocused();
+    return page.locator('.tile__price').allTextContents();
+  };
+
+  const expected = await readPrices('bad');
+  expect(expected).not.toHaveLength(0);
+  expect(await readPrices('formatter')).toEqual(expected);
+});
+
+for (const variant of ['bad', 'formatter', 'memo', 'store', 'transform', 'good']) {
   test.describe(variant, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(`${PAGE_PATH}&variant=${variant}`);

@@ -11,7 +11,7 @@ import {
   type RunResult,
   type VariantResult,
 } from './result.ts';
-import type { Scenario } from './scenario.ts';
+import type { InteractionScenario, LoadScenario, Scenario } from './scenario.ts';
 
 export const VIEWPORT = { width: 1280, height: 720 };
 
@@ -21,7 +21,9 @@ const OBSERVER_FLUSH_MS = 100;
 
 type CdpMetric = { source: string; name: string; unit: Unit; scale: number };
 
-/** Performance.getMetrics の値は累計なので、操作の前後の差を取る */
+const BYTES_PER_KILOBIT = 125;
+
+/** 回数と時間は累計で返ってくるので、操作の前後の差を取る */
 const CDP_METRICS: readonly CdpMetric[] = [
   { source: 'LayoutCount', name: 'cdp:layout-count', unit: 'count', scale: 1 },
   { source: 'RecalcStyleCount', name: 'cdp:recalc-style-count', unit: 'count', scale: 1 },
@@ -29,6 +31,12 @@ const CDP_METRICS: readonly CdpMetric[] = [
   { source: 'RecalcStyleDuration', name: 'cdp:recalc-style-ms', unit: 'ms', scale: SECONDS_TO_MS },
   { source: 'ScriptDuration', name: 'cdp:script-ms', unit: 'ms', scale: SECONDS_TO_MS },
   { source: 'TaskDuration', name: 'cdp:task-ms', unit: 'ms', scale: SECONDS_TO_MS },
+];
+
+/** 量はその時点の値を読む */
+const CDP_GAUGES: readonly CdpMetric[] = [
+  { source: 'Nodes', name: 'cdp:dom-nodes', unit: 'count', scale: 1 },
+  { source: 'JSHeapUsedSize', name: 'cdp:js-heap-used', unit: 'bytes', scale: 1 },
 ];
 
 export type BenchOptions = {
@@ -48,21 +56,41 @@ function createPageUrl(scenario: Scenario, baseUrl: string, variant: string): st
   return `${baseUrl}${scenario.path}?${params}`;
 }
 
-async function openPage(
+/** 新しいコンテキストを作り、計測の条件を設定する。ページはまだ開かない */
+async function createThrottledPage(
   browser: Browser,
   scenario: Scenario,
   options: BenchOptions,
-  variant: string,
 ): Promise<OpenedPage> {
   const context = await browser.newContext({ viewport: VIEWPORT });
   const page = await context.newPage();
   const cdp = await context.newCDPSession(page);
   await cdp.send('Performance.enable');
   await cdp.send('Emulation.setCPUThrottlingRate', { rate: options.cpuThrottle });
-  await page.goto(createPageUrl(scenario, options.baseUrl, variant), { waitUntil: 'load' });
-  await scenario.prepare(page);
-  await page.evaluate(() => window.__perf.drain());
+  if (scenario.network !== undefined) {
+    const { latencyMs, downloadKbps, uploadKbps } = scenario.network;
+    await cdp.send('Network.enable');
+    await cdp.send('Network.emulateNetworkConditions', {
+      offline: false,
+      latency: latencyMs,
+      downloadThroughput: downloadKbps * BYTES_PER_KILOBIT,
+      uploadThroughput: uploadKbps * BYTES_PER_KILOBIT,
+    });
+  }
   return { page, cdp, close: () => context.close() };
+}
+
+async function openInteractionPage(
+  browser: Browser,
+  scenario: InteractionScenario,
+  options: BenchOptions,
+  variant: string,
+): Promise<OpenedPage> {
+  const opened = await createThrottledPage(browser, scenario, options);
+  await opened.page.goto(createPageUrl(scenario, options.baseUrl, variant), { waitUntil: 'load' });
+  await scenario.prepare(opened.page);
+  await opened.page.evaluate(() => window.__perf.drain());
+  return opened;
 }
 
 async function readCdpMetrics(cdp: CDPSession): Promise<Map<string, number>> {
@@ -80,17 +108,12 @@ async function settle(page: Page): Promise<void> {
   );
 }
 
-async function measureIteration(
-  { page, cdp }: OpenedPage,
+async function collectValues(
+  { page }: OpenedPage,
   scenario: Scenario,
-  iteration: number,
+  before: ReadonlyMap<string, number>,
+  after: ReadonlyMap<string, number>,
 ): Promise<MetricValues> {
-  await settle(page);
-  const before = await readCdpMetrics(cdp);
-
-  await scenario.act(page, iteration);
-
-  const after = await readCdpMetrics(cdp);
   await settle(page);
   await page.waitForTimeout(OBSERVER_FLUSH_MS);
   const samples = await page.evaluate(() => window.__perf.drain());
@@ -98,6 +121,9 @@ async function measureIteration(
   const values: MetricValues = {};
   for (const { source, name, scale } of CDP_METRICS) {
     values[name] = ((after.get(source) ?? 0) - (before.get(source) ?? 0)) * scale;
+  }
+  for (const { source, name, scale } of CDP_GAUGES) {
+    values[name] = (after.get(source) ?? 0) * scale;
   }
   for (const metric of scenario.metrics) {
     const value = aggregateSamples(samples, metric);
@@ -108,14 +134,26 @@ async function measureIteration(
   return values;
 }
 
-async function measureRun(
+async function measureIteration(
+  opened: OpenedPage,
+  scenario: InteractionScenario,
+  iteration: number,
+): Promise<MetricValues> {
+  await settle(opened.page);
+  const before = await readCdpMetrics(opened.cdp);
+  await scenario.act(opened.page, iteration);
+  const after = await readCdpMetrics(opened.cdp);
+  return collectValues(opened, scenario, before, after);
+}
+
+async function measureInteractionRun(
   browser: Browser,
-  scenario: Scenario,
+  scenario: InteractionScenario,
   options: BenchOptions,
   variant: string,
   run: number,
 ): Promise<RunResult> {
-  const opened = await openPage(browser, scenario, options, variant);
+  const opened = await openInteractionPage(browser, scenario, options, variant);
   try {
     // 初回だけの処理（JIT の準備など）を結果から除く
     for (let iteration = 0; iteration < options.warmupIterations; iteration += 1) {
@@ -133,10 +171,43 @@ async function measureRun(
   }
 }
 
+/** 読み込みは 1 回で完結するので、空打ちと繰り返しは行わない */
+async function measureLoad(
+  opened: OpenedPage,
+  scenario: LoadScenario,
+  options: BenchOptions,
+  variant: string,
+): Promise<MetricValues> {
+  await opened.page.goto(createPageUrl(scenario, options.baseUrl, variant), {
+    waitUntil: 'commit',
+  });
+  await scenario.waitUntilLoaded(opened.page);
+  const after = await readCdpMetrics(opened.cdp);
+  return collectValues(opened, scenario, new Map(), after);
+}
+
+async function measureRun(
+  browser: Browser,
+  scenario: Scenario,
+  options: BenchOptions,
+  variant: string,
+  run: number,
+): Promise<RunResult> {
+  if (scenario.kind === 'interaction') {
+    return measureInteractionRun(browser, scenario, options, variant, run);
+  }
+  const opened = await createThrottledPage(browser, scenario, options);
+  try {
+    return { run, iterations: [await measureLoad(opened, scenario, options, variant)] };
+  } finally {
+    await opened.close();
+  }
+}
+
 function collectDefinitions(scenario: Scenario): MetricDefinition[] {
   return [
     ...scenario.metrics.map(({ name, unit, optional }) => ({ name, unit, optional })),
-    ...CDP_METRICS.map(({ name, unit }) => ({ name, unit, optional: false })),
+    ...[...CDP_METRICS, ...CDP_GAUGES].map(({ name, unit }) => ({ name, unit, optional: false })),
   ];
 }
 
@@ -177,13 +248,21 @@ export async function recordTraces(
   const paths: string[] = [];
 
   for (const variant of scenario.variants) {
-    const opened = await openPage(browser, scenario, options, variant);
     const path = resolve(outputDirectory, `${scenario.id}-${variant}.trace.json`);
-    await settle(opened.page);
-    await browser.startTracing(opened.page, { path, screenshots: true });
-    await measureIteration(opened, scenario, 0);
-    await browser.stopTracing();
-    await opened.close();
+    if (scenario.kind === 'load') {
+      const opened = await createThrottledPage(browser, scenario, options);
+      await browser.startTracing(opened.page, { path, screenshots: true });
+      await measureLoad(opened, scenario, options, variant);
+      await browser.stopTracing();
+      await opened.close();
+    } else {
+      const opened = await openInteractionPage(browser, scenario, options, variant);
+      await settle(opened.page);
+      await browser.startTracing(opened.page, { path, screenshots: true });
+      await measureIteration(opened, scenario, 0);
+      await browser.stopTracing();
+      await opened.close();
+    }
     paths.push(path);
   }
 

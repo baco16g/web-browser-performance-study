@@ -28,6 +28,7 @@ async function waitForPaintedQuery(page: Page, query: string): Promise<void> {
 }
 
 export const uc03: Scenario = {
+  kind: 'interaction',
   id: 'uc03',
   title: '絞り込み中の入力',
   path: '/pages/uc03-search-input/',

@@ -3,6 +3,7 @@ import { arch, cpus, platform, totalmem } from 'node:os';
 import type { Browser } from '@playwright/test';
 import type { BenchResult, MetricSummary } from './result.ts';
 
+const BYTES_PER_MEBIBYTE = 1024 ** 2;
 const BYTES_PER_GIBIBYTE = 1024 ** 3;
 
 function runGit(args: readonly string[]): string {
@@ -27,7 +28,11 @@ function formatMetric(metric: MetricSummary | undefined): string {
   if (metric === undefined) {
     return '-';
   }
-  const digits = metric.unit === 'count' ? 0 : 1;
+  if (metric.unit === 'bytes') {
+    const toMebibytes = (bytes: number): string => (bytes / BYTES_PER_MEBIBYTE).toFixed(1);
+    return `${toMebibytes(metric.median)} ±${toMebibytes(metric.iqr)} MiB`;
+  }
+  const digits = metric.unit === 'count' ? 0 : metric.unit === 'score' ? 3 : 1;
   return `${metric.median.toFixed(digits)} ±${metric.iqr.toFixed(digits)}`;
 }
 

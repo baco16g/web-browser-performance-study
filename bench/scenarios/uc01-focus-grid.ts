@@ -3,6 +3,7 @@ import { optionalTimeMetric, type Scenario, timeMetric, waitForSample } from '..
 const DONE_SAMPLE = 'uc01:tile-renders';
 
 export const uc01: Scenario = {
+  kind: 'interaction',
   id: 'uc01',
   title: '十字キーのフォーカス移動',
   path: '/pages/uc01-focus-grid/',

@@ -22,9 +22,11 @@
     "check": "npm run typecheck && npm run lint && npm run test",
     "bench": "npm run -s build && tsx bench/run.ts",
     "bench:compare": "tsx bench/compare.ts",
-    "bench:profiling": "vite build --mode profiling && tsx bench/run.ts --label profiling"
+    "bench:profiling": "vite build --mode profiling && tsx bench/run.ts --label profiling",
+    "bench:trace-summary": "tsx bench/summarize-trace.ts"
   },
   "dependencies": {
+    "@tanstack/react-virtual": "^3.14.24",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "web-vitals": "^6.2.3"

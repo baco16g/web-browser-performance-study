@@ -28,19 +28,40 @@ export function optionalTimeMetric(sample: string): SampleMetric {
   return { ...timeMetric(sample), optional: true };
 }
 
-/** 測りたい操作の定義。測り方は全シナリオで共通にする */
-export type Scenario = {
+/** 帯域は Kbps で指定する。latency はリクエストごとに足される遅延 */
+export type NetworkConditions = {
+  latencyMs: number;
+  downloadKbps: number;
+  uploadKbps: number;
+};
+
+type ScenarioBase = {
   id: string;
   title: string;
   path: string;
   query: Record<string, string>;
   variants: readonly [string, ...string[]];
   metrics: readonly SampleMetric[];
+  network?: NetworkConditions;
+};
+
+/** 開いたページの上で同じ操作を繰り返して測る */
+export type InteractionScenario = ScenarioBase & {
+  kind: 'interaction';
   /** ページを開いた後、最初の操作の前に 1 回だけ行う準備 */
   prepare(page: Page): Promise<void>;
   /** 操作を 1 回行い、完了するまで待つ。iteration は読み込みごとに 0 から数える */
   act(page: Page, iteration: number): Promise<void>;
 };
+
+/** キャッシュのない状態からの読み込みそのものを測る */
+export type LoadScenario = ScenarioBase & {
+  kind: 'load';
+  /** 測りたいものがすべて記録されるまで待つ */
+  waitUntilLoaded(page: Page): Promise<void>;
+};
+
+export type Scenario = InteractionScenario | LoadScenario;
 
 /** ページ内で計測値が記録されるまで待つ。rAF でのポーリングはフレームを増やすのでタイマーにする */
 export async function waitForSample(page: Page, sampleName: string): Promise<void> {

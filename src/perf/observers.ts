@@ -1,4 +1,4 @@
-import { onCLS, onINP, onLCP } from 'web-vitals';
+import { onCLS, onINP, onLCP } from 'web-vitals/attribution';
 import { recorder } from './recorder.ts';
 
 export function supportsEntryType(type: string): boolean {
@@ -56,6 +56,15 @@ export function installObservers(): void {
   );
 
   onINP(({ value }) => recorder.record('vitals:inp', value), { reportAllChanges: true });
-  onLCP(({ value }) => recorder.record('vitals:lcp', value), { reportAllChanges: true });
+  onLCP(
+    ({ value, attribution }) => {
+      recorder.record('vitals:lcp', value);
+      recorder.record('vitals:lcp:ttfb', attribution.timeToFirstByte);
+      recorder.record('vitals:lcp:resource-load-delay', attribution.resourceLoadDelay);
+      recorder.record('vitals:lcp:resource-load-duration', attribution.resourceLoadDuration);
+      recorder.record('vitals:lcp:element-render-delay', attribution.elementRenderDelay);
+    },
+    { reportAllChanges: true },
+  );
   onCLS(({ value }) => recorder.record('vitals:cls', value, 'score'), { reportAllChanges: true });
 }

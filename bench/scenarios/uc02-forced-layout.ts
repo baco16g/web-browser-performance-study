@@ -4,6 +4,7 @@ const BUTTON_TEST_ID = 'change-text-size';
 const DONE_SAMPLE = 'uc02:input-to-next-frame';
 
 export const uc02: Scenario = {
+  kind: 'interaction',
   id: 'uc02',
   title: 'カードの高さ揃え',
   path: '/pages/uc02-forced-layout/',

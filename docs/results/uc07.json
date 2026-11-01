@@ -1,0 +1,1897 @@
+{
+  "scenario": "uc07",
+  "title": "再表示と詳細の表示",
+  "createdAt": "2026-11-01T04:14:17.851Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "chromium 156.0.8078.4",
+    "gitCommit": "6fa159e",
+    "gitDirty": false
+  },
+  "conditions": {
+    "runs": 5,
+    "warmupIterations": 1,
+    "iterations": 3,
+    "cpuThrottle": 4,
+    "seed": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "query": {
+      "delay": "200"
+    }
+  },
+  "variants": {
+    "bad": {
+      "runs": [
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.6720000000000015,
+              "cdp:recalc-style-ms": 1.176,
+              "cdp:script-ms": 10.80600000000001,
+              "cdp:task-ms": 32.82900000000002,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3956088,
+              "uc07:first-visit": 227.70000004768372,
+              "uc07:revisit": 227.59999990463257,
+              "uc07:transfer-total": 49622,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 5.039999999999996,
+              "cdp:recalc-style-ms": 0.7469999999999994,
+              "cdp:script-ms": 9.773000000000003,
+              "cdp:task-ms": 30.823000000000018,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4254980,
+              "uc07:first-visit": 233.20000004768372,
+              "uc07:revisit": 233,
+              "uc07:transfer-total": 67664,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.924000000000004,
+              "cdp:recalc-style-ms": 1.752000000000001,
+              "cdp:script-ms": 9.03699999999999,
+              "cdp:task-ms": 28.125999999999983,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4604532,
+              "uc07:first-visit": 232.79999995231628,
+              "uc07:revisit": 231.70000004768372,
+              "uc07:transfer-total": 64064,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.7549999999999946,
+              "cdp:recalc-style-ms": 1.1900000000000002,
+              "cdp:script-ms": 9.646000000000003,
+              "cdp:task-ms": 33.194,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3897624,
+              "uc07:first-visit": 227.40000009536743,
+              "uc07:revisit": 226.70000004768372,
+              "uc07:transfer-total": 49622,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.5430000000000046,
+              "cdp:recalc-style-ms": 2.346,
+              "cdp:script-ms": 7.932999999999995,
+              "cdp:task-ms": 28.811000000000003,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4231480,
+              "uc07:first-visit": 234.39999985694885,
+              "uc07:revisit": 232.59999990463257,
+              "uc07:transfer-total": 67664,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.282,
+              "cdp:recalc-style-ms": 1.882,
+              "cdp:script-ms": 9.158,
+              "cdp:task-ms": 30.878000000000018,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4636480,
+              "uc07:first-visit": 233.79999995231628,
+              "uc07:revisit": 233.70000004768372,
+              "uc07:transfer-total": 64064,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.4429999999999947,
+              "cdp:recalc-style-ms": 1.5599999999999998,
+              "cdp:script-ms": 11.712,
+              "cdp:task-ms": 37.056000000000004,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3893880,
+              "uc07:first-visit": 227.29999995231628,
+              "uc07:revisit": 225.80000019073486,
+              "uc07:transfer-total": 49622,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.607000000000006,
+              "cdp:recalc-style-ms": 3.3669999999999995,
+              "cdp:script-ms": 8.206999999999992,
+              "cdp:task-ms": 33.71100000000002,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4191192,
+              "uc07:first-visit": 234.79999995231628,
+              "uc07:revisit": 235.29999995231628,
+              "uc07:transfer-total": 67664,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 2.7249999999999983,
+              "cdp:recalc-style-ms": 1.209,
+              "cdp:script-ms": 11.110000000000008,
+              "cdp:task-ms": 32.04899999999999,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4540512,
+              "uc07:first-visit": 233,
+              "uc07:revisit": 233.30000019073486,
+              "uc07:transfer-total": 64064,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.0210000000000035,
+              "cdp:recalc-style-ms": 2.7399999999999993,
+              "cdp:script-ms": 9.886000000000006,
+              "cdp:task-ms": 33.805,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3900172,
+              "uc07:first-visit": 226.79999995231628,
+              "uc07:revisit": 227.29999995231628,
+              "uc07:transfer-total": 49622,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.488999999999999,
+              "cdp:recalc-style-ms": 1.6820000000000013,
+              "cdp:script-ms": 10.793999999999999,
+              "cdp:task-ms": 35.17899999999999,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4215332,
+              "uc07:first-visit": 235.20000004768372,
+              "uc07:revisit": 233.40000009536743,
+              "uc07:transfer-total": 67664,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.518000000000002,
+              "cdp:recalc-style-ms": 1.6469999999999991,
+              "cdp:script-ms": 9.588,
+              "cdp:task-ms": 31.53600000000001,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4575436,
+              "uc07:first-visit": 233,
+              "uc07:revisit": 233.29999995231628,
+              "uc07:transfer-total": 64064,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.608,
+              "cdp:recalc-style-ms": 0.8079999999999997,
+              "cdp:script-ms": 11.073,
+              "cdp:task-ms": 31.725999999999978,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3927280,
+              "uc07:first-visit": 228.29999995231628,
+              "uc07:revisit": 225.79999995231628,
+              "uc07:transfer-total": 49622,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 2.671,
+              "cdp:recalc-style-ms": 1.461,
+              "cdp:script-ms": 11.803000000000008,
+              "cdp:task-ms": 33.379999999999995,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4256172,
+              "uc07:first-visit": 234.40000009536743,
+              "uc07:revisit": 233.59999990463257,
+              "uc07:transfer-total": 67664,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.1770000000000005,
+              "cdp:recalc-style-ms": 1.5019999999999998,
+              "cdp:script-ms": 8.969000000000005,
+              "cdp:task-ms": 29.693000000000026,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4634724,
+              "uc07:first-visit": 233,
+              "uc07:revisit": 233.10000014305115,
+              "uc07:transfer-total": 64064,
+              "uc07:requests": 2
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc07:first-visit": {
+          "count": 5,
+          "min": 232.79999995231628,
+          "p25": 233,
+          "median": 233,
+          "p75": 233,
+          "p95": 233.63999996185302,
+          "max": 233.79999995231628,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc07:revisit": {
+          "count": 5,
+          "min": 231.70000004768372,
+          "p25": 232.59999990463257,
+          "median": 233.10000014305115,
+          "p75": 233.29999995231628,
+          "p95": 233.30000014305114,
+          "max": 233.30000019073486,
+          "iqr": 0.7000000476837158,
+          "unit": "ms"
+        },
+        "uc07:transfer-total": {
+          "count": 5,
+          "min": 64064,
+          "p25": 64064,
+          "median": 64064,
+          "p75": 64064,
+          "p95": 64064,
+          "max": 64064,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "uc07:requests": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 6,
+          "p25": 6,
+          "median": 6,
+          "p75": 6,
+          "p95": 6,
+          "max": 6,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 3.4429999999999947,
+          "p25": 3.5430000000000046,
+          "median": 3.608,
+          "p75": 3.924000000000004,
+          "p95": 4.001600000000003,
+          "max": 4.0210000000000035,
+          "iqr": 0.38099999999999934,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 1.176,
+          "p25": 1.461,
+          "median": 1.5599999999999998,
+          "p75": 1.6820000000000013,
+          "p95": 1.842,
+          "max": 1.882,
+          "iqr": 0.2210000000000012,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 9.158,
+          "p25": 9.773000000000003,
+          "median": 9.886000000000006,
+          "p75": 11.073,
+          "p95": 11.102600000000006,
+          "max": 11.110000000000008,
+          "iqr": 1.2999999999999972,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 30.823000000000018,
+          "p25": 30.878000000000018,
+          "median": 31.725999999999978,
+          "p75": 33.71100000000002,
+          "p95": 33.7862,
+          "max": 33.805,
+          "iqr": 2.833000000000002,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 674,
+          "p25": 674,
+          "median": 674,
+          "p75": 674,
+          "p95": 674,
+          "max": 674,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 4191192,
+          "p25": 4215332,
+          "median": 4231480,
+          "p75": 4254980,
+          "p95": 4255933.6,
+          "max": 4256172,
+          "iqr": 39648,
+          "unit": "bytes"
+        }
+      }
+    },
+    "revalidate": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.132999999999997,
+              "cdp:recalc-style-ms": 3.483999999999999,
+              "cdp:script-ms": 9.52399999999999,
+              "cdp:task-ms": 30.942999999999998,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3901592,
+              "uc07:first-visit": 226.39999985694885,
+              "uc07:revisit": 210.10000014305115,
+              "uc07:transfer-total": 25111,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.8510000000000004,
+              "cdp:recalc-style-ms": 2.060000000000001,
+              "cdp:script-ms": 8.479000000000001,
+              "cdp:task-ms": 32.29699999999999,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4184380,
+              "uc07:first-visit": 234.59999990463257,
+              "uc07:revisit": 209.5,
+              "uc07:transfer-total": 34132,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.272999999999998,
+              "cdp:recalc-style-ms": 2.043999999999999,
+              "cdp:script-ms": 10.135000000000005,
+              "cdp:task-ms": 30.43699999999999,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4503972,
+              "uc07:first-visit": 233.20000004768372,
+              "uc07:revisit": 208.69999980926514,
+              "uc07:transfer-total": 32332,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.7540000000000004,
+              "cdp:recalc-style-ms": 2.2889999999999997,
+              "cdp:script-ms": 8.280999999999997,
+              "cdp:task-ms": 31.608999999999998,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3891116,
+              "uc07:first-visit": 229.29999995231628,
+              "uc07:revisit": 206.59999990463257,
+              "uc07:transfer-total": 25111,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.3340000000000036,
+              "cdp:recalc-style-ms": 2.631,
+              "cdp:script-ms": 8.651999999999994,
+              "cdp:task-ms": 31.45400000000001,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4232244,
+              "uc07:first-visit": 234.79999995231628,
+              "uc07:revisit": 208.60000014305115,
+              "uc07:transfer-total": 34132,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.8719999999999937,
+              "cdp:recalc-style-ms": 0.9320000000000005,
+              "cdp:script-ms": 9.14100000000001,
+              "cdp:task-ms": 30.826000000000022,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4582984,
+              "uc07:first-visit": 234.90000009536743,
+              "uc07:revisit": 209.69999980926514,
+              "uc07:transfer-total": 32332,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.176999999999999,
+              "cdp:recalc-style-ms": 0.7920000000000001,
+              "cdp:script-ms": 11.703999999999992,
+              "cdp:task-ms": 30.622999999999983,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3905800,
+              "uc07:first-visit": 228.10000014305115,
+              "uc07:revisit": 209.30000019073486,
+              "uc07:transfer-total": 25111,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.214000000000002,
+              "cdp:recalc-style-ms": 1.9319999999999997,
+              "cdp:script-ms": 10.199,
+              "cdp:task-ms": 32.303999999999974,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4217396,
+              "uc07:first-visit": 234.90000009536743,
+              "uc07:revisit": 206.90000009536743,
+              "uc07:transfer-total": 34132,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.568000000000002,
+              "cdp:recalc-style-ms": 2.2730000000000006,
+              "cdp:script-ms": 9.018000000000011,
+              "cdp:task-ms": 32.24300000000002,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4554152,
+              "uc07:first-visit": 232.90000009536743,
+              "uc07:revisit": 209.69999980926514,
+              "uc07:transfer-total": 32332,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.4059999999999993,
+              "cdp:recalc-style-ms": 2.477,
+              "cdp:script-ms": 9.182999999999996,
+              "cdp:task-ms": 33.328000000000024,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3918336,
+              "uc07:first-visit": 227.39999985694885,
+              "uc07:revisit": 209.20000004768372,
+              "uc07:transfer-total": 25111,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.6419999999999995,
+              "cdp:recalc-style-ms": 1.5079999999999998,
+              "cdp:script-ms": 10.681999999999997,
+              "cdp:task-ms": 35.833000000000006,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4215060,
+              "uc07:first-visit": 236.5,
+              "uc07:revisit": 209.59999990463257,
+              "uc07:transfer-total": 34132,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.708000000000004,
+              "cdp:recalc-style-ms": 0.915,
+              "cdp:script-ms": 9.762000000000008,
+              "cdp:task-ms": 30.74199999999999,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4533776,
+              "uc07:first-visit": 233.20000004768372,
+              "uc07:revisit": 207.79999995231628,
+              "uc07:transfer-total": 32332,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.777999999999998,
+              "cdp:recalc-style-ms": 2.3,
+              "cdp:script-ms": 9.076,
+              "cdp:task-ms": 35.858000000000004,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3895412,
+              "uc07:first-visit": 228.20000004768372,
+              "uc07:revisit": 208.19999980926514,
+              "uc07:transfer-total": 25111,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.717999999999999,
+              "cdp:recalc-style-ms": 0.677,
+              "cdp:script-ms": 10.095999999999993,
+              "cdp:task-ms": 30.74199999999999,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4193076,
+              "uc07:first-visit": 234.5,
+              "uc07:revisit": 207.79999995231628,
+              "uc07:transfer-total": 34132,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.698,
+              "cdp:recalc-style-ms": 2.144,
+              "cdp:script-ms": 8.924000000000001,
+              "cdp:task-ms": 31.743999999999993,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4557344,
+              "uc07:first-visit": 231.79999995231628,
+              "uc07:revisit": 208.5,
+              "uc07:transfer-total": 32332,
+              "uc07:requests": 2
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc07:first-visit": {
+          "count": 5,
+          "min": 231.79999995231628,
+          "p25": 232.90000009536743,
+          "median": 233.20000004768372,
+          "p75": 233.20000004768372,
+          "p95": 234.47999997138976,
+          "max": 234.79999995231628,
+          "iqr": 0.2999999523162842,
+          "unit": "ms"
+        },
+        "uc07:revisit": {
+          "count": 5,
+          "min": 208.19999980926514,
+          "p25": 208.60000014305115,
+          "median": 209.20000004768372,
+          "p75": 209.30000019073486,
+          "p95": 209.46000003814697,
+          "max": 209.5,
+          "iqr": 0.7000000476837158,
+          "unit": "ms"
+        },
+        "uc07:transfer-total": {
+          "count": 5,
+          "min": 32332,
+          "p25": 32332,
+          "median": 32332,
+          "p75": 32332,
+          "p95": 32332,
+          "max": 32332,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "uc07:requests": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 6,
+          "p25": 6,
+          "median": 6,
+          "p75": 6,
+          "p95": 6,
+          "max": 6,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 3.272999999999998,
+          "p25": 3.568000000000002,
+          "median": 3.6419999999999995,
+          "p75": 3.717999999999999,
+          "p95": 3.7468000000000004,
+          "max": 3.7540000000000004,
+          "iqr": 0.14999999999999725,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 1.5079999999999998,
+          "p25": 1.9319999999999997,
+          "median": 2.060000000000001,
+          "p75": 2.144,
+          "p95": 2.26,
+          "max": 2.2889999999999997,
+          "iqr": 0.2120000000000004,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 8.651999999999994,
+          "p25": 9.076,
+          "median": 9.52399999999999,
+          "p75": 9.762000000000008,
+          "p95": 10.111600000000001,
+          "max": 10.199,
+          "iqr": 0.686000000000007,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 30.942999999999998,
+          "p25": 31.45400000000001,
+          "median": 31.743999999999993,
+          "p75": 32.24300000000002,
+          "p95": 33.111000000000026,
+          "max": 33.328000000000024,
+          "iqr": 0.7890000000000121,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 674,
+          "p25": 674,
+          "median": 674,
+          "p75": 674,
+          "p95": 674,
+          "max": 674,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 4184380,
+          "p25": 4193076,
+          "median": 4215060,
+          "p75": 4217396,
+          "p95": 4229274.4,
+          "max": 4232244,
+          "iqr": 24320,
+          "unit": "bytes"
+        }
+      }
+    },
+    "fresh": {
+      "runs": [
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.236999999999997,
+              "cdp:recalc-style-ms": 1.7480000000000004,
+              "cdp:script-ms": 8.218000000000004,
+              "cdp:task-ms": 35.234999999999985,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3879584,
+              "uc07:first-visit": 226.59999990463257,
+              "uc07:revisit": 23.200000047683716,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.417999999999998,
+              "cdp:recalc-style-ms": 1.1229999999999998,
+              "cdp:script-ms": 10.872000000000007,
+              "cdp:task-ms": 31.33,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4162796,
+              "uc07:first-visit": 234,
+              "uc07:revisit": 9.199999809265137,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.607,
+              "cdp:recalc-style-ms": 3.8729999999999998,
+              "cdp:script-ms": 9.468000000000004,
+              "cdp:task-ms": 30.95700000000001,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4495396,
+              "uc07:first-visit": 234.29999995231628,
+              "uc07:revisit": 21.799999952316284,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.937000000000003,
+              "cdp:recalc-style-ms": 1.8290000000000008,
+              "cdp:script-ms": 9.113999999999997,
+              "cdp:task-ms": 30.728999999999978,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3887388,
+              "uc07:first-visit": 229.19999980926514,
+              "uc07:revisit": 20.399999856948853,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 4.128999999999994,
+              "cdp:recalc-style-ms": 2.966999999999999,
+              "cdp:script-ms": 8.661999999999988,
+              "cdp:task-ms": 29.832000000000026,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4185340,
+              "uc07:first-visit": 234.59999990463257,
+              "uc07:revisit": 9.200000047683716,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.0750000000000015,
+              "cdp:recalc-style-ms": 1.0439999999999998,
+              "cdp:script-ms": 11.010999999999992,
+              "cdp:task-ms": 30.84300000000001,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4520060,
+              "uc07:first-visit": 232.70000004768372,
+              "uc07:revisit": 8.699999809265137,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.7719999999999976,
+              "cdp:recalc-style-ms": 0.7499999999999998,
+              "cdp:script-ms": 11.575000000000003,
+              "cdp:task-ms": 32.885999999999996,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3891124,
+              "uc07:first-visit": 227.89999985694885,
+              "uc07:revisit": 20.700000047683716,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.588000000000001,
+              "cdp:recalc-style-ms": 0.7270000000000002,
+              "cdp:script-ms": 8.554000000000006,
+              "cdp:task-ms": 30.004999999999978,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4221688,
+              "uc07:first-visit": 235.40000009536743,
+              "uc07:revisit": 9.799999952316284,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.049999999999997,
+              "cdp:recalc-style-ms": 1.8829999999999993,
+              "cdp:script-ms": 10.015999999999996,
+              "cdp:task-ms": 30.862999999999975,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4561788,
+              "uc07:first-visit": 231.89999985694885,
+              "uc07:revisit": 9.200000047683716,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.9799999999999973,
+              "cdp:recalc-style-ms": 1.757,
+              "cdp:script-ms": 10.982999999999993,
+              "cdp:task-ms": 34.536999999999985,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3917272,
+              "uc07:first-visit": 226.90000009536743,
+              "uc07:revisit": 23.700000047683716,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.588000000000001,
+              "cdp:recalc-style-ms": 0.38999999999999974,
+              "cdp:script-ms": 10.162999999999991,
+              "cdp:task-ms": 28.89799999999998,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4228856,
+              "uc07:first-visit": 234.20000004768372,
+              "uc07:revisit": 21.90000009536743,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 2.8019999999999987,
+              "cdp:recalc-style-ms": 1.8010000000000006,
+              "cdp:script-ms": 9.249000000000008,
+              "cdp:task-ms": 29.40900000000002,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4578068,
+              "uc07:first-visit": 231.90000009536743,
+              "uc07:revisit": 22.300000190734863,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 2
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 3.9830000000000005,
+              "cdp:recalc-style-ms": 0.3849999999999999,
+              "cdp:script-ms": 8.537000000000003,
+              "cdp:task-ms": 32.364000000000004,
+              "cdp:dom-nodes": 496,
+              "cdp:js-heap-used": 3882256,
+              "uc07:first-visit": 226.09999990463257,
+              "uc07:revisit": 37.299999952316284,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 2.8839999999999977,
+              "cdp:recalc-style-ms": 0.7890000000000006,
+              "cdp:script-ms": 11.019000000000002,
+              "cdp:task-ms": 32.36299999999998,
+              "cdp:dom-nodes": 674,
+              "cdp:js-heap-used": 4220532,
+              "uc07:first-visit": 234,
+              "uc07:revisit": 20.700000047683716,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 2
+            },
+            {
+              "cdp:layout-count": 6,
+              "cdp:recalc-style-count": 16,
+              "cdp:layout-ms": 1.4209999999999987,
+              "cdp:recalc-style-ms": 2.64,
+              "cdp:script-ms": 9.225999999999997,
+              "cdp:task-ms": 28.104000000000017,
+              "cdp:dom-nodes": 852,
+              "cdp:js-heap-used": 4572552,
+              "uc07:first-visit": 234.10000014305115,
+              "uc07:revisit": 22.40000009536743,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 2
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc07:first-visit": {
+          "count": 5,
+          "min": 231.89999985694885,
+          "p25": 231.90000009536743,
+          "median": 232.70000004768372,
+          "p75": 234,
+          "p95": 234,
+          "max": 234,
+          "iqr": 2.0999999046325684,
+          "unit": "ms"
+        },
+        "uc07:revisit": {
+          "count": 5,
+          "min": 9.200000047683716,
+          "p25": 9.799999952316284,
+          "median": 21.799999952316284,
+          "p75": 22.300000190734863,
+          "p95": 22.380000114440918,
+          "max": 22.40000009536743,
+          "iqr": 12.500000238418579,
+          "unit": "ms"
+        },
+        "uc07:transfer-total": {
+          "count": 5,
+          "min": 32032,
+          "p25": 32032,
+          "median": 32032,
+          "p75": 32032,
+          "p95": 32032,
+          "max": 32032,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "uc07:requests": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 6,
+          "p25": 6,
+          "median": 6,
+          "p75": 6,
+          "p95": 6,
+          "max": 6,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 2.8839999999999977,
+          "p25": 3.588000000000001,
+          "median": 3.588000000000001,
+          "p75": 3.937000000000003,
+          "p95": 4.3218,
+          "max": 4.417999999999998,
+          "iqr": 0.349000000000002,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 0.7499999999999998,
+          "p25": 0.7890000000000006,
+          "median": 1.7480000000000004,
+          "p75": 1.757,
+          "p95": 1.8146000000000007,
+          "max": 1.8290000000000008,
+          "iqr": 0.9679999999999993,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 9.113999999999997,
+          "p25": 9.225999999999997,
+          "median": 9.468000000000004,
+          "p75": 10.015999999999996,
+          "p95": 10.133599999999992,
+          "max": 10.162999999999991,
+          "iqr": 0.7899999999999991,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 29.40900000000002,
+          "p25": 30.728999999999978,
+          "median": 30.862999999999975,
+          "p75": 31.33,
+          "p95": 32.156399999999984,
+          "max": 32.36299999999998,
+          "iqr": 0.6010000000000204,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 674,
+          "p25": 674,
+          "median": 674,
+          "p75": 674,
+          "p95": 674,
+          "max": 674,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 4162796,
+          "p25": 4185340,
+          "median": 4220532,
+          "p75": 4221688,
+          "p95": 4227422.4,
+          "max": 4228856,
+          "iqr": 36348,
+          "unit": "bytes"
+        }
+      }
+    },
+    "memory": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 3.8019999999999996,
+              "cdp:recalc-style-ms": 1.384,
+              "cdp:script-ms": 9.2,
+              "cdp:task-ms": 29.546000000000017,
+              "cdp:dom-nodes": 492,
+              "cdp:js-heap-used": 3782288,
+              "uc07:first-visit": 227.79999995231628,
+              "uc07:revisit": 5,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 3.4579999999999957,
+              "cdp:recalc-style-ms": 0.35899999999999993,
+              "cdp:script-ms": 9.501999999999997,
+              "cdp:task-ms": 29.40800000000002,
+              "cdp:dom-nodes": 668,
+              "cdp:js-heap-used": 4068668,
+              "uc07:first-visit": 235.5,
+              "uc07:revisit": 4.299999952316284,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 4.055000000000003,
+              "cdp:recalc-style-ms": 1.5129999999999997,
+              "cdp:script-ms": 6.610999999999992,
+              "cdp:task-ms": 25.202,
+              "cdp:dom-nodes": 844,
+              "cdp:js-heap-used": 4414416,
+              "uc07:first-visit": 232.70000004768372,
+              "uc07:revisit": 4.400000095367432,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 3.932999999999999,
+              "cdp:recalc-style-ms": 2.5309999999999993,
+              "cdp:script-ms": 7.889000000000007,
+              "cdp:task-ms": 29.649000000000008,
+              "cdp:dom-nodes": 492,
+              "cdp:js-heap-used": 3824932,
+              "uc07:first-visit": 226.70000004768372,
+              "uc07:revisit": 20.200000047683716,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 3.7589999999999986,
+              "cdp:recalc-style-ms": 1.8129999999999995,
+              "cdp:script-ms": 7.150999999999991,
+              "cdp:task-ms": 24.852999999999987,
+              "cdp:dom-nodes": 668,
+              "cdp:js-heap-used": 4150972,
+              "uc07:first-visit": 234,
+              "uc07:revisit": 4.8999998569488525,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 3.6730000000000027,
+              "cdp:recalc-style-ms": 1.2300000000000002,
+              "cdp:script-ms": 7.850999999999997,
+              "cdp:task-ms": 26.980000000000032,
+              "cdp:dom-nodes": 844,
+              "cdp:js-heap-used": 4439324,
+              "uc07:first-visit": 233.79999995231628,
+              "uc07:revisit": 4.3999998569488525,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 4.157000000000001,
+              "cdp:recalc-style-ms": 2.1329999999999996,
+              "cdp:script-ms": 7.717000000000001,
+              "cdp:task-ms": 30.75,
+              "cdp:dom-nodes": 492,
+              "cdp:js-heap-used": 3811288,
+              "uc07:first-visit": 227.60000014305115,
+              "uc07:revisit": 20.59999990463257,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 3.5400000000000014,
+              "cdp:recalc-style-ms": 2.404,
+              "cdp:script-ms": 7.50400000000001,
+              "cdp:task-ms": 29.340000000000032,
+              "cdp:dom-nodes": 668,
+              "cdp:js-heap-used": 4151784,
+              "uc07:first-visit": 234.09999990463257,
+              "uc07:revisit": 4.5,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 2.708999999999996,
+              "cdp:recalc-style-ms": 2.8460000000000014,
+              "cdp:script-ms": 6.685999999999997,
+              "cdp:task-ms": 28.171000000000003,
+              "cdp:dom-nodes": 844,
+              "cdp:js-heap-used": 4440616,
+              "uc07:first-visit": 233,
+              "uc07:revisit": 4.299999952316284,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 3.3159999999999994,
+              "cdp:recalc-style-ms": 0.5289999999999999,
+              "cdp:script-ms": 8.722000000000008,
+              "cdp:task-ms": 25.583000000000023,
+              "cdp:dom-nodes": 492,
+              "cdp:js-heap-used": 3832796,
+              "uc07:first-visit": 225.39999985694885,
+              "uc07:revisit": 4.099999904632568,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 3.8310000000000013,
+              "cdp:recalc-style-ms": 0.9620000000000002,
+              "cdp:script-ms": 8.206000000000005,
+              "cdp:task-ms": 26.314000000000004,
+              "cdp:dom-nodes": 668,
+              "cdp:js-heap-used": 4129644,
+              "uc07:first-visit": 234.5,
+              "uc07:revisit": 4.200000047683716,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 4.015999999999999,
+              "cdp:recalc-style-ms": 1.5529999999999997,
+              "cdp:script-ms": 7.720000000000004,
+              "cdp:task-ms": 29.26799999999996,
+              "cdp:dom-nodes": 844,
+              "cdp:js-heap-used": 4434332,
+              "uc07:first-visit": 232.30000019073486,
+              "uc07:revisit": 4.200000047683716,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 2.7780000000000027,
+              "cdp:recalc-style-ms": 1.7890000000000001,
+              "cdp:script-ms": 6.92100000000001,
+              "cdp:task-ms": 22.355000000000015,
+              "cdp:dom-nodes": 492,
+              "cdp:js-heap-used": 4076796,
+              "uc07:first-visit": 226.39999985694885,
+              "uc07:revisit": 4.299999952316284,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 4.020000000000003,
+              "cdp:recalc-style-ms": 1.0489999999999995,
+              "cdp:script-ms": 8.157999999999998,
+              "cdp:task-ms": 26.630000000000013,
+              "cdp:dom-nodes": 668,
+              "cdp:js-heap-used": 4356844,
+              "uc07:first-visit": 235,
+              "uc07:revisit": 4.400000095367432,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 5,
+              "cdp:recalc-style-count": 15,
+              "cdp:layout-ms": 4.5390000000000015,
+              "cdp:recalc-style-ms": 2.098,
+              "cdp:script-ms": 6.178000000000003,
+              "cdp:task-ms": 27.22100000000002,
+              "cdp:dom-nodes": 844,
+              "cdp:js-heap-used": 4628048,
+              "uc07:first-visit": 233.5,
+              "uc07:revisit": 4.6000001430511475,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc07:first-visit": {
+          "count": 5,
+          "min": 232.30000019073486,
+          "p25": 232.70000004768372,
+          "median": 233,
+          "p75": 233.5,
+          "p95": 233.73999996185302,
+          "max": 233.79999995231628,
+          "iqr": 0.7999999523162842,
+          "unit": "ms"
+        },
+        "uc07:revisit": {
+          "count": 5,
+          "min": 4.200000047683716,
+          "p25": 4.400000095367432,
+          "median": 4.400000095367432,
+          "p75": 4.5,
+          "p95": 4.819999885559082,
+          "max": 4.8999998569488525,
+          "iqr": 0.09999990463256836,
+          "unit": "ms"
+        },
+        "uc07:transfer-total": {
+          "count": 5,
+          "min": 32032,
+          "p25": 32032,
+          "median": 32032,
+          "p75": 32032,
+          "p95": 32032,
+          "max": 32032,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "uc07:requests": {
+          "count": 5,
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "p95": 1,
+          "max": 1,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 5,
+          "p25": 5,
+          "median": 5,
+          "p75": 5,
+          "p95": 5,
+          "max": 5,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 15,
+          "p25": 15,
+          "median": 15,
+          "p75": 15,
+          "p95": 15,
+          "max": 15,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 3.5400000000000014,
+          "p25": 3.7589999999999986,
+          "median": 3.8019999999999996,
+          "p75": 3.8310000000000013,
+          "p95": 3.982200000000003,
+          "max": 4.020000000000003,
+          "iqr": 0.07200000000000273,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 0.9620000000000002,
+          "p25": 1.384,
+          "median": 1.7890000000000001,
+          "p75": 1.8129999999999995,
+          "p95": 2.2857999999999996,
+          "max": 2.404,
+          "iqr": 0.4289999999999996,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 6.92100000000001,
+          "p25": 7.50400000000001,
+          "median": 7.850999999999997,
+          "p75": 8.206000000000005,
+          "p95": 9.0012,
+          "max": 9.2,
+          "iqr": 0.7019999999999946,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 26.314000000000004,
+          "p25": 26.630000000000013,
+          "median": 26.980000000000032,
+          "p75": 29.340000000000032,
+          "p95": 29.394400000000022,
+          "max": 29.40800000000002,
+          "iqr": 2.7100000000000186,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 668,
+          "p25": 668,
+          "median": 668,
+          "p75": 668,
+          "p95": 668,
+          "max": 668,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 4068668,
+          "p25": 4129644,
+          "median": 4150972,
+          "p75": 4151784,
+          "p95": 4315832,
+          "max": 4356844,
+          "iqr": 22140,
+          "unit": "bytes"
+        }
+      }
+    },
+    "good": {
+      "runs": [
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.0760000000000023,
+              "cdp:recalc-style-ms": 0.8149999999999997,
+              "cdp:script-ms": 9.013,
+              "cdp:task-ms": 29.418,
+              "cdp:dom-nodes": 488,
+              "cdp:js-heap-used": 3817260,
+              "uc07:first-visit": 4.8999998569488525,
+              "uc07:revisit": 4.400000095367432,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.4129999999999994,
+              "cdp:recalc-style-ms": 2.177,
+              "cdp:script-ms": 7.651000000000005,
+              "cdp:task-ms": 24.240999999999985,
+              "cdp:dom-nodes": 662,
+              "cdp:js-heap-used": 4053304,
+              "uc07:first-visit": 5.1000001430511475,
+              "uc07:revisit": 4.299999952316284,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 4.199000000000002,
+              "cdp:recalc-style-ms": 1.7830000000000008,
+              "cdp:script-ms": 7.592999999999988,
+              "cdp:task-ms": 24.92500000000003,
+              "cdp:dom-nodes": 836,
+              "cdp:js-heap-used": 4349012,
+              "uc07:first-visit": 4.699999809265137,
+              "uc07:revisit": 4.3999998569488525,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.8720000000000003,
+              "cdp:recalc-style-ms": 0.9879999999999993,
+              "cdp:script-ms": 8.15500000000001,
+              "cdp:task-ms": 28.195999999999998,
+              "cdp:dom-nodes": 488,
+              "cdp:js-heap-used": 3809364,
+              "uc07:first-visit": 5.799999952316284,
+              "uc07:revisit": 4.299999952316284,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.702000000000004,
+              "cdp:recalc-style-ms": 2.3579999999999997,
+              "cdp:script-ms": 5.919999999999995,
+              "cdp:task-ms": 25.76300000000001,
+              "cdp:dom-nodes": 662,
+              "cdp:js-heap-used": 4060088,
+              "uc07:first-visit": 5.300000190734863,
+              "uc07:revisit": 3.8000001907348633,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 2.943999999999995,
+              "cdp:recalc-style-ms": 1.66,
+              "cdp:script-ms": 7.060999999999998,
+              "cdp:task-ms": 24.145000000000028,
+              "cdp:dom-nodes": 836,
+              "cdp:js-heap-used": 4325036,
+              "uc07:first-visit": 4.400000095367432,
+              "uc07:revisit": 4.699999809265137,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.4420000000000006,
+              "cdp:recalc-style-ms": 0.7280000000000003,
+              "cdp:script-ms": 9.063000000000002,
+              "cdp:task-ms": 27.357999999999993,
+              "cdp:dom-nodes": 488,
+              "cdp:js-heap-used": 3840172,
+              "uc07:first-visit": 4.5,
+              "uc07:revisit": 5,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.7430000000000034,
+              "cdp:recalc-style-ms": 0.9679999999999992,
+              "cdp:script-ms": 7.338999999999999,
+              "cdp:task-ms": 24.983000000000004,
+              "cdp:dom-nodes": 662,
+              "cdp:js-heap-used": 4090824,
+              "uc07:first-visit": 5.799999952316284,
+              "uc07:revisit": 4.299999952316284,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.1059999999999977,
+              "cdp:recalc-style-ms": 1.6980000000000006,
+              "cdp:script-ms": 5.543000000000006,
+              "cdp:task-ms": 24.831999999999994,
+              "cdp:dom-nodes": 836,
+              "cdp:js-heap-used": 4402780,
+              "uc07:first-visit": 4.700000047683716,
+              "uc07:revisit": 4.299999952316284,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.0550000000000024,
+              "cdp:recalc-style-ms": 0.4550000000000001,
+              "cdp:script-ms": 9.161000000000003,
+              "cdp:task-ms": 25.93200000000001,
+              "cdp:dom-nodes": 488,
+              "cdp:js-heap-used": 3821580,
+              "uc07:first-visit": 4.900000095367432,
+              "uc07:revisit": 4.299999952316284,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.854000000000003,
+              "cdp:recalc-style-ms": 1.8359999999999996,
+              "cdp:script-ms": 7.372000000000003,
+              "cdp:task-ms": 27.43699999999999,
+              "cdp:dom-nodes": 662,
+              "cdp:js-heap-used": 4076880,
+              "uc07:first-visit": 5.400000095367432,
+              "uc07:revisit": 5,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.4289999999999945,
+              "cdp:recalc-style-ms": 1.8710000000000002,
+              "cdp:script-ms": 7.678000000000004,
+              "cdp:task-ms": 24.00700000000003,
+              "cdp:dom-nodes": 836,
+              "cdp:js-heap-used": 4366868,
+              "uc07:first-visit": 4.799999952316284,
+              "uc07:revisit": 4.299999952316284,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.176999999999999,
+              "cdp:recalc-style-ms": 1.216,
+              "cdp:script-ms": 7.439000000000001,
+              "cdp:task-ms": 25.191999999999993,
+              "cdp:dom-nodes": 488,
+              "cdp:js-heap-used": 3819136,
+              "uc07:first-visit": 4.900000095367432,
+              "uc07:revisit": 4.799999952316284,
+              "uc07:transfer-total": 24811,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.394000000000001,
+              "cdp:recalc-style-ms": 1.7299999999999998,
+              "cdp:script-ms": 6.895999999999999,
+              "cdp:task-ms": 24.446999999999996,
+              "cdp:dom-nodes": 662,
+              "cdp:js-heap-used": 4069628,
+              "uc07:first-visit": 5.099999904632568,
+              "uc07:revisit": 4,
+              "uc07:transfer-total": 33832,
+              "uc07:requests": 1
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 14,
+              "cdp:layout-ms": 3.0929999999999986,
+              "cdp:recalc-style-ms": 1.085,
+              "cdp:script-ms": 8.564000000000002,
+              "cdp:task-ms": 26.708999999999982,
+              "cdp:dom-nodes": 836,
+              "cdp:js-heap-used": 4347844,
+              "uc07:first-visit": 5.299999952316284,
+              "uc07:revisit": 4.699999809265137,
+              "uc07:transfer-total": 32032,
+              "uc07:requests": 1
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc07:first-visit": {
+          "count": 5,
+          "min": 4.700000047683716,
+          "p25": 4.8999998569488525,
+          "median": 4.900000095367432,
+          "p75": 5.099999904632568,
+          "p95": 5.260000133514405,
+          "max": 5.300000190734863,
+          "iqr": 0.20000004768371582,
+          "unit": "ms"
+        },
+        "uc07:revisit": {
+          "count": 5,
+          "min": 4.299999952316284,
+          "p25": 4.299999952316284,
+          "median": 4.299999952316284,
+          "p75": 4.3999998569488525,
+          "p95": 4.63999981880188,
+          "max": 4.699999809265137,
+          "iqr": 0.09999990463256836,
+          "unit": "ms"
+        },
+        "uc07:transfer-total": {
+          "count": 5,
+          "min": 32032,
+          "p25": 32032,
+          "median": 32032,
+          "p75": 32032,
+          "p95": 32032,
+          "max": 32032,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "uc07:requests": {
+          "count": 5,
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "p95": 1,
+          "max": 1,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 4,
+          "p25": 4,
+          "median": 4,
+          "p75": 4,
+          "p95": 4,
+          "max": 4,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 14,
+          "p25": 14,
+          "median": 14,
+          "p75": 14,
+          "p95": 14,
+          "max": 14,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 3.176999999999999,
+          "p25": 3.4129999999999994,
+          "median": 3.4289999999999945,
+          "p75": 3.4420000000000006,
+          "p95": 3.650000000000003,
+          "max": 3.702000000000004,
+          "iqr": 0.029000000000001247,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 0.9679999999999992,
+          "p25": 1.216,
+          "median": 1.66,
+          "p75": 1.7830000000000008,
+          "p95": 1.8254,
+          "max": 1.8359999999999996,
+          "iqr": 0.5670000000000008,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 7.060999999999998,
+          "p25": 7.338999999999999,
+          "median": 7.439000000000001,
+          "p75": 7.651000000000005,
+          "p95": 7.6726000000000045,
+          "max": 7.678000000000004,
+          "iqr": 0.3120000000000065,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 24.92500000000003,
+          "p25": 24.983000000000004,
+          "median": 25.191999999999993,
+          "p75": 25.76300000000001,
+          "p95": 25.89820000000001,
+          "max": 25.93200000000001,
+          "iqr": 0.7800000000000047,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 662,
+          "p25": 662,
+          "median": 662,
+          "p75": 662,
+          "p95": 662,
+          "max": 662,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 4053304,
+          "p25": 4060088,
+          "median": 4069628,
+          "p75": 4076880,
+          "p95": 4088035.2,
+          "max": 4090824,
+          "iqr": 16792,
+          "unit": "bytes"
+        }
+      }
+    }
+  }
+}

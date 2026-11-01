@@ -29,6 +29,8 @@ A personal study project for learning browser performance measurement. Each use 
 - **CPU 制限は Worker に効かなかった。** Worker の検索時間は CPU 1倍でも8倍でも 18〜21ms でした。制限下の比較では Worker が速く見えますが、制限なしで比べると結果が出るまでの時間は同期処理とほぼ同じです（[UC3](docs/usecases/uc03-search-input.md)）。
 - **画像の取得を 860ms 早めても LCP は 116ms しか縮まなかった。** LCP を内訳に分けると、次の律速点は一覧の描画でした。取得を早めた分は描画の待ちに移っただけで、FCP は帯域の取り合いで 68ms 悪化しました（[UC4](docs/usecases/uc04-initial-load.md)）。
 - **フレーム間隔の指標はラスタライズの費用を映さなかった。** p95 が 16.7ms のままでも、トレースではラスタライズの時間が約5倍違いました（[UC5](docs/usecases/uc05-scroll-list.md)）。
+- **リスナーを外してもヒープの増加は止まらなかった。** 詳細データを保持する経路が2本あり、両方を切る必要がありました。予想した3本目の経路は実測で否定されました（[UC6](docs/usecases/uc06-memory-growth.md)）。
+- **ETag の再検証で縮んだのは 24ms だけだった。** 問い合わせは毎回行い、省けるのは本文の転送だけでした（[UC7](docs/usecases/uc07-cache-prefetch.md)）。
 - **`useDeferredValue` は最初の1文字しか救わなかった。** 検索中に打った2文字目は 52.8ms 待たされ、Long Task も残りました。1文字だけの計測では見逃す問題です（[UC3](docs/usecases/uc03-search-input.md)）。
 
 ## 動かし方
@@ -61,15 +63,15 @@ npm run bench:trace-summary -- --scenario uc05
 
 ## ユースケース
 
-| #                                          | 症状                               | 学ぶこと                                             | 状態     |
-| ------------------------------------------ | ---------------------------------- | ---------------------------------------------------- | -------- |
-| [UC1](docs/usecases/uc01-focus-grid.md)    | 十字キーでのフォーカス移動が遅い   | React の再レンダリングの範囲、Event Timing、Profiler | 実装済み |
-| [UC2](docs/usecases/uc02-forced-layout.md) | カードの高さ揃えが重い             | 強制同期レイアウト、レイアウト回数の読み方           | 実装済み |
-| [UC3](docs/usecases/uc03-search-input.md)  | 絞り込み中に入力が固まる           | Long Tasks、メインスレッドの明け渡し、Web Worker     | 実装済み |
-| [UC4](docs/usecases/uc04-initial-load.md)  | 初期表示と操作可能になるまでが遅い | LCP の内訳、CLS、Resource Timing                     | 実装済み |
-| [UC5](docs/usecases/uc05-scroll-list.md)   | スクロールがカクつく               | フレーム間隔、トレースの集計、画像のデコード         | 実装済み |
-| UC6                                        | 画面を行き来するとメモリが増える   | ヒープの比較、リークの見つけ方                       | 準備中   |
-| UC7                                        | 再表示や詳細表示が遅い             | HTTP キャッシュ、先読みの効果測定                    | 準備中   |
+| #                                           | 症状                               | 学ぶこと                                              | 状態     |
+| ------------------------------------------- | ---------------------------------- | ----------------------------------------------------- | -------- |
+| [UC1](docs/usecases/uc01-focus-grid.md)     | 十字キーでのフォーカス移動が遅い   | React の再レンダリングの範囲、Event Timing、Profiler  | 実装済み |
+| [UC2](docs/usecases/uc02-forced-layout.md)  | カードの高さ揃えが重い             | 強制同期レイアウト、レイアウト回数の読み方            | 実装済み |
+| [UC3](docs/usecases/uc03-search-input.md)   | 絞り込み中に入力が固まる           | Long Tasks、メインスレッドの明け渡し、Web Worker      | 実装済み |
+| [UC4](docs/usecases/uc04-initial-load.md)   | 初期表示と操作可能になるまでが遅い | LCP の内訳、CLS、Resource Timing                      | 実装済み |
+| [UC5](docs/usecases/uc05-scroll-list.md)    | スクロールがカクつく               | フレーム間隔、トレースの集計、画像のデコード          | 実装済み |
+| [UC6](docs/usecases/uc06-memory-growth.md)  | 画面を行き来するとメモリが増える   | GC の後に残る量、参照の経路、リークとキャッシュの違い | 実装済み |
+| [UC7](docs/usecases/uc07-cache-prefetch.md) | 再表示や詳細表示が遅い             | HTTP キャッシュ、先読み、速さと新しさの交換           | 実装済み |
 
 ## 計測の4つの層
 

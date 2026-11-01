@@ -1,0 +1,1938 @@
+{
+  "scenario": "uc06",
+  "title": "一覧と詳細の往復で残るメモリ",
+  "createdAt": "2026-11-01T04:12:21.864Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "chromium 156.0.8078.4",
+    "gitCommit": "6fa159e",
+    "gitDirty": false
+  },
+  "conditions": {
+    "runs": 5,
+    "warmupIterations": 2,
+    "iterations": 5,
+    "cpuThrottle": 4,
+    "seed": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "query": {}
+  },
+  "variants": {
+    "bad": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.18200000000001,
+              "cdp:recalc-style-ms": 3.301,
+              "cdp:script-ms": 15.884999999999996,
+              "cdp:task-ms": 112.27099999999996,
+              "cdp:retained-heap": 3187272,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12567860
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 23.999999999999993,
+              "cdp:recalc-style-ms": 4.586000000000001,
+              "cdp:script-ms": 12.272999999999993,
+              "cdp:task-ms": 122.502,
+              "cdp:retained-heap": 3155532,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15723288
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.632000000000016,
+              "cdp:recalc-style-ms": 2.8469999999999986,
+              "cdp:script-ms": 15.252000000000002,
+              "cdp:task-ms": 124.24600000000008,
+              "cdp:retained-heap": 3229968,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18953128
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 23.351999999999983,
+              "cdp:recalc-style-ms": 4.0409999999999995,
+              "cdp:script-ms": 14.827000000000007,
+              "cdp:task-ms": 133.865,
+              "cdp:retained-heap": 3104508,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 22057508
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.457000000000008,
+              "cdp:recalc-style-ms": 3.613999999999999,
+              "cdp:script-ms": 17.478999999999996,
+              "cdp:task-ms": 144.76500000000004,
+              "cdp:retained-heap": 3099420,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25155248
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.317000000000004,
+              "cdp:recalc-style-ms": 2.501,
+              "cdp:script-ms": 14.564000000000007,
+              "cdp:task-ms": 111.59399999999997,
+              "cdp:retained-heap": 3187272,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12571208
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 29.047000000000004,
+              "cdp:recalc-style-ms": 2.442999999999999,
+              "cdp:script-ms": 19.365999999999993,
+              "cdp:task-ms": 132.17800000000003,
+              "cdp:retained-heap": 3155532,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15726636
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.226,
+              "cdp:recalc-style-ms": 2.8160000000000007,
+              "cdp:script-ms": 17.02400000000001,
+              "cdp:task-ms": 128.88699999999997,
+              "cdp:retained-heap": 3231520,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18958028
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 23.896,
+              "cdp:recalc-style-ms": 4.262999999999999,
+              "cdp:script-ms": 17.081000000000014,
+              "cdp:task-ms": 132.42399999999998,
+              "cdp:retained-heap": 3074440,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 22030788
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.256,
+              "cdp:recalc-style-ms": 2.5109999999999992,
+              "cdp:script-ms": 15.777999999999986,
+              "cdp:task-ms": 138.50600000000003,
+              "cdp:retained-heap": 3099420,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25129812
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 22.863000000000007,
+              "cdp:recalc-style-ms": 2.291999999999999,
+              "cdp:script-ms": 18.262,
+              "cdp:task-ms": 110.49900000000001,
+              "cdp:retained-heap": 3187064,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12542400
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 28.24900000000001,
+              "cdp:recalc-style-ms": 2.8129999999999997,
+              "cdp:script-ms": 15.405000000000001,
+              "cdp:task-ms": 118.48400000000004,
+              "cdp:retained-heap": 3157012,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15699308
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.501999999999995,
+              "cdp:recalc-style-ms": 3.6629999999999994,
+              "cdp:script-ms": 15.54,
+              "cdp:task-ms": 124.84700000000004,
+              "cdp:retained-heap": 3231924,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18929552
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.321999999999985,
+              "cdp:recalc-style-ms": 3.9750000000000028,
+              "cdp:script-ms": 17.504999999999992,
+              "cdp:task-ms": 136.53799999999993,
+              "cdp:retained-heap": 3104164,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 22033320
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.058999999999997,
+              "cdp:recalc-style-ms": 3.7459999999999996,
+              "cdp:script-ms": 17.873,
+              "cdp:task-ms": 146.2970000000001,
+              "cdp:retained-heap": 3099432,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25131460
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.63800000000001,
+              "cdp:recalc-style-ms": 3.588000000000001,
+              "cdp:script-ms": 16.302999999999997,
+              "cdp:task-ms": 118.89499999999997,
+              "cdp:retained-heap": 3187272,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12560040
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.378999999999987,
+              "cdp:recalc-style-ms": 2.4069999999999996,
+              "cdp:script-ms": 16.093999999999998,
+              "cdp:task-ms": 122.502,
+              "cdp:retained-heap": 3155532,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15715468
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 23.981,
+              "cdp:recalc-style-ms": 3.1079999999999997,
+              "cdp:script-ms": 16.041,
+              "cdp:task-ms": 122.36800000000004,
+              "cdp:retained-heap": 3199568,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18914908
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.147000000000002,
+              "cdp:recalc-style-ms": 3.202,
+              "cdp:script-ms": 19.244999999999983,
+              "cdp:task-ms": 132.59399999999988,
+              "cdp:retained-heap": 3074108,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 21988888
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 23.827000000000016,
+              "cdp:recalc-style-ms": 3.4870000000000005,
+              "cdp:script-ms": 15.767999999999976,
+              "cdp:task-ms": 138.34499999999994,
+              "cdp:retained-heap": 3099420,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25086628
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.035999999999987,
+              "cdp:recalc-style-ms": 3.6439999999999997,
+              "cdp:script-ms": 18.302,
+              "cdp:task-ms": 113.83699999999996,
+              "cdp:retained-heap": 3188824,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12554364
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 24.19700000000001,
+              "cdp:recalc-style-ms": 3.325999999999999,
+              "cdp:script-ms": 16.416,
+              "cdp:task-ms": 117.58000000000001,
+              "cdp:retained-heap": 3125060,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15677768
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 25.120000000000005,
+              "cdp:recalc-style-ms": 2.722000000000002,
+              "cdp:script-ms": 17.152,
+              "cdp:task-ms": 123.41900000000005,
+              "cdp:retained-heap": 3199640,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18877280
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 22.782999999999998,
+              "cdp:recalc-style-ms": 2.723,
+              "cdp:script-ms": 17.434999999999977,
+              "cdp:task-ms": 131.40799999999996,
+              "cdp:retained-heap": 3074428,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 21951580
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.790000000000006,
+              "cdp:recalc-style-ms": 4.563999999999998,
+              "cdp:script-ms": 15.523999999999983,
+              "cdp:task-ms": 133.79299999999984,
+              "cdp:retained-heap": 3099488,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 10,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25050672
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 20,
+          "p25": 20,
+          "median": 20,
+          "p75": 20,
+          "p95": 20,
+          "max": 20,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 20,
+          "p25": 20,
+          "median": 20,
+          "p75": 20,
+          "p95": 20,
+          "max": 20,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 24.18200000000001,
+          "p25": 24.19700000000001,
+          "median": 24.317000000000004,
+          "p75": 25.63800000000001,
+          "p95": 25.9748,
+          "max": 26.058999999999997,
+          "iqr": 1.440999999999999,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 2.5109999999999992,
+          "p25": 3.202,
+          "median": 3.325999999999999,
+          "p75": 3.613999999999999,
+          "p95": 3.653199999999999,
+          "max": 3.6629999999999994,
+          "iqr": 0.41199999999999903,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 15.252000000000002,
+          "p25": 16.093999999999998,
+          "median": 17.02400000000001,
+          "p75": 17.152,
+          "p95": 17.434399999999993,
+          "max": 17.504999999999992,
+          "iqr": 1.0580000000000034,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 122.502,
+          "p25": 123.41900000000005,
+          "median": 124.24600000000008,
+          "p75": 124.84700000000004,
+          "p95": 130.71180000000004,
+          "max": 132.17800000000003,
+          "iqr": 1.427999999999983,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 2415,
+          "p25": 2415,
+          "median": 2415,
+          "p75": 2415,
+          "p95": 2415,
+          "max": 2415,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 18877280,
+          "p25": 18914908,
+          "median": 18929552,
+          "p75": 18953128,
+          "p95": 18957048,
+          "max": 18958028,
+          "iqr": 38220,
+          "unit": "bytes"
+        },
+        "cdp:retained-heap": {
+          "count": 5,
+          "min": 3125060,
+          "p25": 3155532,
+          "median": 3155532,
+          "p75": 3155532,
+          "p95": 3156716,
+          "max": 3157012,
+          "iqr": 0,
+          "unit": "bytes"
+        },
+        "cdp:retained-nodes": {
+          "count": 5,
+          "min": 460,
+          "p25": 460,
+          "median": 460,
+          "p75": 460,
+          "p95": 460,
+          "max": 460,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:retained-listeners": {
+          "count": 5,
+          "min": 10,
+          "p25": 10,
+          "median": 10,
+          "p75": 10,
+          "p95": 10,
+          "max": 10,
+          "iqr": 0,
+          "unit": "count"
+        }
+      }
+    },
+    "listener": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 23.753999999999998,
+              "cdp:recalc-style-ms": 3.195,
+              "cdp:script-ms": 19.632000000000012,
+              "cdp:task-ms": 116.36000000000001,
+              "cdp:retained-heap": 3184276,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12563004
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.217000000000017,
+              "cdp:recalc-style-ms": 2.999,
+              "cdp:script-ms": 15.199000000000003,
+              "cdp:task-ms": 115.62399999999995,
+              "cdp:retained-heap": 3154144,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15717056
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 24.466999999999988,
+              "cdp:recalc-style-ms": 2.8569999999999984,
+              "cdp:script-ms": 17.10300000000001,
+              "cdp:task-ms": 122.09999999999998,
+              "cdp:retained-heap": 3196760,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18912136
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 22.789000000000005,
+              "cdp:recalc-style-ms": 3.5670000000000006,
+              "cdp:script-ms": 14.956999999999997,
+              "cdp:task-ms": 130.29500000000004,
+              "cdp:retained-heap": 3070796,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 21982804
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 27.729000000000003,
+              "cdp:recalc-style-ms": 2.0060000000000007,
+              "cdp:script-ms": 16.58699999999999,
+              "cdp:task-ms": 151.24899999999997,
+              "cdp:retained-heap": 3095420,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25078096
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.825,
+              "cdp:recalc-style-ms": 3.552999999999999,
+              "cdp:script-ms": 16.525,
+              "cdp:task-ms": 114.83299999999997,
+              "cdp:retained-heap": 3185944,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12549944
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 25.973999999999997,
+              "cdp:recalc-style-ms": 2.650999999999999,
+              "cdp:script-ms": 15.536999999999995,
+              "cdp:task-ms": 115.04700000000001,
+              "cdp:retained-heap": 3122180,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15670468
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.600999999999985,
+              "cdp:recalc-style-ms": 3.892000000000003,
+              "cdp:script-ms": 15.492000000000006,
+              "cdp:task-ms": 126.14000000000003,
+              "cdp:retained-heap": 3227160,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18897500
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.772000000000016,
+              "cdp:recalc-style-ms": 3.955,
+              "cdp:script-ms": 16.591999999999995,
+              "cdp:task-ms": 135.85800000000003,
+              "cdp:retained-heap": 3101960,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 21999332
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.867,
+              "cdp:recalc-style-ms": 4.278999999999998,
+              "cdp:script-ms": 15.36600000000002,
+              "cdp:task-ms": 137.30399999999986,
+              "cdp:retained-heap": 3096540,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25095476
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 24.091,
+              "cdp:recalc-style-ms": 2.477,
+              "cdp:script-ms": 16.520999999999994,
+              "cdp:task-ms": 125.75800000000004,
+              "cdp:retained-heap": 3184392,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12538248
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 25.838,
+              "cdp:recalc-style-ms": 2.2880000000000003,
+              "cdp:script-ms": 15.841999999999995,
+              "cdp:task-ms": 117.60700000000001,
+              "cdp:retained-heap": 3122180,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15660324
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 23.583999999999993,
+              "cdp:recalc-style-ms": 2.678999999999999,
+              "cdp:script-ms": 16.17600000000001,
+              "cdp:task-ms": 120.09400000000004,
+              "cdp:retained-heap": 3196688,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18856884
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.369000000000003,
+              "cdp:recalc-style-ms": 2.8390000000000013,
+              "cdp:script-ms": 16.988000000000003,
+              "cdp:task-ms": 128.13399999999996,
+              "cdp:retained-heap": 3071300,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 21928056
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 23.581999999999994,
+              "cdp:recalc-style-ms": 3.716999999999998,
+              "cdp:script-ms": 15.02400000000001,
+              "cdp:task-ms": 136.19899999999996,
+              "cdp:retained-heap": 3096540,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25022916
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 24.540000000000006,
+              "cdp:recalc-style-ms": 2.2159999999999993,
+              "cdp:script-ms": 17.406999999999993,
+              "cdp:task-ms": 116.07600000000001,
+              "cdp:retained-heap": 3184952,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12544372
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.068999999999996,
+              "cdp:recalc-style-ms": 5.689999999999999,
+              "cdp:script-ms": 13.690999999999995,
+              "cdp:task-ms": 119.10299999999995,
+              "cdp:retained-heap": 3153128,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15697396
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 25.740999999999985,
+              "cdp:recalc-style-ms": 2.2670000000000017,
+              "cdp:script-ms": 15.463999999999992,
+              "cdp:task-ms": 120.33499999999997,
+              "cdp:retained-heap": 3197332,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18894600
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.11000000000002,
+              "cdp:recalc-style-ms": 2.6060000000000008,
+              "cdp:script-ms": 16.741000000000007,
+              "cdp:task-ms": 128.10300000000007,
+              "cdp:retained-heap": 3072908,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 21967380
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 28.036000000000005,
+              "cdp:recalc-style-ms": 2.905999999999999,
+              "cdp:script-ms": 17.820000000000004,
+              "cdp:task-ms": 145.88299999999998,
+              "cdp:retained-heap": 3097864,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25063564
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 23.673,
+              "cdp:recalc-style-ms": 2.224,
+              "cdp:script-ms": 15.516000000000002,
+              "cdp:task-ms": 109.27599999999998,
+              "cdp:retained-heap": 3185512,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1495,
+              "cdp:js-heap-used": 12547204
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 23.799999999999986,
+              "cdp:recalc-style-ms": 3.675999999999999,
+              "cdp:script-ms": 15.991999999999992,
+              "cdp:task-ms": 119.209,
+              "cdp:retained-heap": 3153772,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 1955,
+              "cdp:js-heap-used": 15700872
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 23.757,
+              "cdp:recalc-style-ms": 2.411,
+              "cdp:script-ms": 12.816999999999995,
+              "cdp:task-ms": 120.05399999999999,
+              "cdp:retained-heap": 3228208,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2415,
+              "cdp:js-heap-used": 18928952
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.051000000000016,
+              "cdp:recalc-style-ms": 2.3899999999999997,
+              "cdp:script-ms": 19.296000000000006,
+              "cdp:task-ms": 131.231,
+              "cdp:retained-heap": 3103480,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 2875,
+              "cdp:js-heap-used": 22032304
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.769999999999985,
+              "cdp:recalc-style-ms": 3.751000000000001,
+              "cdp:script-ms": 17.058000000000018,
+              "cdp:task-ms": 142.8020000000001,
+              "cdp:retained-heap": 3096540,
+              "cdp:retained-nodes": 460,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 3335,
+              "cdp:js-heap-used": 25127552
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 19,
+          "p25": 20,
+          "median": 20,
+          "p75": 20,
+          "p95": 20,
+          "max": 20,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 19,
+          "p25": 20,
+          "median": 20,
+          "p75": 20,
+          "p95": 20,
+          "max": 20,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 23.799999999999986,
+          "p25": 24.091,
+          "median": 24.217000000000017,
+          "p75": 24.867,
+          "p95": 25.566199999999988,
+          "max": 25.740999999999985,
+          "iqr": 0.7759999999999998,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 2.411,
+          "p25": 2.6060000000000008,
+          "median": 2.678999999999999,
+          "p75": 2.999,
+          "p95": 3.7134000000000023,
+          "max": 3.892000000000003,
+          "iqr": 0.39299999999999935,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 15.536999999999995,
+          "p25": 15.991999999999992,
+          "median": 16.17600000000001,
+          "p75": 16.58699999999999,
+          "p95": 16.710200000000004,
+          "max": 16.741000000000007,
+          "iqr": 0.5949999999999971,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 120.05399999999999,
+          "p25": 120.33499999999997,
+          "median": 122.09999999999998,
+          "p75": 125.75800000000004,
+          "p95": 126.06360000000004,
+          "max": 126.14000000000003,
+          "iqr": 5.423000000000073,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 2415,
+          "p25": 2415,
+          "median": 2415,
+          "p75": 2415,
+          "p95": 2415,
+          "max": 2415,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 18856884,
+          "p25": 18894600,
+          "median": 18897500,
+          "p75": 18912136,
+          "p95": 18925588.8,
+          "max": 18928952,
+          "iqr": 17536,
+          "unit": "bytes"
+        },
+        "cdp:retained-heap": {
+          "count": 5,
+          "min": 3122180,
+          "p25": 3122180,
+          "median": 3153128,
+          "p75": 3153772,
+          "p95": 3154069.6,
+          "max": 3154144,
+          "iqr": 31592,
+          "unit": "bytes"
+        },
+        "cdp:retained-nodes": {
+          "count": 5,
+          "min": 460,
+          "p25": 460,
+          "median": 460,
+          "p75": 460,
+          "p95": 460,
+          "max": 460,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:retained-listeners": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        }
+      }
+    },
+    "detached": {
+      "runs": [
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.52399999999999,
+              "cdp:recalc-style-ms": 3.4420000000000006,
+              "cdp:script-ms": 15.160000000000007,
+              "cdp:task-ms": 112.18400000000001,
+              "cdp:retained-heap": 3149724,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 12446896
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.173000000000016,
+              "cdp:recalc-style-ms": 2.1079999999999988,
+              "cdp:script-ms": 17.70999999999999,
+              "cdp:task-ms": 123.83300000000008,
+              "cdp:retained-heap": 3119432,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 15566224
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.259999999999977,
+              "cdp:recalc-style-ms": 3.314000000000001,
+              "cdp:script-ms": 13.56099999999999,
+              "cdp:task-ms": 128.757,
+              "cdp:retained-heap": 3192528,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 18757072
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.226999999999997,
+              "cdp:recalc-style-ms": 3.061999999999999,
+              "cdp:script-ms": 16.816000000000024,
+              "cdp:task-ms": 132.03500000000003,
+              "cdp:retained-heap": 3037000,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 21793944
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.19100000000002,
+              "cdp:recalc-style-ms": 3.7219999999999995,
+              "cdp:script-ms": 17.66200000000001,
+              "cdp:task-ms": 137.42199999999994,
+              "cdp:retained-heap": 3093348,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 24886896
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.007,
+              "cdp:recalc-style-ms": 4.294000000000001,
+              "cdp:script-ms": 16.014,
+              "cdp:task-ms": 126.886,
+              "cdp:retained-heap": 3149832,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 12436816
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.668999999999997,
+              "cdp:recalc-style-ms": 2.4049999999999994,
+              "cdp:script-ms": 14.190000000000008,
+              "cdp:task-ms": 117.62299999999992,
+              "cdp:retained-heap": 3117700,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 15554412
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 25.499999999999996,
+              "cdp:recalc-style-ms": 2.164000000000001,
+              "cdp:script-ms": 15.050000000000008,
+              "cdp:task-ms": 122.40699999999993,
+              "cdp:retained-heap": 3192600,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 18746884
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.824000000000012,
+              "cdp:recalc-style-ms": 4.163,
+              "cdp:script-ms": 18.30499999999999,
+              "cdp:task-ms": 128.50499999999997,
+              "cdp:retained-heap": 3067068,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 21813824
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.234000000000005,
+              "cdp:recalc-style-ms": 2.2749999999999995,
+              "cdp:script-ms": 17.314999999999998,
+              "cdp:task-ms": 138.55399999999983,
+              "cdp:retained-heap": 3061340,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 24873484
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.175,
+              "cdp:recalc-style-ms": 4.4030000000000005,
+              "cdp:script-ms": 16.896999999999995,
+              "cdp:task-ms": 115.58200000000002,
+              "cdp:retained-heap": 3149624,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 12464368
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.45299999999999,
+              "cdp:recalc-style-ms": 3.0679999999999996,
+              "cdp:script-ms": 14.391000000000014,
+              "cdp:task-ms": 119.15100000000001,
+              "cdp:retained-heap": 3117772,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 15582060
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 20.699000000000023,
+              "cdp:recalc-style-ms": 4.022999999999999,
+              "cdp:script-ms": 14.330000000000009,
+              "cdp:task-ms": 147.78800000000004,
+              "cdp:retained-heap": 3190688,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 18772620
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 25.638999999999996,
+              "cdp:recalc-style-ms": 1.806000000000002,
+              "cdp:script-ms": 17.249000000000013,
+              "cdp:task-ms": 129.94399999999996,
+              "cdp:retained-heap": 3036236,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 21808728
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.48299999999998,
+              "cdp:recalc-style-ms": 4.364,
+              "cdp:script-ms": 15.609999999999985,
+              "cdp:task-ms": 135.94099999999986,
+              "cdp:retained-heap": 3061660,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 24870260
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 24.772000000000002,
+              "cdp:recalc-style-ms": 4.435,
+              "cdp:script-ms": 16.64,
+              "cdp:task-ms": 110.47400000000002,
+              "cdp:retained-heap": 3149832,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 12437604
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.548000000000002,
+              "cdp:recalc-style-ms": 4.496999999999999,
+              "cdp:script-ms": 15.996999999999998,
+              "cdp:task-ms": 120.14899999999994,
+              "cdp:retained-heap": 3119252,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 15556752
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 24.481,
+              "cdp:recalc-style-ms": 3.6130000000000018,
+              "cdp:script-ms": 16.85600000000001,
+              "cdp:task-ms": 123.83,
+              "cdp:retained-heap": 3162200,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 18717272
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.095000000000006,
+              "cdp:recalc-style-ms": 2.4499999999999975,
+              "cdp:script-ms": 16.13400000000001,
+              "cdp:task-ms": 135.56599999999997,
+              "cdp:retained-heap": 3037000,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 21754144
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.891,
+              "cdp:recalc-style-ms": 4.197000000000003,
+              "cdp:script-ms": 17.834000000000017,
+              "cdp:task-ms": 142.90099999999995,
+              "cdp:retained-heap": 3061340,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 24815088
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 27.579000000000008,
+              "cdp:recalc-style-ms": 2.706,
+              "cdp:script-ms": 17.474000000000004,
+              "cdp:task-ms": 113.24400000000001,
+              "cdp:retained-heap": 3149624,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 12448408
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.303000000000004,
+              "cdp:recalc-style-ms": 2.9830000000000014,
+              "cdp:script-ms": 17.078999999999983,
+              "cdp:task-ms": 123.94299999999991,
+              "cdp:retained-heap": 3117736,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 15566040
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 25.646,
+              "cdp:recalc-style-ms": 3.665999999999999,
+              "cdp:script-ms": 16.096,
+              "cdp:task-ms": 122.02399999999992,
+              "cdp:retained-heap": 3192564,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 18758476
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.68199999999998,
+              "cdp:recalc-style-ms": 3.1400000000000006,
+              "cdp:script-ms": 19.962000000000007,
+              "cdp:task-ms": 128.74999999999991,
+              "cdp:retained-heap": 3068176,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 21826524
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.351000000000013,
+              "cdp:recalc-style-ms": 3.037999999999999,
+              "cdp:script-ms": 13.807000000000013,
+              "cdp:task-ms": 128.5449999999999,
+              "cdp:retained-heap": 3090632,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 24915476
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 20,
+          "p25": 20,
+          "median": 20,
+          "p75": 20,
+          "p95": 20,
+          "max": 20,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 20,
+          "p25": 20,
+          "median": 20,
+          "p75": 20,
+          "p95": 20,
+          "max": 20,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 24.45299999999999,
+          "p25": 24.772000000000002,
+          "median": 25.234000000000005,
+          "p75": 25.259999999999977,
+          "p95": 25.2944,
+          "max": 25.303000000000004,
+          "iqr": 0.4879999999999747,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 2.4049999999999994,
+          "p25": 3.037999999999999,
+          "median": 3.314000000000001,
+          "p75": 4.022999999999999,
+          "p95": 4.162200000000002,
+          "max": 4.197000000000003,
+          "iqr": 0.9849999999999999,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 15.609999999999985,
+          "p25": 16.014,
+          "median": 16.64,
+          "p75": 16.816000000000024,
+          "p95": 17.02639999999999,
+          "max": 17.078999999999983,
+          "iqr": 0.8020000000000245,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 123.83,
+          "p25": 123.94299999999991,
+          "median": 126.886,
+          "p75": 128.757,
+          "p95": 129.70659999999998,
+          "max": 129.94399999999996,
+          "iqr": 4.814000000000092,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 115,
+          "p25": 115,
+          "median": 115,
+          "p75": 115,
+          "p95": 115,
+          "max": 115,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 18717272,
+          "p25": 18746884,
+          "median": 18757072,
+          "p75": 18758476,
+          "p95": 18769791.2,
+          "max": 18772620,
+          "iqr": 11592,
+          "unit": "bytes"
+        },
+        "cdp:retained-heap": {
+          "count": 5,
+          "min": 3117700,
+          "p25": 3117736,
+          "median": 3117772,
+          "p75": 3119252,
+          "p95": 3119396,
+          "max": 3119432,
+          "iqr": 1516,
+          "unit": "bytes"
+        },
+        "cdp:retained-nodes": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:retained-listeners": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        }
+      }
+    },
+    "good": {
+      "runs": [
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.050000000000004,
+              "cdp:recalc-style-ms": 3.261999999999999,
+              "cdp:script-ms": 17.055,
+              "cdp:task-ms": 112.848,
+              "cdp:retained-heap": 151872,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9439228
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.14000000000001,
+              "cdp:recalc-style-ms": 2.6310000000000016,
+              "cdp:script-ms": 17.541,
+              "cdp:task-ms": 110.54000000000008,
+              "cdp:retained-heap": -30376,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9408748
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.888999999999996,
+              "cdp:recalc-style-ms": 2.8979999999999997,
+              "cdp:script-ms": 17.986,
+              "cdp:task-ms": 115.00199999999994,
+              "cdp:retained-heap": 75348,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9482804
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 23.959000000000007,
+              "cdp:recalc-style-ms": 2.848,
+              "cdp:script-ms": 16.04999999999998,
+              "cdp:task-ms": 101.95999999999994,
+              "cdp:retained-heap": -51712,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9430964
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 22.481999999999974,
+              "cdp:recalc-style-ms": 4.215,
+              "cdp:script-ms": 15.079999999999982,
+              "cdp:task-ms": 111.23099999999997,
+              "cdp:retained-heap": -90396,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9340440
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.796,
+              "cdp:recalc-style-ms": 2.7609999999999997,
+              "cdp:script-ms": 14.835,
+              "cdp:task-ms": 109.122,
+              "cdp:retained-heap": 145576,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9439360
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.189000000000004,
+              "cdp:recalc-style-ms": 2.631,
+              "cdp:script-ms": 16.438999999999997,
+              "cdp:task-ms": 106.92699999999999,
+              "cdp:retained-heap": -31504,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9407752
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.081999999999994,
+              "cdp:recalc-style-ms": 3.8019999999999996,
+              "cdp:script-ms": 15.21,
+              "cdp:task-ms": 102.44900000000001,
+              "cdp:retained-heap": 76852,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9484476
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.378999999999987,
+              "cdp:recalc-style-ms": 2.7030000000000007,
+              "cdp:script-ms": 17.282000000000018,
+              "cdp:task-ms": 108.541,
+              "cdp:retained-heap": -51724,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9431072
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 23.615000000000023,
+              "cdp:recalc-style-ms": 2.8919999999999986,
+              "cdp:script-ms": 14.345999999999998,
+              "cdp:task-ms": 101.611,
+              "cdp:retained-heap": -90396,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9340548
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.841,
+              "cdp:recalc-style-ms": 1.7839999999999991,
+              "cdp:script-ms": 14.664999999999997,
+              "cdp:task-ms": 113.67900000000003,
+              "cdp:retained-heap": 152500,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9442204
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 24.610000000000007,
+              "cdp:recalc-style-ms": 3.039999999999999,
+              "cdp:script-ms": 15.835000000000003,
+              "cdp:task-ms": 104.27299999999995,
+              "cdp:retained-heap": -31528,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9410596
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 23.676000000000002,
+              "cdp:recalc-style-ms": 3.812000000000001,
+              "cdp:script-ms": 15.452000000000021,
+              "cdp:task-ms": 105.186,
+              "cdp:retained-heap": 67484,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9477952
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.878999999999987,
+              "cdp:recalc-style-ms": 3.327,
+              "cdp:script-ms": 16.800000000000008,
+              "cdp:task-ms": 115.80299999999998,
+              "cdp:retained-heap": -51736,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9426088
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 26.232000000000006,
+              "cdp:recalc-style-ms": 2.5129999999999977,
+              "cdp:script-ms": 19.070000000000004,
+              "cdp:task-ms": 112.05299999999995,
+              "cdp:retained-heap": -90384,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9335576
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 27.627,
+              "cdp:recalc-style-ms": 3.588000000000001,
+              "cdp:script-ms": 20.385,
+              "cdp:task-ms": 125.86599999999997,
+              "cdp:retained-heap": 152544,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9439248
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 27.436000000000014,
+              "cdp:recalc-style-ms": 2.626,
+              "cdp:script-ms": 15.390999999999988,
+              "cdp:task-ms": 103.25700000000005,
+              "cdp:retained-heap": -31432,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9407712
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 26.558999999999997,
+              "cdp:recalc-style-ms": 2.64,
+              "cdp:script-ms": 13.651999999999997,
+              "cdp:task-ms": 101.74799999999995,
+              "cdp:retained-heap": 75288,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9482872
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 24.686999999999987,
+              "cdp:recalc-style-ms": 4.410999999999998,
+              "cdp:script-ms": 18.008999999999997,
+              "cdp:task-ms": 112.11499999999997,
+              "cdp:retained-heap": -50532,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9432212
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 25.908000000000015,
+              "cdp:recalc-style-ms": 2.8810000000000016,
+              "cdp:script-ms": 16.24600000000001,
+              "cdp:task-ms": 106.80000000000011,
+              "cdp:retained-heap": -91516,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9340568
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.720000000000006,
+              "cdp:recalc-style-ms": 2.683,
+              "cdp:script-ms": 14.667,
+              "cdp:task-ms": 115.78600000000006,
+              "cdp:retained-heap": 144480,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9439220
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 27.358999999999995,
+              "cdp:recalc-style-ms": 2.610000000000001,
+              "cdp:script-ms": 17.832,
+              "cdp:task-ms": 115.06300000000003,
+              "cdp:retained-heap": -31480,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9407636
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 24.733000000000004,
+              "cdp:recalc-style-ms": 2.109,
+              "cdp:script-ms": 17.35300000000001,
+              "cdp:task-ms": 107.51500000000003,
+              "cdp:retained-heap": 75288,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9482796
+            },
+            {
+              "cdp:layout-count": 20,
+              "cdp:recalc-style-count": 20,
+              "cdp:layout-ms": 25.055999999999994,
+              "cdp:recalc-style-ms": 3.074999999999998,
+              "cdp:script-ms": 17.523999999999983,
+              "cdp:task-ms": 102.55199999999998,
+              "cdp:retained-heap": -51724,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9430944
+            },
+            {
+              "cdp:layout-count": 19,
+              "cdp:recalc-style-count": 19,
+              "cdp:layout-ms": 23.565,
+              "cdp:recalc-style-ms": 4.847,
+              "cdp:script-ms": 18.097,
+              "cdp:task-ms": 114.5640000000001,
+              "cdp:retained-heap": -90384,
+              "cdp:retained-nodes": 0,
+              "cdp:retained-listeners": 0,
+              "cdp:dom-nodes": 115,
+              "cdp:js-heap-used": 9340432
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 19,
+          "p25": 20,
+          "median": 20,
+          "p75": 20,
+          "p95": 20,
+          "max": 20,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 19,
+          "p25": 20,
+          "median": 20,
+          "p75": 20,
+          "p95": 20,
+          "max": 20,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 25.055999999999994,
+          "p25": 25.189000000000004,
+          "median": 25.841,
+          "p75": 26.050000000000004,
+          "p95": 26.4572,
+          "max": 26.558999999999997,
+          "iqr": 0.8610000000000007,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 2.683,
+          "p25": 2.7609999999999997,
+          "median": 2.8810000000000016,
+          "p75": 2.8979999999999997,
+          "p95": 3.011599999999999,
+          "max": 3.039999999999999,
+          "iqr": 0.137,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 15.21,
+          "p25": 15.835000000000003,
+          "median": 16.24600000000001,
+          "p75": 17.055,
+          "p95": 17.430199999999985,
+          "max": 17.523999999999983,
+          "iqr": 1.219999999999997,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 106.80000000000011,
+          "p25": 106.92699999999999,
+          "median": 111.23099999999997,
+          "p75": 112.05299999999995,
+          "p95": 114.06180000000008,
+          "max": 114.5640000000001,
+          "iqr": 5.125999999999962,
+          "unit": "ms"
+        },
+        "cdp:dom-nodes": {
+          "count": 5,
+          "min": 115,
+          "p25": 115,
+          "median": 115,
+          "p75": 115,
+          "p95": 115,
+          "max": 115,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:js-heap-used": {
+          "count": 5,
+          "min": 9426088,
+          "p25": 9430944,
+          "median": 9430964,
+          "p75": 9431072,
+          "p95": 9431984,
+          "max": 9432212,
+          "iqr": 128,
+          "unit": "bytes"
+        },
+        "cdp:retained-heap": {
+          "count": 5,
+          "min": -31528,
+          "p25": -31504,
+          "median": -31480,
+          "p75": -31432,
+          "p95": -30587.2,
+          "max": -30376,
+          "iqr": 72,
+          "unit": "bytes"
+        },
+        "cdp:retained-nodes": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:retained-listeners": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        }
+      }
+    }
+  }
+}

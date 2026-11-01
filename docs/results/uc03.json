@@ -1,0 +1,2450 @@
+{
+  "scenario": "uc03",
+  "title": "絞り込み中の入力",
+  "createdAt": "2026-11-01T03:18:34.344Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpuModel": "Apple M1",
+    "cpuCount": 8,
+    "memoryGiB": 16,
+    "nodeVersion": "v24.21.0",
+    "browser": "chromium 156.0.8078.4",
+    "gitCommit": "a5f462d",
+    "gitDirty": false
+  },
+  "conditions": {
+    "runs": 5,
+    "warmupIterations": 2,
+    "iterations": 5,
+    "cpuThrottle": 4,
+    "seed": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "query": {
+      "count": "50000"
+    }
+  },
+  "variants": {
+    "bad": {
+      "runs": [
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.862999999999996,
+              "cdp:recalc-style-ms": 3.965,
+              "cdp:script-ms": 168.52600000000007,
+              "cdp:task-ms": 212.42499999999998,
+              "uc03:input-to-next-frame": 206.79999995231628,
+              "uc03:results-ready": 167.09999990463257,
+              "browser:long-task-total": 205,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.204000000000004,
+              "cdp:recalc-style-ms": 3.366000000000001,
+              "cdp:script-ms": 169.79500000000002,
+              "cdp:task-ms": 208.75899999999993,
+              "uc03:input-to-next-frame": 206.5,
+              "uc03:results-ready": 167.09999990463257,
+              "browser:long-task-total": 205,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.337999999999997,
+              "cdp:recalc-style-ms": 3.8539999999999996,
+              "cdp:script-ms": 165.27099999999996,
+              "cdp:task-ms": 204.63300000000007,
+              "uc03:input-to-next-frame": 200.79999995231628,
+              "uc03:results-ready": 161.20000004768372,
+              "browser:long-task-total": 199,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 200
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.495999999999988,
+              "cdp:recalc-style-ms": 3.393999999999998,
+              "cdp:script-ms": 166.45200000000006,
+              "cdp:task-ms": 204.55099999999993,
+              "uc03:input-to-next-frame": 203.10000014305115,
+              "uc03:results-ready": 162.70000004768372,
+              "browser:long-task-total": 201,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 200
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.207000000000008,
+              "cdp:recalc-style-ms": 3.913,
+              "cdp:script-ms": 167.3530000000001,
+              "cdp:task-ms": 209.592,
+              "uc03:input-to-next-frame": 204.69999980926514,
+              "uc03:results-ready": 164.19999980926514,
+              "browser:long-task-total": 202,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.273000000000003,
+              "cdp:recalc-style-ms": 4.052000000000001,
+              "cdp:script-ms": 171.56700000000004,
+              "cdp:task-ms": 212.4830000000001,
+              "uc03:input-to-next-frame": 207.70000004768372,
+              "uc03:results-ready": 168.20000004768372,
+              "browser:long-task-total": 206,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.569999999999983,
+              "cdp:recalc-style-ms": 3.331999999999998,
+              "cdp:script-ms": 169.08,
+              "cdp:task-ms": 210.73399999999998,
+              "uc03:input-to-next-frame": 207.59999990463257,
+              "uc03:results-ready": 168.10000014305115,
+              "browser:long-task-total": 206,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.93500000000001,
+              "cdp:recalc-style-ms": 3.7920000000000003,
+              "cdp:script-ms": 168.11100000000013,
+              "cdp:task-ms": 205.88000000000005,
+              "uc03:input-to-next-frame": 201.10000014305115,
+              "uc03:results-ready": 161.59999990463257,
+              "browser:long-task-total": 200,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 200
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.759,
+              "cdp:recalc-style-ms": 3.9059999999999997,
+              "cdp:script-ms": 168.59500000000006,
+              "cdp:task-ms": 205.6009999999999,
+              "uc03:input-to-next-frame": 202.70000004768372,
+              "uc03:results-ready": 163.39999985694885,
+              "browser:long-task-total": 202,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 200
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.062,
+              "cdp:recalc-style-ms": 4.123999999999999,
+              "cdp:script-ms": 167.37999999999985,
+              "cdp:task-ms": 209.611,
+              "uc03:input-to-next-frame": 206,
+              "uc03:results-ready": 165.59999990463257,
+              "browser:long-task-total": 204,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.872999999999994,
+              "cdp:recalc-style-ms": 4.023000000000002,
+              "cdp:script-ms": 171.543,
+              "cdp:task-ms": 214.38000000000014,
+              "uc03:input-to-next-frame": 209.29999995231628,
+              "uc03:results-ready": 170.5,
+              "browser:long-task-total": 208,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.186000000000014,
+              "cdp:recalc-style-ms": 3.698,
+              "cdp:script-ms": 170.612,
+              "cdp:task-ms": 211.419,
+              "uc03:input-to-next-frame": 209,
+              "uc03:results-ready": 169.5,
+              "browser:long-task-total": 208,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.93200000000001,
+              "cdp:recalc-style-ms": 3.8829999999999973,
+              "cdp:script-ms": 170.50699999999986,
+              "cdp:task-ms": 208.45200000000008,
+              "uc03:input-to-next-frame": 203.29999995231628,
+              "uc03:results-ready": 163,
+              "browser:long-task-total": 202,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.462999999999983,
+              "cdp:recalc-style-ms": 4.2909999999999995,
+              "cdp:script-ms": 168.70000000000007,
+              "cdp:task-ms": 205.50099999999992,
+              "uc03:input-to-next-frame": 203,
+              "uc03:results-ready": 162.5,
+              "browser:long-task-total": 202,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.312,
+              "cdp:recalc-style-ms": 3.685999999999998,
+              "cdp:script-ms": 168.512,
+              "cdp:task-ms": 209.61000000000007,
+              "uc03:input-to-next-frame": 206.89999985694885,
+              "uc03:results-ready": 167.29999995231628,
+              "browser:long-task-total": 205,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.469000000000005,
+              "cdp:recalc-style-ms": 4.024,
+              "cdp:script-ms": 170.667,
+              "cdp:task-ms": 216.06199999999998,
+              "uc03:input-to-next-frame": 208.89999985694885,
+              "uc03:results-ready": 168.39999985694885,
+              "browser:long-task-total": 206,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.233999999999995,
+              "cdp:recalc-style-ms": 3.8389999999999986,
+              "cdp:script-ms": 170.424,
+              "cdp:task-ms": 211.54400000000018,
+              "uc03:input-to-next-frame": 208.5,
+              "uc03:results-ready": 168.09999990463257,
+              "browser:long-task-total": 206,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.521000000000015,
+              "cdp:recalc-style-ms": 3.7830000000000017,
+              "cdp:script-ms": 168.0999999999999,
+              "cdp:task-ms": 206.21199999999985,
+              "uc03:input-to-next-frame": 202.19999980926514,
+              "uc03:results-ready": 162.29999995231628,
+              "browser:long-task-total": 201,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 200
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.822999999999983,
+              "cdp:recalc-style-ms": 3.8960000000000004,
+              "cdp:script-ms": 166.83800000000005,
+              "cdp:task-ms": 203.68399999999997,
+              "uc03:input-to-next-frame": 201.29999995231628,
+              "uc03:results-ready": 160.89999985694885,
+              "browser:long-task-total": 199,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 200
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.548000000000016,
+              "cdp:recalc-style-ms": 3.6239999999999988,
+              "cdp:script-ms": 168.1950000000001,
+              "cdp:task-ms": 210.7030000000001,
+              "uc03:input-to-next-frame": 206.09999990463257,
+              "uc03:results-ready": 166.80000019073486,
+              "browser:long-task-total": 204,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.016999999999985,
+              "cdp:recalc-style-ms": 4.208,
+              "cdp:script-ms": 172.79999999999995,
+              "cdp:task-ms": 213.9209999999999,
+              "uc03:input-to-next-frame": 209.5,
+              "uc03:results-ready": 171.09999990463257,
+              "browser:long-task-total": 207,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.31800000000001,
+              "cdp:recalc-style-ms": 3.341,
+              "cdp:script-ms": 171.89,
+              "cdp:task-ms": 212.18700000000013,
+              "uc03:input-to-next-frame": 209.79999995231628,
+              "uc03:results-ready": 169.5,
+              "browser:long-task-total": 208,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.328000000000014,
+              "cdp:recalc-style-ms": 3.404000000000001,
+              "cdp:script-ms": 170.6549999999999,
+              "cdp:task-ms": 207.96499999999995,
+              "uc03:input-to-next-frame": 203.79999995231628,
+              "uc03:results-ready": 163.5,
+              "browser:long-task-total": 202,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.842999999999975,
+              "cdp:recalc-style-ms": 4.650999999999999,
+              "cdp:script-ms": 168.2330000000001,
+              "cdp:task-ms": 206.53699999999998,
+              "uc03:input-to-next-frame": 202.79999995231628,
+              "uc03:results-ready": 163.20000004768372,
+              "browser:long-task-total": 201,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 27.020000000000017,
+              "cdp:recalc-style-ms": 3.4810000000000016,
+              "cdp:script-ms": 169.829,
+              "cdp:task-ms": 212.03499999999997,
+              "uc03:input-to-next-frame": 207.10000014305115,
+              "uc03:results-ready": 167.70000004768372,
+              "browser:long-task-total": 205,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 204.69999980926514,
+          "p25": 206,
+          "median": 206.09999990463257,
+          "p75": 206.89999985694885,
+          "p95": 207.0600000858307,
+          "max": 207.10000014305115,
+          "iqr": 0.8999998569488525,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 164.19999980926514,
+          "p25": 165.59999990463257,
+          "median": 166.80000019073486,
+          "p75": 167.29999995231628,
+          "p95": 167.62000002861024,
+          "max": 167.70000004768372,
+          "iqr": 1.7000000476837158,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 5,
+          "min": 202,
+          "p25": 204,
+          "median": 204,
+          "p75": 205,
+          "p95": 205,
+          "max": 205,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "browser:long-task-count": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 208,
+          "p25": 208,
+          "median": 208,
+          "p75": 208,
+          "p95": 208,
+          "max": 208,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 4,
+          "p25": 4,
+          "median": 4,
+          "p75": 4,
+          "p95": 4,
+          "max": 4,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 25.204000000000004,
+          "p25": 25.273000000000003,
+          "median": 25.312,
+          "p75": 25.469000000000005,
+          "p95": 25.90739999999999,
+          "max": 26.016999999999985,
+          "iqr": 0.1960000000000015,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 3.4810000000000016,
+          "p25": 3.8389999999999986,
+          "median": 3.8539999999999996,
+          "p75": 3.8829999999999973,
+          "p95": 3.9013999999999993,
+          "max": 3.9059999999999997,
+          "iqr": 0.04399999999999871,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 167.3530000000001,
+          "p25": 168.1950000000001,
+          "median": 168.59500000000006,
+          "p75": 170.50699999999986,
+          "p95": 170.62539999999987,
+          "max": 170.6549999999999,
+          "iqr": 2.311999999999756,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 208.75899999999993,
+          "p25": 209.61000000000007,
+          "median": 209.611,
+          "p75": 210.7030000000001,
+          "p95": 211.7686,
+          "max": 212.03499999999997,
+          "iqr": 1.0930000000000177,
+          "unit": "ms"
+        }
+      }
+    },
+    "microtask": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.259000000000004,
+              "cdp:recalc-style-ms": 4.360999999999999,
+              "cdp:script-ms": 25.111999999999995,
+              "cdp:task-ms": 220.46600000000007,
+              "uc03:input-to-next-frame": 212.10000014305115,
+              "uc03:results-ready": 171.79999995231628,
+              "browser:long-task-total": 210,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 216
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.664999999999992,
+              "cdp:recalc-style-ms": 3.5850000000000013,
+              "cdp:script-ms": 24.500999999999994,
+              "cdp:task-ms": 212.23300000000012,
+              "uc03:input-to-next-frame": 208.90000009536743,
+              "uc03:results-ready": 169.40000009536743,
+              "browser:long-task-total": 208,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.34,
+              "cdp:recalc-style-ms": 3.4649999999999994,
+              "cdp:script-ms": 25.79300000000001,
+              "cdp:task-ms": 209.49899999999988,
+              "uc03:input-to-next-frame": 203.89999985694885,
+              "uc03:results-ready": 166.20000004768372,
+              "browser:long-task-total": 202,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.659000000000013,
+              "cdp:recalc-style-ms": 4.376999999999999,
+              "cdp:script-ms": 24.068999999999953,
+              "cdp:task-ms": 208.26499999999993,
+              "uc03:input-to-next-frame": 205.5,
+              "uc03:results-ready": 166.59999990463257,
+              "browser:long-task-total": 204,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.721999999999994,
+              "cdp:recalc-style-ms": 3.935000000000001,
+              "cdp:script-ms": 23.353000000000012,
+              "cdp:task-ms": 212.66699999999994,
+              "uc03:input-to-next-frame": 209.40000009536743,
+              "uc03:results-ready": 169,
+              "browser:long-task-total": 207,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.764999999999983,
+              "cdp:recalc-style-ms": 4.2780000000000005,
+              "cdp:script-ms": 26.337,
+              "cdp:task-ms": 214.69899999999998,
+              "uc03:input-to-next-frame": 209.90000009536743,
+              "uc03:results-ready": 170.40000009536743,
+              "browser:long-task-total": 207,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.835000000000026,
+              "cdp:recalc-style-ms": 3.3979999999999984,
+              "cdp:script-ms": 25.307000000000023,
+              "cdp:task-ms": 212.01399999999992,
+              "uc03:input-to-next-frame": 208.70000004768372,
+              "uc03:results-ready": 168.59999990463257,
+              "browser:long-task-total": 207,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.271999999999988,
+              "cdp:recalc-style-ms": 3.665999999999999,
+              "cdp:script-ms": 23.57799999999999,
+              "cdp:task-ms": 207.30000000000004,
+              "uc03:input-to-next-frame": 203.29999995231628,
+              "uc03:results-ready": 164.59999990463257,
+              "browser:long-task-total": 201,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.226999999999997,
+              "cdp:recalc-style-ms": 3.6990000000000007,
+              "cdp:script-ms": 24.70699999999998,
+              "cdp:task-ms": 206.97200000000015,
+              "uc03:input-to-next-frame": 203.40000009536743,
+              "uc03:results-ready": 164.20000004768372,
+              "browser:long-task-total": 202,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.79999999999999,
+              "cdp:recalc-style-ms": 3.765000000000001,
+              "cdp:script-ms": 24.61599999999997,
+              "cdp:task-ms": 211.07399999999998,
+              "uc03:input-to-next-frame": 207.29999995231628,
+              "uc03:results-ready": 166.59999990463257,
+              "browser:long-task-total": 205,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.657,
+              "cdp:recalc-style-ms": 4.117000000000001,
+              "cdp:script-ms": 26.893,
+              "cdp:task-ms": 213.299,
+              "uc03:input-to-next-frame": 209.29999995231628,
+              "uc03:results-ready": 170.10000014305115,
+              "browser:long-task-total": 207,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.027999999999995,
+              "cdp:recalc-style-ms": 3.8419999999999983,
+              "cdp:script-ms": 25.363999999999997,
+              "cdp:task-ms": 213.58100000000002,
+              "uc03:input-to-next-frame": 211.40000009536743,
+              "uc03:results-ready": 171.09999990463257,
+              "browser:long-task-total": 210,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 216
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.262000000000004,
+              "cdp:recalc-style-ms": 3.948,
+              "cdp:script-ms": 24.129999999999985,
+              "cdp:task-ms": 209.3069999999999,
+              "uc03:input-to-next-frame": 204.70000004768372,
+              "uc03:results-ready": 166.10000014305115,
+              "browser:long-task-total": 203,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.910999999999987,
+              "cdp:recalc-style-ms": 3.306,
+              "cdp:script-ms": 23.95600000000003,
+              "cdp:task-ms": 206.634,
+              "uc03:input-to-next-frame": 204.5,
+              "uc03:results-ready": 164.90000009536743,
+              "browser:long-task-total": 203,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.935000000000013,
+              "cdp:recalc-style-ms": 3.0820000000000016,
+              "cdp:script-ms": 24.197999999999997,
+              "cdp:task-ms": 213.611,
+              "uc03:input-to-next-frame": 207.60000014305115,
+              "uc03:results-ready": 168.79999995231628,
+              "browser:long-task-total": 206,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.784000000000002,
+              "cdp:recalc-style-ms": 3.450999999999999,
+              "cdp:script-ms": 24.926000000000002,
+              "cdp:task-ms": 216.07300000000006,
+              "uc03:input-to-next-frame": 209.29999995231628,
+              "uc03:results-ready": 168.79999995231628,
+              "browser:long-task-total": 207,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.471999999999994,
+              "cdp:recalc-style-ms": 3.778000000000002,
+              "cdp:script-ms": 26.182999999999957,
+              "cdp:task-ms": 212.72299999999998,
+              "uc03:input-to-next-frame": 209.40000009536743,
+              "uc03:results-ready": 169.09999990463257,
+              "browser:long-task-total": 208,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.544000000000008,
+              "cdp:recalc-style-ms": 3.797999999999999,
+              "cdp:script-ms": 24.976,
+              "cdp:task-ms": 208.5680000000001,
+              "uc03:input-to-next-frame": 204,
+              "uc03:results-ready": 163.5,
+              "browser:long-task-total": 202,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.204,
+              "cdp:recalc-style-ms": 3.200999999999999,
+              "cdp:script-ms": 24.546000000000014,
+              "cdp:task-ms": 208.02799999999988,
+              "uc03:input-to-next-frame": 204.59999990463257,
+              "uc03:results-ready": 165.09999990463257,
+              "browser:long-task-total": 203,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.15199999999998,
+              "cdp:recalc-style-ms": 4.963000000000002,
+              "cdp:script-ms": 25.106000000000016,
+              "cdp:task-ms": 214.27200000000002,
+              "uc03:input-to-next-frame": 208.40000009536743,
+              "uc03:results-ready": 169,
+              "browser:long-task-total": 207,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.15300000000001,
+              "cdp:recalc-style-ms": 4.225999999999999,
+              "cdp:script-ms": 24.568000000000005,
+              "cdp:task-ms": 214.96099999999996,
+              "uc03:input-to-next-frame": 210.5,
+              "uc03:results-ready": 170.10000014305115,
+              "browser:long-task-total": 209,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.06799999999998,
+              "cdp:recalc-style-ms": 3.4870000000000005,
+              "cdp:script-ms": 24.116000000000028,
+              "cdp:task-ms": 214.14500000000004,
+              "uc03:input-to-next-frame": 210.60000014305115,
+              "uc03:results-ready": 171.40000009536743,
+              "browser:long-task-total": 209,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.449000000000023,
+              "cdp:recalc-style-ms": 4.083,
+              "cdp:script-ms": 22.85100000000001,
+              "cdp:task-ms": 207.8040000000001,
+              "uc03:input-to-next-frame": 203.79999995231628,
+              "uc03:results-ready": 164.30000019073486,
+              "browser:long-task-total": 202,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.09999999999998,
+              "cdp:recalc-style-ms": 3.568000000000002,
+              "cdp:script-ms": 24.93200000000001,
+              "cdp:task-ms": 205.6389999999999,
+              "uc03:input-to-next-frame": 203.39999985694885,
+              "uc03:results-ready": 163,
+              "browser:long-task-total": 203,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.21000000000001,
+              "cdp:recalc-style-ms": 3.386,
+              "cdp:script-ms": 24.668999999999997,
+              "cdp:task-ms": 214.5739999999998,
+              "uc03:input-to-next-frame": 209.29999995231628,
+              "uc03:results-ready": 170.5,
+              "browser:long-task-total": 208,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 208
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 207.29999995231628,
+          "p25": 207.60000014305115,
+          "median": 208.40000009536743,
+          "p75": 208.90000009536743,
+          "p95": 209.2199999809265,
+          "max": 209.29999995231628,
+          "iqr": 1.2999999523162842,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 166.59999990463257,
+          "p25": 168.79999995231628,
+          "median": 168.79999995231628,
+          "p75": 169,
+          "p95": 169.88000011444092,
+          "max": 170.10000014305115,
+          "iqr": 0.20000004768371582,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 5,
+          "min": 205,
+          "p25": 206,
+          "median": 207,
+          "p75": 207,
+          "p95": 207.8,
+          "max": 208,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "browser:long-task-count": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 208,
+          "p25": 208,
+          "median": 208,
+          "p75": 208,
+          "p95": 208,
+          "max": 208,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 4,
+          "p25": 4,
+          "median": 4,
+          "p75": 4,
+          "p95": 4,
+          "max": 4,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 25.15199999999998,
+          "p25": 25.15300000000001,
+          "median": 25.657,
+          "p75": 25.664999999999992,
+          "p95": 25.77299999999999,
+          "max": 25.79999999999999,
+          "iqr": 0.5119999999999827,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 3.568000000000002,
+          "p25": 3.6990000000000007,
+          "median": 3.778000000000002,
+          "p75": 3.8419999999999983,
+          "p95": 3.9164000000000003,
+          "max": 3.935000000000001,
+          "iqr": 0.14299999999999757,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 24.197999999999997,
+          "p25": 24.500999999999994,
+          "median": 24.568000000000005,
+          "p75": 24.70699999999998,
+          "p95": 24.922199999999997,
+          "max": 24.976,
+          "iqr": 0.2059999999999853,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 211.07399999999998,
+          "p25": 212.23300000000012,
+          "median": 212.72299999999998,
+          "p75": 213.299,
+          "p95": 213.97580000000002,
+          "max": 214.14500000000004,
+          "iqr": 1.0659999999998888,
+          "unit": "ms"
+        }
+      }
+    },
+    "deferred": {
+      "runs": [
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.531000000000002,
+              "cdp:recalc-style-ms": 1.8620000000000008,
+              "cdp:script-ms": 163.15199999999996,
+              "cdp:task-ms": 200.5159999999999,
+              "uc03:input-to-next-frame": 53.700000047683716,
+              "uc03:results-ready": 165.20000004768372,
+              "browser:long-task-total": 147,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.773999999999994,
+              "cdp:recalc-style-ms": 2.0409999999999995,
+              "cdp:script-ms": 163.104,
+              "cdp:task-ms": 200.445,
+              "uc03:input-to-next-frame": 49.299999952316284,
+              "uc03:results-ready": 159.19999980926514,
+              "browser:long-task-total": 147,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 48
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.990000000000004,
+              "cdp:recalc-style-ms": 2.026,
+              "cdp:script-ms": 163.22900000000007,
+              "cdp:task-ms": 197.268,
+              "uc03:input-to-next-frame": 46.200000047683716,
+              "uc03:results-ready": 155.10000014305115,
+              "browser:long-task-total": 148,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 48
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.213000000000001,
+              "cdp:recalc-style-ms": 2.113000000000002,
+              "cdp:script-ms": 159.76000000000013,
+              "cdp:task-ms": 193.4149999999999,
+              "uc03:input-to-next-frame": 54.60000014305115,
+              "uc03:results-ready": 161.40000009536743,
+              "browser:long-task-total": 146,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.89399999999999,
+              "cdp:recalc-style-ms": 1.4379999999999984,
+              "cdp:script-ms": 163.55999999999992,
+              "cdp:task-ms": 195.18999999999997,
+              "uc03:input-to-next-frame": 52,
+              "uc03:results-ready": 160,
+              "browser:long-task-total": 146,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.700999999999992,
+              "cdp:recalc-style-ms": 2.234999999999999,
+              "cdp:script-ms": 162.25100000000003,
+              "cdp:task-ms": 199.77400000000011,
+              "uc03:input-to-next-frame": 53.09999990463257,
+              "uc03:results-ready": 163.79999995231628,
+              "browser:long-task-total": 147,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.330000000000009,
+              "cdp:recalc-style-ms": 2.406,
+              "cdp:script-ms": 163.39899999999997,
+              "cdp:task-ms": 196.77099999999982,
+              "uc03:input-to-next-frame": 47.89999985694885,
+              "uc03:results-ready": 156,
+              "browser:long-task-total": 146,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 48
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.501999999999999,
+              "cdp:recalc-style-ms": 1.890000000000001,
+              "cdp:script-ms": 160.68100000000007,
+              "cdp:task-ms": 194.43299999999985,
+              "uc03:input-to-next-frame": 53.59999990463257,
+              "uc03:results-ready": 160.39999985694885,
+              "browser:long-task-total": 146,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.402999999999997,
+              "cdp:recalc-style-ms": 2.1339999999999986,
+              "cdp:script-ms": 160.7240000000001,
+              "cdp:task-ms": 192.84199999999996,
+              "uc03:input-to-next-frame": 50,
+              "uc03:results-ready": 156.29999995231628,
+              "browser:long-task-total": 145,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 48
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.181,
+              "cdp:recalc-style-ms": 2.4150000000000005,
+              "cdp:script-ms": 160.701,
+              "cdp:task-ms": 196.82999999999984,
+              "uc03:input-to-next-frame": 52.89999985694885,
+              "uc03:results-ready": 162.59999990463257,
+              "browser:long-task-total": 147,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.126,
+              "cdp:recalc-style-ms": 2.9709999999999996,
+              "cdp:script-ms": 163.242,
+              "cdp:task-ms": 199.76400000000007,
+              "uc03:input-to-next-frame": 53.700000047683716,
+              "uc03:results-ready": 164,
+              "browser:long-task-total": 147,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.349000000000002,
+              "cdp:recalc-style-ms": 2.456,
+              "cdp:script-ms": 160.69699999999997,
+              "cdp:task-ms": 201.16,
+              "uc03:input-to-next-frame": 51.200000047683716,
+              "uc03:results-ready": 160.70000004768372,
+              "browser:long-task-total": 146,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 48
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.110999999999999,
+              "cdp:recalc-style-ms": 1.5910000000000004,
+              "cdp:script-ms": 163.72700000000017,
+              "cdp:task-ms": 196.58100000000013,
+              "uc03:input-to-next-frame": 47.59999990463257,
+              "uc03:results-ready": 155,
+              "browser:long-task-total": 147,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 48
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.794,
+              "cdp:recalc-style-ms": 1.87,
+              "cdp:script-ms": 161.14800000000008,
+              "cdp:task-ms": 193.57999999999987,
+              "uc03:input-to-next-frame": 52.700000047683716,
+              "uc03:results-ready": 159.60000014305115,
+              "browser:long-task-total": 146,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.183,
+              "cdp:recalc-style-ms": 2.3399999999999985,
+              "cdp:script-ms": 159.4819999999999,
+              "cdp:task-ms": 193.78499999999988,
+              "uc03:input-to-next-frame": 52.40000009536743,
+              "uc03:results-ready": 159.60000014305115,
+              "browser:long-task-total": 145,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.354000000000006,
+              "cdp:recalc-style-ms": 2.1009999999999986,
+              "cdp:script-ms": 162.373,
+              "cdp:task-ms": 199.70600000000005,
+              "uc03:input-to-next-frame": 52.19999980926514,
+              "uc03:results-ready": 163.59999990463257,
+              "browser:long-task-total": 146,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.520999999999992,
+              "cdp:recalc-style-ms": 2.1020000000000016,
+              "cdp:script-ms": 161.4859999999999,
+              "cdp:task-ms": 199.862,
+              "uc03:input-to-next-frame": 52.799999952316284,
+              "uc03:results-ready": 162.39999985694885,
+              "browser:long-task-total": 147,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.459,
+              "cdp:recalc-style-ms": 1.7729999999999986,
+              "cdp:script-ms": 161.96699999999998,
+              "cdp:task-ms": 197.48299999999986,
+              "uc03:input-to-next-frame": 50.69999980926514,
+              "uc03:results-ready": 159.19999980926514,
+              "browser:long-task-total": 148,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 48
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.005000000000015,
+              "cdp:recalc-style-ms": 2.0459999999999994,
+              "cdp:script-ms": 161.5199999999999,
+              "cdp:task-ms": 194.29000000000008,
+              "uc03:input-to-next-frame": 53.90000009536743,
+              "uc03:results-ready": 160.40000009536743,
+              "browser:long-task-total": 146,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.438999999999979,
+              "cdp:recalc-style-ms": 1.930000000000001,
+              "cdp:script-ms": 160.04299999999995,
+              "cdp:task-ms": 193.25900000000007,
+              "uc03:input-to-next-frame": 54.69999980926514,
+              "uc03:results-ready": 161.79999995231628,
+              "browser:long-task-total": 145,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.753000000000002,
+              "cdp:recalc-style-ms": 2.8019999999999987,
+              "cdp:script-ms": 163.12800000000004,
+              "cdp:task-ms": 200.082,
+              "uc03:input-to-next-frame": 56,
+              "uc03:results-ready": 167.79999995231628,
+              "browser:long-task-total": 148,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.296000000000003,
+              "cdp:recalc-style-ms": 2.4919999999999995,
+              "cdp:script-ms": 163.52600000000007,
+              "cdp:task-ms": 198.35999999999987,
+              "uc03:input-to-next-frame": 53.09999990463257,
+              "uc03:results-ready": 162,
+              "browser:long-task-total": 149,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.028999999999998,
+              "cdp:recalc-style-ms": 2.4760000000000026,
+              "cdp:script-ms": 162.83199999999988,
+              "cdp:task-ms": 195.5150000000001,
+              "uc03:input-to-next-frame": 53,
+              "uc03:results-ready": 159.89999985694885,
+              "browser:long-task-total": 147,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 56
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.080000000000007,
+              "cdp:recalc-style-ms": 2.251999999999997,
+              "cdp:script-ms": 161.10099999999994,
+              "cdp:task-ms": 193.97600000000014,
+              "uc03:input-to-next-frame": 52.10000014305115,
+              "uc03:results-ready": 159,
+              "browser:long-task-total": 146,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 48
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.797000000000004,
+              "cdp:recalc-style-ms": 1.8440000000000019,
+              "cdp:script-ms": 162.94799999999987,
+              "cdp:task-ms": 196.76899999999998,
+              "uc03:input-to-next-frame": 51.799999952316284,
+              "uc03:results-ready": 160.20000004768372,
+              "browser:long-task-total": 147,
+              "browser:long-task-count": 2,
+              "browser:keydown:duration": 48
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 52,
+          "p25": 52.40000009536743,
+          "median": 52.799999952316284,
+          "p75": 52.89999985694885,
+          "p95": 52.97999997138977,
+          "max": 53,
+          "iqr": 0.4999997615814209,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 159.60000014305115,
+          "p25": 160,
+          "median": 160.20000004768372,
+          "p75": 160.39999985694885,
+          "p95": 161.5199999332428,
+          "max": 161.79999995231628,
+          "iqr": 0.39999985694885254,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 5,
+          "min": 146,
+          "p25": 146,
+          "median": 146,
+          "p75": 147,
+          "p95": 147,
+          "max": 147,
+          "iqr": 1,
+          "unit": "ms"
+        },
+        "browser:long-task-count": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 56,
+          "p25": 56,
+          "median": 56,
+          "p75": 56,
+          "p95": 56,
+          "max": 56,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 3,
+          "p25": 3,
+          "median": 3,
+          "p75": 3,
+          "p95": 3,
+          "max": 3,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "p95": 1,
+          "max": 1,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 13.330000000000009,
+          "p25": 13.520999999999992,
+          "median": 13.753000000000002,
+          "p75": 13.773999999999994,
+          "p95": 14.043599999999998,
+          "max": 14.110999999999999,
+          "iqr": 0.2530000000000019,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 2.026,
+          "p25": 2.0459999999999994,
+          "median": 2.234999999999999,
+          "p75": 2.3399999999999985,
+          "p95": 2.4488000000000016,
+          "max": 2.4760000000000026,
+          "iqr": 0.29399999999999915,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 160.7240000000001,
+          "p25": 161.14800000000008,
+          "median": 161.5199999999999,
+          "p75": 162.94799999999987,
+          "p95": 163.11119999999994,
+          "max": 163.15199999999996,
+          "iqr": 1.799999999999784,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 196.58100000000013,
+          "p25": 196.76899999999998,
+          "median": 196.77099999999982,
+          "p75": 197.268,
+          "p95": 197.43999999999988,
+          "max": 197.48299999999986,
+          "iqr": 0.49900000000002365,
+          "unit": "ms"
+        }
+      }
+    },
+    "yield": {
+      "runs": [
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.118999999999993,
+              "cdp:recalc-style-ms": 2.4779999999999993,
+              "cdp:script-ms": 15.701999999999995,
+              "cdp:task-ms": 150.32299999999998,
+              "uc03:input-to-next-frame": 15.200000047683716,
+              "uc03:results-ready": 118.09999990463257,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.593000000000007,
+              "cdp:recalc-style-ms": 2.1330000000000013,
+              "cdp:script-ms": 15.958999999999973,
+              "cdp:task-ms": 150.92499999999998,
+              "uc03:input-to-next-frame": 14.5,
+              "uc03:results-ready": 115.40000009536743,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.285999999999992,
+              "cdp:recalc-style-ms": 2.050999999999999,
+              "cdp:script-ms": 16.77300000000004,
+              "cdp:task-ms": 153.578,
+              "uc03:input-to-next-frame": 13.399999856948853,
+              "uc03:results-ready": 115.40000009536743,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.389000000000014,
+              "cdp:recalc-style-ms": 2.0289999999999995,
+              "cdp:script-ms": 14.740999999999948,
+              "cdp:task-ms": 158.60499999999988,
+              "uc03:input-to-next-frame": 16.5,
+              "uc03:results-ready": 125.79999995231628,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.854000000000005,
+              "cdp:recalc-style-ms": 1.9880000000000002,
+              "cdp:script-ms": 14.42300000000002,
+              "cdp:task-ms": 147.85100000000017,
+              "uc03:input-to-next-frame": 12.5,
+              "uc03:results-ready": 113.59999990463257,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.330999999999996,
+              "cdp:recalc-style-ms": 2.067000000000001,
+              "cdp:script-ms": 17.306999999999988,
+              "cdp:task-ms": 156.54499999999993,
+              "uc03:input-to-next-frame": 20.59999990463257,
+              "uc03:results-ready": 131.40000009536743,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 24
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.338000000000003,
+              "cdp:recalc-style-ms": 2.456999999999999,
+              "cdp:script-ms": 14.745000000000008,
+              "cdp:task-ms": 152.15199999999996,
+              "uc03:input-to-next-frame": 12.899999856948853,
+              "uc03:results-ready": 116.69999980926514,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.490000000000002,
+              "cdp:recalc-style-ms": 2.0890000000000004,
+              "cdp:script-ms": 14.529000000000014,
+              "cdp:task-ms": 156.10000000000014,
+              "uc03:input-to-next-frame": 13.200000047683716,
+              "uc03:results-ready": 116.70000004768372,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.737999999999987,
+              "cdp:recalc-style-ms": 1.979999999999999,
+              "cdp:script-ms": 15.062000000000019,
+              "cdp:task-ms": 159.29499999999996,
+              "uc03:input-to-next-frame": 14.400000095367432,
+              "uc03:results-ready": 124.40000009536743,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.343000000000021,
+              "cdp:recalc-style-ms": 1.7010000000000012,
+              "cdp:script-ms": 15.547000000000033,
+              "cdp:task-ms": 145.1929999999999,
+              "uc03:input-to-next-frame": 15.799999952316284,
+              "uc03:results-ready": 112.89999985694885,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.156000000000002,
+              "cdp:recalc-style-ms": 2.0559999999999996,
+              "cdp:script-ms": 17.084000000000017,
+              "cdp:task-ms": 153.92600000000002,
+              "uc03:input-to-next-frame": 13.700000047683716,
+              "uc03:results-ready": 117.39999985694885,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.526999999999997,
+              "cdp:recalc-style-ms": 2.150000000000001,
+              "cdp:script-ms": 15.182000000000029,
+              "cdp:task-ms": 157.33999999999992,
+              "uc03:input-to-next-frame": 19.100000143051147,
+              "uc03:results-ready": 129.60000014305115,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.243000000000006,
+              "cdp:recalc-style-ms": 2.1379999999999995,
+              "cdp:script-ms": 16.17799999999997,
+              "cdp:task-ms": 150.81199999999995,
+              "uc03:input-to-next-frame": 16.600000143051147,
+              "uc03:results-ready": 116.20000004768372,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.293,
+              "cdp:recalc-style-ms": 2.0359999999999996,
+              "cdp:script-ms": 15.421999999999992,
+              "cdp:task-ms": 157.173,
+              "uc03:input-to-next-frame": 18.800000190734863,
+              "uc03:results-ready": 128.80000019073486,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 12.875999999999998,
+              "cdp:recalc-style-ms": 1.9060000000000015,
+              "cdp:script-ms": 15.218000000000009,
+              "cdp:task-ms": 147.67700000000005,
+              "uc03:input-to-next-frame": 14,
+              "uc03:results-ready": 114.20000004768372,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.862,
+              "cdp:recalc-style-ms": 2.2379999999999987,
+              "cdp:script-ms": 15.738000000000001,
+              "cdp:task-ms": 147.37800000000001,
+              "uc03:input-to-next-frame": 16.100000143051147,
+              "uc03:results-ready": 117.10000014305115,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.093999999999996,
+              "cdp:recalc-style-ms": 2.2520000000000007,
+              "cdp:script-ms": 15.650000000000025,
+              "cdp:task-ms": 153.2620000000001,
+              "uc03:input-to-next-frame": 13.099999904632568,
+              "uc03:results-ready": 117.70000004768372,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.150999999999998,
+              "cdp:recalc-style-ms": 1.4630000000000007,
+              "cdp:script-ms": 15.786999999999995,
+              "cdp:task-ms": 157.48300000000003,
+              "uc03:input-to-next-frame": 11.300000190734863,
+              "uc03:results-ready": 116.60000014305115,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.050000000000008,
+              "cdp:recalc-style-ms": 2.274,
+              "cdp:script-ms": 16.230999999999995,
+              "cdp:task-ms": 160.41700000000003,
+              "uc03:input-to-next-frame": 12.900000095367432,
+              "uc03:results-ready": 124.20000004768372,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 11.743000000000004,
+              "cdp:recalc-style-ms": 1.9710000000000005,
+              "cdp:script-ms": 15.421999999999992,
+              "cdp:task-ms": 146.20299999999986,
+              "uc03:input-to-next-frame": 15.899999856948853,
+              "uc03:results-ready": 114,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.664999999999997,
+              "cdp:recalc-style-ms": 2.490000000000001,
+              "cdp:script-ms": 16.91099999999998,
+              "cdp:task-ms": 149.48000000000005,
+              "uc03:input-to-next-frame": 14.900000095367432,
+              "uc03:results-ready": 116.39999985694885,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 14.338000000000003,
+              "cdp:recalc-style-ms": 2.262,
+              "cdp:script-ms": 16.642000000000017,
+              "cdp:task-ms": 151.48799999999994,
+              "uc03:input-to-next-frame": 13.900000095367432,
+              "uc03:results-ready": 116.89999985694885,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 15.052999999999997,
+              "cdp:recalc-style-ms": 1.6909999999999998,
+              "cdp:script-ms": 15.172000000000018,
+              "cdp:task-ms": 171.675,
+              "uc03:input-to-next-frame": 10.599999904632568,
+              "uc03:results-ready": 123.5,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.701999999999991,
+              "cdp:recalc-style-ms": 1.4999999999999996,
+              "cdp:script-ms": 14.896999999999993,
+              "cdp:task-ms": 148.62299999999996,
+              "uc03:input-to-next-frame": 15.200000047683716,
+              "uc03:results-ready": 113.20000004768372,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            },
+            {
+              "cdp:layout-count": 3,
+              "cdp:recalc-style-count": 1,
+              "cdp:layout-ms": 13.289000000000023,
+              "cdp:recalc-style-ms": 2.169999999999998,
+              "cdp:script-ms": 14.991000000000032,
+              "cdp:task-ms": 147.0499999999999,
+              "uc03:input-to-next-frame": 14.799999952316284,
+              "uc03:results-ready": 113.70000004768372,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 13.099999904632568,
+          "p25": 14.400000095367432,
+          "median": 14.5,
+          "p75": 14.799999952316284,
+          "p95": 16.240000104904176,
+          "max": 16.600000143051147,
+          "iqr": 0.39999985694885254,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 115.40000009536743,
+          "p25": 116.39999985694885,
+          "median": 116.70000004768372,
+          "p75": 117.10000014305115,
+          "p95": 117.33999991416931,
+          "max": 117.39999985694885,
+          "iqr": 0.7000002861022949,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:long-task-count": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 3,
+          "p25": 3,
+          "median": 3,
+          "p75": 3,
+          "p95": 3,
+          "max": 3,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "p95": 1,
+          "max": 1,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 14.285999999999992,
+          "p25": 14.293,
+          "median": 14.330999999999996,
+          "p75": 14.338000000000003,
+          "p95": 14.907600000000006,
+          "max": 15.050000000000008,
+          "iqr": 0.04500000000000348,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 2.050999999999999,
+          "p25": 2.0559999999999996,
+          "median": 2.067000000000001,
+          "p75": 2.169999999999998,
+          "p95": 2.2243999999999984,
+          "max": 2.2379999999999987,
+          "iqr": 0.11399999999999855,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 15.062000000000019,
+          "p25": 15.172000000000018,
+          "median": 15.421999999999992,
+          "p75": 15.701999999999995,
+          "p95": 15.7308,
+          "max": 15.738000000000001,
+          "iqr": 0.5299999999999763,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 149.48000000000005,
+          "p25": 150.92499999999998,
+          "median": 153.2620000000001,
+          "p75": 153.92600000000002,
+          "p95": 155.6652000000001,
+          "max": 156.10000000000014,
+          "iqr": 3.001000000000033,
+          "unit": "ms"
+        }
+      }
+    },
+    "worker": {
+      "runs": [
+        {
+          "run": 3,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.648999999999994,
+              "cdp:recalc-style-ms": 4.404000000000002,
+              "cdp:script-ms": 24.323999999999984,
+              "cdp:task-ms": 76.94299999999998,
+              "uc03:input-to-next-frame": 14.5,
+              "uc03:results-ready": 55.299999952316284,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.299999952316284
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 27.69200000000002,
+              "cdp:recalc-style-ms": 3.814999999999999,
+              "cdp:script-ms": 26.397000000000006,
+              "cdp:task-ms": 94.81700000000004,
+              "uc03:input-to-next-frame": 15.700000047683716,
+              "uc03:results-ready": 61.40000009536743,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.700000047683716
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.88699999999999,
+              "cdp:recalc-style-ms": 3.5980000000000003,
+              "cdp:script-ms": 25.81300000000003,
+              "cdp:task-ms": 72.19299999999996,
+              "uc03:input-to-next-frame": 12.700000047683716,
+              "uc03:results-ready": 51.60000014305115,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.09999990463257
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.671999999999997,
+              "cdp:recalc-style-ms": 3.726,
+              "cdp:script-ms": 21.828999999999986,
+              "cdp:task-ms": 70.96100000000006,
+              "uc03:input-to-next-frame": 13.799999952316284,
+              "uc03:results-ready": 50.700000047683716,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.100000143051147
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.722999999999992,
+              "cdp:recalc-style-ms": 4.071999999999999,
+              "cdp:script-ms": 22.052000000000017,
+              "cdp:task-ms": 70.40099999999994,
+              "uc03:input-to-next-frame": 11.400000095367432,
+              "uc03:results-ready": 50.200000047683716,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18
+            }
+          ]
+        },
+        {
+          "run": 0,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.974999999999998,
+              "cdp:recalc-style-ms": 4.168999999999999,
+              "cdp:script-ms": 24.032999999999998,
+              "cdp:task-ms": 76.44200000000001,
+              "uc03:input-to-next-frame": 14.600000143051147,
+              "uc03:results-ready": 54.799999952316284,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.100000143051147
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.593000000000007,
+              "cdp:recalc-style-ms": 4.881,
+              "cdp:script-ms": 23.477000000000025,
+              "cdp:task-ms": 92.8,
+              "uc03:input-to-next-frame": 13.699999809265137,
+              "uc03:results-ready": 57,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.399999856948853
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.977999999999998,
+              "cdp:recalc-style-ms": 3.615,
+              "cdp:script-ms": 21.62200000000003,
+              "cdp:task-ms": 72.45999999999997,
+              "uc03:input-to-next-frame": 14.100000143051147,
+              "uc03:results-ready": 52.19999980926514,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.200000047683716
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 24.252999999999997,
+              "cdp:recalc-style-ms": 3.979,
+              "cdp:script-ms": 24.27800000000002,
+              "cdp:task-ms": 74.33900000000004,
+              "uc03:input-to-next-frame": 13.400000095367432,
+              "uc03:results-ready": 52.5,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.09999990463257
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 25.036,
+              "cdp:recalc-style-ms": 3.448000000000003,
+              "cdp:script-ms": 24.005,
+              "cdp:task-ms": 72.78200000000001,
+              "uc03:input-to-next-frame": 14.700000047683716,
+              "uc03:results-ready": 53.10000014305115,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.299999952316284
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.777999999999995,
+              "cdp:recalc-style-ms": 3.835,
+              "cdp:script-ms": 26.47299999999997,
+              "cdp:task-ms": 77.22300000000004,
+              "uc03:input-to-next-frame": 14.700000047683716,
+              "uc03:results-ready": 53.69999980926514,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.299999952316284
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.266000000000012,
+              "cdp:recalc-style-ms": 3.0219999999999985,
+              "cdp:script-ms": 24.677999999999976,
+              "cdp:task-ms": 96.96000000000005,
+              "uc03:input-to-next-frame": 14.599999904632568,
+              "uc03:results-ready": 74.19999980926514,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 19
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.948999999999998,
+              "cdp:recalc-style-ms": 3.615,
+              "cdp:script-ms": 22.61200000000002,
+              "cdp:task-ms": 71.26600000000005,
+              "uc03:input-to-next-frame": 11.700000047683716,
+              "uc03:results-ready": 51.90000009536743,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.199999809265137
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.464999999999986,
+              "cdp:recalc-style-ms": 4.397000000000002,
+              "cdp:script-ms": 21.99300000000004,
+              "cdp:task-ms": 71.93700000000003,
+              "uc03:input-to-next-frame": 15.799999952316284,
+              "uc03:results-ready": 51.799999952316284,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.299999952316284
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.421999999999997,
+              "cdp:recalc-style-ms": 3.4579999999999993,
+              "cdp:script-ms": 22.397,
+              "cdp:task-ms": 69.08599999999998,
+              "uc03:input-to-next-frame": 12.700000047683716,
+              "uc03:results-ready": 49.90000009536743,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.200000047683716
+            }
+          ]
+        },
+        {
+          "run": 1,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.566999999999993,
+              "cdp:recalc-style-ms": 4.723,
+              "cdp:script-ms": 23.746999999999964,
+              "cdp:task-ms": 76.02100000000006,
+              "uc03:input-to-next-frame": 15.400000095367432,
+              "uc03:results-ready": 53.700000047683716,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.200000047683716
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.673000000000002,
+              "cdp:recalc-style-ms": 4.497000000000001,
+              "cdp:script-ms": 24.21899999999999,
+              "cdp:task-ms": 94.19500000000002,
+              "uc03:input-to-next-frame": 15.100000143051147,
+              "uc03:results-ready": 58.09999990463257,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.200000047683716
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 24.96000000000001,
+              "cdp:recalc-style-ms": 3.3240000000000007,
+              "cdp:script-ms": 23.787000000000003,
+              "cdp:task-ms": 71.53599999999993,
+              "uc03:input-to-next-frame": 12.299999952316284,
+              "uc03:results-ready": 51.700000047683716,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.788999999999977,
+              "cdp:recalc-style-ms": 3.386999999999998,
+              "cdp:script-ms": 22.88800000000002,
+              "cdp:task-ms": 71.06200000000007,
+              "uc03:input-to-next-frame": 11.600000143051147,
+              "uc03:results-ready": 50.700000047683716,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.100000143051147
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.538000000000004,
+              "cdp:recalc-style-ms": 3.8340000000000005,
+              "cdp:script-ms": 22.843000000000004,
+              "cdp:task-ms": 71.40900000000005,
+              "uc03:input-to-next-frame": 12,
+              "uc03:results-ready": 49.69999980926514,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "uc03:worker-search": 18
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "iterations": [
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 26.441000000000006,
+              "cdp:recalc-style-ms": 4.057999999999999,
+              "cdp:script-ms": 23.843999999999976,
+              "cdp:task-ms": 76.56700000000005,
+              "uc03:input-to-next-frame": 13.400000095367432,
+              "uc03:results-ready": 54.5,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.100000143051147
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 27.20499999999998,
+              "cdp:recalc-style-ms": 3.5480000000000027,
+              "cdp:script-ms": 23.60799999999996,
+              "cdp:task-ms": 93.916,
+              "uc03:input-to-next-frame": 14.200000047683716,
+              "uc03:results-ready": 56.30000019073486,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.90000009536743
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 23.632000000000016,
+              "cdp:recalc-style-ms": 4.042999999999998,
+              "cdp:script-ms": 22.76900000000004,
+              "cdp:task-ms": 70.38100000000003,
+              "uc03:input-to-next-frame": 13,
+              "uc03:results-ready": 52.09999990463257,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.100000143051147
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.021999999999984,
+              "cdp:recalc-style-ms": 3.8860000000000006,
+              "cdp:script-ms": 23.152000000000005,
+              "cdp:task-ms": 69.92900000000002,
+              "uc03:input-to-next-frame": 12.099999904632568,
+              "uc03:results-ready": 50.39999985694885,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.09999990463257
+            },
+            {
+              "cdp:layout-count": 4,
+              "cdp:recalc-style-count": 2,
+              "cdp:layout-ms": 22.989000000000008,
+              "cdp:recalc-style-ms": 3.6559999999999997,
+              "cdp:script-ms": 23.65100000000003,
+              "cdp:task-ms": 70.66800000000006,
+              "uc03:input-to-next-frame": 11.700000047683716,
+              "uc03:results-ready": 50.40000009536743,
+              "browser:long-task-total": 0,
+              "browser:long-task-count": 0,
+              "browser:keydown:duration": 16,
+              "uc03:worker-search": 18.100000143051147
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "uc03:input-to-next-frame": {
+          "count": 5,
+          "min": 12.299999952316284,
+          "p25": 13,
+          "median": 13.799999952316284,
+          "p75": 14.100000143051147,
+          "p95": 14.499999952316283,
+          "max": 14.599999904632568,
+          "iqr": 1.1000001430511475,
+          "unit": "ms"
+        },
+        "uc03:results-ready": {
+          "count": 5,
+          "min": 51.60000014305115,
+          "p25": 51.700000047683716,
+          "median": 51.90000009536743,
+          "p75": 52.09999990463257,
+          "p95": 52.90000009536743,
+          "max": 53.10000014305115,
+          "iqr": 0.39999985694885254,
+          "unit": "ms"
+        },
+        "browser:long-task-total": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "browser:long-task-count": {
+          "count": 5,
+          "min": 0,
+          "p25": 0,
+          "median": 0,
+          "p75": 0,
+          "p95": 0,
+          "max": 0,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "browser:keydown:duration": {
+          "count": 5,
+          "min": 16,
+          "p25": 16,
+          "median": 16,
+          "p75": 16,
+          "p95": 16,
+          "max": 16,
+          "iqr": 0,
+          "unit": "ms"
+        },
+        "uc03:worker-search": {
+          "count": 5,
+          "min": 18.100000143051147,
+          "p25": 18.100000143051147,
+          "median": 18.100000143051147,
+          "p75": 18.200000047683716,
+          "p95": 18.27999997138977,
+          "max": 18.299999952316284,
+          "iqr": 0.09999990463256836,
+          "unit": "ms"
+        },
+        "cdp:layout-count": {
+          "count": 5,
+          "min": 4,
+          "p25": 4,
+          "median": 4,
+          "p75": 4,
+          "p95": 4,
+          "max": 4,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:recalc-style-count": {
+          "count": 5,
+          "min": 2,
+          "p25": 2,
+          "median": 2,
+          "p75": 2,
+          "p95": 2,
+          "max": 2,
+          "iqr": 0,
+          "unit": "count"
+        },
+        "cdp:layout-ms": {
+          "count": 5,
+          "min": 22.88699999999999,
+          "p25": 23.632000000000016,
+          "median": 23.948999999999998,
+          "p75": 24.96000000000001,
+          "p95": 25.020800000000005,
+          "max": 25.036,
+          "iqr": 1.3279999999999959,
+          "unit": "ms"
+        },
+        "cdp:recalc-style-ms": {
+          "count": 5,
+          "min": 3.615,
+          "p25": 3.814999999999999,
+          "median": 3.8340000000000005,
+          "p75": 3.8860000000000006,
+          "p95": 3.9604000000000004,
+          "max": 3.979,
+          "iqr": 0.0710000000000015,
+          "unit": "ms"
+        },
+        "cdp:script-ms": {
+          "count": 5,
+          "min": 22.61200000000002,
+          "p25": 23.60799999999996,
+          "median": 23.746999999999964,
+          "p75": 24.005,
+          "p95": 24.260199999999987,
+          "max": 24.323999999999984,
+          "iqr": 0.39700000000003755,
+          "unit": "ms"
+        },
+        "cdp:task-ms": {
+          "count": 5,
+          "min": 70.66800000000006,
+          "p25": 71.53599999999993,
+          "median": 71.93700000000003,
+          "p75": 72.19299999999996,
+          "p95": 73.90980000000002,
+          "max": 74.33900000000004,
+          "iqr": 0.6570000000000249,
+          "unit": "ms"
+        }
+      }
+    }
+  }
+}

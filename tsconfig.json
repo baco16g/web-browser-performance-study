@@ -17,5 +17,5 @@
     "allowImportingTsExtensions": true,
     "skipLibCheck": true
   },
-  "include": ["src", "server", "bench", "e2e", "scripts", "*.ts"]
+  "include": ["src", "server", "bench", "e2e", "scripts", "*.ts", "react-internals/.vitepress"]
 }

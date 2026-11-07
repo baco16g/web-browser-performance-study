@@ -10,6 +10,8 @@ A personal study project for learning browser performance measurement. Each use 
 
 [公開サイト](https://baco16g.github.io/web-browser-performance-study/)で UC1、UC2、UC3、UC5、UC6 を試せます。UC4 と UC7 はモック API が必要なので、手元で動かしてください。
 
+React の内部の仕組みは、ソースコードを読みながら[解説サイト](https://baco16g.github.io/web-browser-performance-study/react-internals/)にまとめています。
+
 React DevTools の Profiler を使うときは、[プロファイリングビルドの公開サイト](https://baco16g.github.io/web-browser-performance-study/profiling/)を開きます。React の計測の分だけ遅くなるので、render の回数や理由を調べるために使い、時間は本番ビルドで測ります。
 
 ## 実測の例: 強制同期レイアウトを避けると待ち時間が約77%減った

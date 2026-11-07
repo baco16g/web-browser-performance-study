@@ -27,6 +27,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      # リンク切れがあるとビルドが失敗するので、解説サイトもここで確かめる
+      - run: npm run docs:build
 
   e2e:
     name: E2E (${{ matrix.browser }})

@@ -36,6 +36,8 @@ export default defineConfig(({ mode }) => ({
           pageDirectories.map(({ name }) => [name, resolve(root, 'pages', name, 'index.html')]),
         ),
       },
+      // React のトラックは実行時の関数名を表示し、ソースマップでは戻らないので名前を残す
+      output: { keepNames: PROFILING_MODES.has(mode) },
     },
   },
 }));
